@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <meta name="title" content="KUIT 1주차 자기소개" />
+    <meta name="Date" content="2025-03-18T15:58:10+09:00" />
+
+    <!-- OG == Open Graph. 콘텐츠의 요약 내용이 SNS에 게시되기 최적화된 데이터가 되도록 -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://github.com/Konkuk-KUIT/KUIT5_WEB-Frontend/tree/main" />
+    <meta property="og:title" content="KUIT 5기 WEB 실습 미션" />
+    <meta property="og:image" content="https://example.com/image.jpg" />
+    <meta property="og:description" content="매주 강의 영상을 보고, 워크북 작성 및 미션 수행" />
+    <meta property="og:site_name" content="쿠잇" />
+    <meta property="og:locale" content="en_US" />
+
+    <!-- meta 헤더에서 페이지 이동? -->
+    <meta
+      http-equiv="refresh"
+      content="3000; url=https://fantasy-paper-18d.notion.site/1-1b869d4659b680d69f50c4f67aa76438?pvs=4"
+    />
+
+    <title>1주차 실습 : Glyph8 자기소개</title>
+
+    <script async>
+      console.log("head 태그 내부 + async 사용")
+      console.log(Date.now())
+    </script>
+
+  </head>
+  <body style="margin: 300px;">
+    <div name="margin_collaping" style="margin-top: 200px;">안녕하세요~! 강동윤입니다.</div>
+    <div>학과 : 컴퓨터공학부</div>
+    <div>학년 : 4학년 1학기 재학 중</div>
+    <div>MBTI : INFP</div>
+    <div>하고 싶은 말 : 앞으로 1학기가 어떨지가 기대됩니다.</div>
+    <p id="greeting"></p>
+
+    <script defer>
+      console.log("body 태그 마지막 + defer 사용")
+      document.getElementById("greeting").innerHTML = "한 학기동안 잘부탁합니다."
+      console.log(Date.now())
+    </script>
+  </body>
+</html>
