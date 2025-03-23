@@ -1,0 +1,262 @@
+.post-header .post-header__text {
+    width: 50;
+    height: 28;
+    font-family: Inter;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 28px;
+    letter-spacing: 0%;
+
+}
+
+.post-header .post-header__icon-container img {
+    width: 14;
+    height: 14;
+
+
+}
+
+button {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    outline: inherit;
+}
+
+.post-header .post-header__icon-container {
+
+    display: flex;
+    align-items: center;
+    gap: 16px;
+
+}
+
+.post-header__left {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.post-header {
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+    width: 390px;
+    height: 52px;
+    justify-content: space-between;
+    padding-top: 12px;
+    padding-right: 16px;
+    padding-bottom: 12px;
+    padding-left: 16px;
+    background-color: #FFFFFF;
+    box-sizing: border-box;
+    border-bottom: 1px solid #D9D9D9;
+
+
+}
+
+.screen{
+    width: 390;
+    height: 726;
+    top: 47px;
+
+}
+
+.post img {
+    display: flex;
+    align-items: center;
+    width: 110px;
+    height: 110px;
+    border-radius: 4px;
+    object-fit:cover;
+    display: block;
+    background: #D9D9D9;
+}
+
+.post{
+    width: 358px;
+    height: 110px;
+    gap: 16px;
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+    margin-top: 16px;
+    padding-bottom: 16px;
+    margin-left: 12px;
+    border-bottom: 1px solid #D9D9D9;
+    position: relative;
+}
+
+
+    
+
+.post .post__name .post__title{
+    width: 232;
+    height: 20;
+    font-family: Inter;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+    letter-spacing: 0%;
+    margin-top: 0px;
+    margin-bottom: 1px;
+    white-space: nowrap;
+}
+
+.post .post__name .post__info{
+    width: 80;
+    height: 16;
+    gap: 4px;
+    font-family: Inter;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: 0%;
+    color: #8C8C8C;
+    margin-top: 0px;
+    margin-bottom: 2px;
+    white-space: nowrap;
+
+}
+
+.post .post__name .price{
+    width: 78;
+    height: 22;
+    font-family: Inter;
+    font-weight: 700;
+    font-size: 15px;
+    line-height: 22px;
+    letter-spacing: 0%;
+    color: #FF7E36;
+    margin-top: 0px;
+    white-space: nowrap;
+}
+
+.post .post__reaction{
+    width: 232;
+    height: 16;
+    background-color: #FFFFFF;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-top: 110px;
+    margin-left: 68px;
+
+    display: flex;
+    flex-wrap: nowrap;
+
+    
+
+}
+
+
+.post .post__reaction .chat_reaction{
+    width: 40px;
+    height: 16;
+    gap: 2px;
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+   
+    position: absolute;
+    z-index: 10;
+    right: 30px;
+    bottom: 0;
+    
+
+} 
+
+.post .post__reaction .heart_reaction{
+    width: 40px;
+    height: 16;
+    gap: 2px;
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+    
+    margin-left:-10px;
+    position: absolute;
+    z-index: 10;
+    right: 0;
+    bottom: 0;
+    
+
+} 
+
+
+
+.post .post__reaction img{
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    outline: inherit;
+    display: flex;
+    align-items: center;
+    width:16px;
+    height:16px;
+    margin-top: -9px;
+
+    vertical-align: middle;
+
+}
+.post .post__reaction span{
+    width: 12;
+    height: 16;
+
+    font-family: Inter;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: 0%;
+    color: #8C8C8C;
+    gap:10px;
+}
+
+
+.post-bottom {
+    position:fixed;
+    z-index: 10px;
+
+}
+
+.post-bottom .plus-button {
+    width: 48px;
+    height: 48px;
+    padding: 12px;
+    border-radius: 90px;
+    position:fixed;
+    left: 310px;
+    bottom: 100px;
+    z-index: 10px;
+    border: none;
+
+}
+
+.post-bottom .post-bottom__icon-container{
+
+    border-top: 1px solid #D9D9D9;
+    width: 390;
+    height: 58;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    position:fixed;
+    bottom: 0;
+    left: 0;
+    background-color:#FFFFFF;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    z-index: 10px;
+
+}
+
+.post-bottom .post-bottom__icon-container img{
+    width: 78;
+    height: 42;
+    
+
+}
+
+
