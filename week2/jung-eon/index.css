@@ -222,8 +222,13 @@ button {
 
 
 .post-bottom {
+    width: 390;
+    height: 58;
+    padding-top: 8px;
+    padding-bottom: 8px;
+
     position:fixed;
-    z-index: 10px;
+    
 
 }
 
@@ -232,10 +237,10 @@ button {
     height: 48px;
     padding: 12px;
     border-radius: 90px;
+
     position:fixed;
     left: 310px;
     bottom: 100px;
-    z-index: 10px;
     border: none;
 
 }
@@ -247,20 +252,61 @@ button {
     height: 58px;
     padding-top: 8px;
     padding-bottom: 8px;
+
     position:fixed;
     bottom: 0px;
-    left: 0px;
     background-color:#FFFFFF;
+    
+
     display: flex;
     justify-content: space-around;
     align-items: center;
-    z-index: 10px;
+
+    
+    
 
 }
 
 .post-bottom .post-bottom__icon-container img{
-    width: 78px;
-    height: 42px;
+    padding-top: 8px;
+    padding-bottom: 0px;
+    width: 24;
+    height: 24;
+
+    position:fixed;
+    bottom:38px;
+
+    align-items: center;
+}
+
+.post-bottom .post-bottom__icon-container .icon-text{
+    width: 50px;
+    height: 14px;
+    padding-top: 23px;
+    padding-left: 30px;
+    padding-right: 30px;
+
+    display: flex;
+    position: fixed;
+
+
+    display: flex; 
+    justify-content: center;
+
+    font-family: Inter;
+    font-weight: 400px;
+    font-size: 10px;
+    line-height: 14px;
+    letter-spacing: 0%;
+    
+
+}
+
+
+.post-bottom .post-bottom__icon-container .button{
+    align-items:center;
+    display: flex; 
+    justify-content: center;
     
 
 }
