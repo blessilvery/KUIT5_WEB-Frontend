@@ -1,0 +1,26 @@
+/* global styles 정의 */
+button {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    outline: inherit;
+}
+
+.post-header {
+    
+}
+
+.post-header header {
+    display: flex;
+    padding: 14px 16px;
+    position: absolute; /* 위에 뜨는 공간 없어짐*/
+    width: 100%;
+    justify-content: space-between;  /* padding 때문에 b가 화면상에서 사라짐 */
+    box-sizing: border-box;     /* 화면에서 없어진 b가 다시 보임 */
+}
+
+.post-header .post__images img{
+    max-width: 100%;
+    max-height: 100%;
+}
