@@ -1,3 +1,14 @@
-<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M11.9756 2C11.8157 2.00546 11.6617 2.06192 11.5361 2.16113L4.42969 7.75976C3.52774 8.47058 3 9.55675 3 10.7051V20.25C3 20.9318 3.5682 21.5 4.25 21.5H9.25C9.9318 21.5 10.5 20.9318 10.5 20.25V15.25C10.5 15.1025 10.6025 15 10.75 15H13.25C13.3975 15 13.5 15.1025 13.5 15.25V20.25C13.5 20.9318 14.0682 21.5 14.75 21.5H19.75C20.4318 21.5 21 20.9318 21 20.25V10.7051C21 9.55675 20.4723 8.47058 19.5703 7.75976L12.4639 2.16113C12.3252 2.05157 12.1522 1.9945 11.9756 2ZM12 3.70507L18.6426 8.93847C19.1846 9.36566 19.5 10.0154 19.5 10.7051V20H15V15.25C15 14.2925 14.2075 13.5 13.25 13.5H10.75C9.79252 13.5 9 14.2925 9 15.25V20H4.5V10.7051C4.5 10.0154 4.81537 9.36566 5.35742 8.93847L12 3.70507Z" fill="white"/>
+<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<mask id="mask0_102_510" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="24" height="24">
+<rect x="24" width="24" height="24" transform="rotate(90 24 0)" fill="url(#pattern0_102_510)"/>
+</mask>
+<g mask="url(#mask0_102_510)">
+<path d="M24 0L24 24L-1.04907e-06 24L0 -1.04907e-06L24 0Z" fill="white"/>
+</g>
+<defs>
+<pattern id="pattern0_102_510" patternContentUnits="objectBoundingBox" width="1" height="1">
+<use xlink:href="#image0_102_510" transform="scale(0.0104167)"/>
+</pattern>
+<image id="image0_102_510" width="96" height="96" preserveAspectRatio="none" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGAAAABgCAYAAADimHc4AAAABmJLR0QA/wD/AP+gvaeTAAABIUlEQVR4nO3XXU7VUBhA0R2Nl7kIjEqno5FIZC6ATgKcgM5AfMTgw4UXEhruT2/SnLWS77E756Q9TVsAAAAAAAAAAAAAAAAAAAB1Wp1Vt9Xfx7mtvlQn+vM5qr5V/6qHF+a+Oq9WA/ZndVT96OWFP5/vbbaJpfdnd9HrF/80Xwfqz+q06WM7dZyPB+hPerNroPq4Zedt9WGA/ux+tvnT8zQ3A/Rnd9f2G/gzQH/SPl5BDzNfu/T+pH3cgN87XPtrgP6kfdyAqx2uvRygP7uT1p9k23zGvR+gfxDnbb6Bs4H6s1tV171+8VfVu4H6B7Fq/Xs+dZzvWz852yx+6f2DOa4+t/5JuXucm+pT+3lnLr0PAAAAAAAAAAAAAAAAAAAs3H+QGK6Gte/9gwAAAABJRU5ErkJggg=="/>
+</defs>
 </svg>

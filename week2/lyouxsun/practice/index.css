@@ -1,26 +1,144 @@
 /* global styles 정의 */
 button {
-    background: none;
-    border: none;
-    padding: 0;
-    cursor: pointer;
-    outline: inherit;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  outline: inherit;
 }
 
 .post-header {
-    
 }
 
 .post-header header {
-    display: flex;
-    padding: 14px 16px;
-    position: absolute; /* 위에 뜨는 공간 없어짐*/
-    width: 100%;
-    justify-content: space-between;  /* padding 때문에 b가 화면상에서 사라짐 */
-    box-sizing: border-box;     /* 화면에서 없어진 b가 다시 보임 */
+  display: flex;
+  padding: 14px 16px;
+  position: absolute; /* 위에 뜨는 공간 없어짐 */
+  width: 100%;
+  justify-content: space-between; /* 자식 요소들을 좌우 끝에 배치하고, 사이 공간은 최대한 벌려준다 -> padding 때문에 b가 화면상에서 사라짐 */
+  box-sizing: border-box; /* 화면에서 없어진 b가 다시 보임 */
+  /* justify-content만 설정하면 요소의 총 너비를 계산할 때 padding과 border를 포함시킴 */
+  /* 그래서 box-sizing을 통해서 padding이 너비에 추가되지 않고 포함되도록 함 */
 }
 
-.post-header .post__images img{
-    max-width: 100%;
-    max-height: 100%;
+.post-header .post-header__icon-container {
+  display: flex;
+  gap: 16px; /* 자식 요소들 사이의 간격 */
+  align-items: center; /* 수직축 상에서 어디에 배치할 것인지 */
 }
+
+.post-header .post__image-container .post__image {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.post {
+  padding: 0 16px;
+}
+
+.post > section {
+  padding: 16px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.post > section:last-child {
+  border-bottom: none;
+}
+
+.post__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.post__header .header__user {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.header__user .user__profile-img {
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;
+}
+
+.header__user .user__info {
+  display: flex;
+  flex-direction: column;
+}
+.header__user .user__info .user__name {
+  margin-bottom: 4px; /*user_info에 gap을 줘도 되는데 flex gap을 지원하는 브라우저가 적어서 margin bottom을 사용하는게 더 좋다 */
+  color: #000;
+  font-family: Inter;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 18px; /* 128.571% */
+}
+
+.header__user .user__info .user__address {
+  color: #4f4f4f;
+  font-family: Inter;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 16px; /* 133.333% */
+}
+
+.post__header .temperature__description {
+  color: #8c8c8c;
+  font-family: Inter;
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 12px; /* 120% */
+  text-decoration-line: underline;
+  text-decoration-style: solid;
+  text-decoration-skip-ink: none;
+  text-decoration-thickness: auto;
+  text-underline-offset: auto;
+  text-underline-position: from-font;
+}
+
+.post__header .temperature__container {
+  display: flex;
+  margin-bottom: 4px;
+  align-items: center;
+}
+
+.post__header .header__temperature {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.header__temperature .temperature__indicator {
+  display: flex;
+  flex-direction: column;
+  margin-right: 4px;
+}
+
+.header__temperature .temperature__value {
+  color: #4ac1db;
+  font-family: Inter;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 18px; /* 128.571% */
+}
+
+.temperature__indicator .temperature__bar {
+    height: 2px;
+    width: 100%;
+    background-color: #d9d9d9;
+    border-radius: 10px;
+  
+  }
+  .temperature__indicator .temperature__bar--value {
+    width: 37.2%;
+    height: 2px;
+    border-radius: 10px;
+    background-color: #4ac1db;
+  }

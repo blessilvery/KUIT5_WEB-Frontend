@@ -1,52 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8"/>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="index.css"/>
-        <link rel="stylesheet" href="reset.css"/>
-        <title>daangn</title>
-    </head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="index.css" />
+    <link rel="stylesheet" href="reset.css" />
+    <title>daangn</title>
+  </head>
 
-    <body>
-        <!-- 상단 이미지 캐러셀 및 헤더 -->
-        <section class="post-header">
-            <header>
-                <div>
-                    <!-- 버튼을 만들 때에는 타입을 명시해줘야 한다. -->
-                    <button type="button">
-                        <img src="../assets/left-chevron.svg" alt="go back"/>
-                    </button>
-                    <button type="button">
-                        <img src="../assets/home.svg" alt="go home button"/>
-                    </button>       
-                </div>
-                <div>
-                    <button type="button">
-                        <img src="../assets/share.svg" alt="share"/>
-                    </button>
-                    <button type="button">
-                        <img src="../assets/kabab.svg" alt=""/>
-                    </button>       
-                </div>
-            </header>
+  <body>
+    <!-- 상단 이미지 캐러셀 및 헤더 -->
+    <section class="post-header">
+      <header>
+        <div class="post-header__icon-container">
+          <!-- 버튼을 만들 때에는 타입을 명시해줘야 한다. -->
+          <button type="button">
+            <img src="../assets/left-chevron.svg" alt="go back" />
+          </button>
+          <button type="button">
+            <img src="../assets/home.svg" alt="go home button" />
+          </button>
+        </div>
+        <div class="post-header__icon-container">
+          <button type="button">
+            <img src="../assets/share.svg" alt="share product" />
+          </button>
+          <button type="button">
+            <img src="../assets/kebab.svg" alt="open settings" />
+          </button>
+        </div>
+      </header>
 
-            <div class="post__images">
-                <img src="http://placehold.co/720" alt="wh-1000xm5 실버"> 
-                <!-- img를 적을 때에는 대체 택스트 alt 꼭 넣기 -->
+      <div class="post__image-container">
+        <img
+          class="post__image"
+          src="http://placehold.co/720"
+          alt="wh-1000xm5 실버"
+        />
+        <!-- img를 적을 때에는 대체 택스트 alt 꼭 넣기 -->
+      </div>
+    </section>
+
+    <!-- 게시글 -->
+    <article class="post">
+      <section class="post__header">
+        <div class="header__user">
+          <img
+            class="user__profile-img"
+            src="http://placehold.co/40"
+            alt="user's profile image"
+          />
+          <div class="user__info">
+            <span class="user__name">감성탐방러</span>
+            <span class="user__address">중랑구 면목동</span>
+          </div>
+        </div>
+        <div class="header__temperature">
+          <div class="temperature__container">
+            <div class="temperature__indicator">
+              <span class="temperature__value">37.2°C</span>
+              <div class="temperature__bar">
+                <div class="temperature__bar--value"></div>
+              </div>
             </div>
-        </section>
+            <span>🙂</span>
+          </div>
+          <button type="button">
+            <span class="temperature__description">매너온도</span>
+          </button>
+        </div>
+      </section>
+      <section class="post__content">
+        <h1 class="title">소니 Wh-1000xm5 실버 팝니다.</h1>
+        <div class="description__container"></div>
+      </section>
+      <section class="post__default">post__default</section>
+    </article>
 
-        <!-- 게시글 -->
-        <article class="post">
-
-        </article>
-
-        <!-- 하단바 -->
-        <nav class="bottom-bar">
-
-        </nav>
-    </body>
+    <!-- 하단바 -->
+    <nav class="bottom-bar"></nav>
+  </body>
 </html>
 
 <!-- 네이밍 방식 : Block__Element--Modifier -->
