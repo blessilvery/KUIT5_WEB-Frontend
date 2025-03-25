@@ -7,9 +7,6 @@ button {
   outline: inherit;
 }
 
-.post-header {
-}
-
 .post-header header {
   display: flex;
   padding: 14px 16px;
@@ -34,6 +31,7 @@ button {
 
 .post {
   padding: 0 16px;
+  padding-bottom: 54px; /*아래 nav의 세로가 54px이어서 그만끔 뺀거임 */
 }
 
 .post > section {
@@ -126,19 +124,171 @@ button {
   font-size: 14px;
   font-style: normal;
   font-weight: 700;
-  line-height: 18px; /* 128.571% */
+  line-height: 18px;
 }
 
 .temperature__indicator .temperature__bar {
-    height: 2px;
-    width: 100%;
-    background-color: #d9d9d9;
-    border-radius: 10px;
-  
-  }
-  .temperature__indicator .temperature__bar--value {
-    width: 37.2%;
-    height: 2px;
-    border-radius: 10px;
-    background-color: #4ac1db;
-  }
+  height: 2px;
+  width: 100%;
+  background-color: #d9d9d9;
+  border-radius: 10px;
+}
+.temperature__indicator .temperature__bar--value {
+  width: 37.2%;
+  height: 2px;
+  border-radius: 10px;
+  background-color: #4ac1db;
+}
+
+.post__content {
+  align-items: center;
+}
+
+.post__content .post__title {
+  color: #000;
+  font-family: Inter;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 28px;
+  margin-bottom: 8px;
+}
+
+.post__content .desc__container {
+  color: #8c8c8c;
+  font-family: Inter;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 16px;
+}
+
+.post__content .desc__category {
+  line-height: 18px; /* .desc__category에 대하여 중복 적용하면 여기 쓰여져있는게 더 우선 적용되는건가? */
+  text-decoration-line: underline;
+  text-decoration-style: solid;
+  text-decoration-skip-ink: none;
+  text-decoration-thickness: auto;
+  text-underline-offset: auto;
+  text-underline-position: from-font;
+}
+
+.post__content .post__text {
+  color: #000;
+  font-family: Inter;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 18px;
+  margin: 16px 0;
+}
+
+.post .section__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.section__header .section__title {
+  color: #000;
+  font-family: Inter;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 20px;
+}
+
+.post .products__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px 16px;
+  margin: 16px 0 8px;
+}
+
+.product__container {
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+}
+
+.product__container .product__name {
+  color: #000;
+  font-family: Inter;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 18px;
+  margin: 8px 0;
+}
+
+.product__price {
+  color: #000;
+  font-family: Inter;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 18px;
+}
+
+.product__container .product__img {
+  max-height: 118px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.bottom-bar {
+  display: flex;
+  justify-content: space-between;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: #fff;
+  padding: 8px 16px 12px;
+
+  border-top: 1px solid #d9d9d9; /* nav바 위에 선 그어주기 */
+  box-sizing: border-box;
+}
+
+.bottom-bar .bar__chat-btn {
+  padding: 8px 14px;
+  border-radius: 4px;
+  background: #ff7e36;
+  color: var(--white, #fff);
+  font-family: Inter;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 18px;
+}
+
+.bottom-bar .info__suggestable {
+  color: #8c8c8c;
+  font-family: Inter;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 18px;
+}
+
+.bottom-bar .product__price {
+  margin-bottom: 2px;
+}
+
+.bar__info-container .divider {
+  width: 1px;
+  align-self: stretch;
+  stroke: #eee;
+  border-right: 1px solid #d9d9d9; /* nav바 위에 선 그어주기 */
+}
+.bar__info-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+}
+
+.bar__info-container .bar__info {
+  display: flex;
+  flex-direction: column;
+}
