@@ -9,3 +9,5 @@ KUIT 5기 WEB Part 스터디 실습, 미션 저장소입니다.
 - 각 주차별 폴더 안에, 자신의 닉네임 or 이름 폴더를 새로 만듭니다. 해당 폴더 안에서 Index.html 등을 생성하여 미션을 진행합니다.
 
 git clone --branch <branchname> <remote-repo-url>
+
+git push <원격저장소 이름 clone 했으면 그냥 origin> <branch이름>
