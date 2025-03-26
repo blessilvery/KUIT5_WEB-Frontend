@@ -1,11 +1,3 @@
-button {
-  background-color: inherit;
-  border: none;
-}
-.post:last-of-type {
-  margin-bottom: 58px;
-}
-
 .content {
   margin: 20px auto 0;
 }
@@ -17,6 +9,7 @@ button {
   font-size: 18px;
   box-sizing: border-box;
   position: relative;
+  border-bottom: 1px solid #eeeeee;
 }
 .dong-selector {
   line-height: 24px;
@@ -30,143 +23,59 @@ button {
   transform: translateY(-50%);
   margin-right: 16px;
 }
-.post-filter-nav {
+.post {
+  padding: 16px 0;
+  margin: 0 16px;
+  border-bottom: 1px solid #eeeeee;
   display: flex;
-  padding-left: 16px;
-  height: 56px;
-  gap: 8px;
-  overflow-x: auto;
-  scrollbar-width: none;
-  align-items: center;
-  border-bottom: 1px #eeeeee solid;
+  position: relative;
 }
-.post-filter-nav > button {
-  border: #eeeeee 1px solid;
-  border-radius: 100px;
-  height: 32px;
-  white-space: nowrap;
-  padding: 8px 12px;
-  display: flex;
-  align-items: center;
+.post:last-of-type {
+  border: none;
+  margin-bottom: 58px;
 }
-.banner {
-  display: flex;
-  height: 64px;
-  padding-left: 16px;
-  align-items: center;
+.post > img {
+  width: 110px;
+  height: 110px;
 }
-.banner img {
-  height: 62.5%;
-  margin-right: 8px;
+.thumbnail {
+  margin-right: 16px;
 }
-.banner div {
+.item-description {
   display: flex;
   flex-direction: column;
-  justify-items: center;
+  gap: 4px;
 }
-.banner p:nth-child(1) {
+.item-name {
   height: 20px;
-  font-size: 15px;
-  font-weight: bold;
-  margin-bottom: 2px;
   line-height: 20px;
 }
-.banner p:nth-child(2) {
+.item-place {
   font-size: 12px;
+  color: #8c8c8c;
   height: 16px;
   line-height: 16px;
 }
-.post {
-  border-top: 4px #eeeeee solid;
-  padding: 16px;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
+.item-price {
+  color: #ff7e36;
+  font-size: 15px;
+  font-weight: bold;
+  height: 22px;
+  line-height: 22px;
 }
-.post_filter {
-  font-size: 10px;
-  padding: 3px 6px;
-  border-radius: 4px;
-  height: 24px;
-  line-height: 18px;
-  background-color: #eeeeee;
-  text-align: center;
-  display: inline-block;
-  box-sizing: border-box;
-}
-.post_content {
-  font-size: 14px;
-}
-.post_content p {
-  line-height: 1.2rem;
-}
-.content-info {
-  font-size: 12px;
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-}
-.content-info p {
-  display: flex;
-  align-items: center;
-}
-.content_footer {
+.item-stats {
+  position: absolute;
+  bottom: 16px;
+  right: 0;
   font-size: 12px;
   color: #8c8c8c;
-  position: relative;
-}
-.content_comment {
-  border-top: 1px solid #eeeeee;
-  padding: 10px 16px;
-  color: #5e5e5e;
-  font-size: 12px;
   display: flex;
-  gap: 16px;
-}
-.content_comment span {
-  display: flex;
-  align-items: center;
   gap: 4px;
 }
-.content_image-container {
-  white-space: nowrap;
-  overflow-x: auto;
-  scrollbar-width: none;
+.item-stats span {
   display: flex;
   gap: 2px;
-}
-.content_image-container img {
-  width: 250px;
-}
-.content-location {
-  border: 1px #d9d9d9 solid;
-  border-radius: 4px;
-  display: flex;
-  height: 52px;
-}
-.content-location_image {
-  position: relative;
-  width: 52px;
-  overflow: hidden;
-}
-.content-location_image img {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-.content-location_description {
-  padding: 0 12px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-.content-location_description p {
-  font-size: 12px;
-  height: 16px;
-}
-.content-location_description p:nth-child(2) {
-  color: #8c8c8c;
+  align-items: center;
 }
 .new-post {
   border-radius: 50%;
@@ -205,45 +114,4 @@ button {
 .nav-menu img {
   height: 24px;
   width: 24px;
-}
-
-.highlight {
-  color: #ff7e36;
-}
-.sub-content {
-  font-size: 12px;
-  color: #8c8c8c;
-  margin-top: 4px;
-}
-.upload-time {
-  position: absolute;
-  right: 0;
-}
-.see-more {
-  font-size: 14px;
-  font-weight: bold;
-  color: #868686;
-}
-.location-background {
-  background-color: #f6f6f6;
-  width: 33px;
-  height: 33px;
-  position: absolute;
-  transform: rotate(343.7deg);
-}
-.location-background:nth-child(1) {
-  top: 0.65px;
-  left: -14px;
-}
-.location-background:nth-child(2) {
-  top: -9.74px;
-  left: 21.51px;
-}
-.location-background:nth-child(3) {
-  top: 38.4px;
-  left: -11.29px;
-}
-.location-background:nth-child(4) {
-  top: 28.02px;
-  left: 24.22px;
 }
