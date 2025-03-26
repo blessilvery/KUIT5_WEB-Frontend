@@ -32,7 +32,7 @@ button {
 
 .post {
   padding: 0 16px;
-  padding-bottom: 54px; /*아래 nav의 세로가 54px이어서 그만끔 뺀거임 */
+  padding-bottom: 54px; /*아래 nav의 세로가 54px이어서 그만큼 뺀거임 */
 }
 
 .post > section {
@@ -74,7 +74,7 @@ button {
   font-size: 14px;
   font-style: normal;
   font-weight: 700;
-  line-height: 18px; /* 128.571% */
+  line-height: 18px;
 }
 
 .header__user .user__info .user__address {
@@ -83,7 +83,7 @@ button {
   font-size: 12px;
   font-style: normal;
   font-weight: 400;
-  line-height: 16px; /* 133.333% */
+  line-height: 16px;
 }
 
 .post__header .temperature__description {
@@ -92,7 +92,7 @@ button {
   font-size: 10px;
   font-style: normal;
   font-weight: 400;
-  line-height: 12px; /* 120% */
+  line-height: 12px;
   text-decoration-line: underline;
   text-decoration-style: solid;
   text-decoration-skip-ink: none;

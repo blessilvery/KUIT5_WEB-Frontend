@@ -46,7 +46,7 @@ button {
   flex-direction: column;
   padding: 0 16px;
   margin-top: 56px;
-    padding-bottom: 58px; /*아래 nav의 세로가 54px이어서 그만끔 뺀거임 */
+  padding-bottom: 58px; /*아래 nav의 세로가 54px이어서 그만끔 뺀거임 */
 }
 
 .post .post-product__container {
@@ -140,9 +140,8 @@ button {
   position: fixed;
   bottom: 0;
   width: 100%;
-  background-color: #fff;
+  margin-top: 52px;
   padding: 8px 0;
-
   border-top: 1px solid #d9d9d9; /* nav바 위에 선 그어주기 */
   box-sizing: border-box;
 }
@@ -166,11 +165,16 @@ button {
 .add__btn {
   display: flex;
   position: fixed;
-  bottom: 74px; /* 이렇게 하는게 맞나..? */
+  bottom: 74px; /* 화면에 px로 지정해서 고정. 이렇게 하는게 맞나..? */
   right: 16px;
   padding: 12px 12px;
   border-radius: 100px;
   align-items: flex-start;
   background: #ff7e36;
   box-shadow: 0px 4px 12px 0px rgba(0, 0, 0, 0.12);
+}
+
+.post > .post-product__container {
+  padding: 16px 0;
+  border-bottom: 1px solid #eee;
 }
