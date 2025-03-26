@@ -10,8 +10,8 @@
 }
 
 .post-header .post-header__left {
-    width: 70;
-    height: 28;
+    width: 100px;
+    height: 28px;
     gap: 6px;
 
 }
@@ -102,7 +102,7 @@ button {
     width: 232px;
     height: 20px;
     font-family: Inter;
-    font-weight: 400px;
+    font-weight: 400;
     font-size: 16px;
     line-height: 20px;
     letter-spacing: 0%;
@@ -144,7 +144,7 @@ button {
     width: 232px;
     height: 16px;
     background-color: #FFFFFF;
-    display: flex;
+
     justify-content: flex-end;
     align-items: center;
     margin-top: 110px;
@@ -287,10 +287,7 @@ button {
     padding-right: 30px;
 
     display: flex;
-    position: fixed;
-
-
-    display: flex; 
+    position: fixed; 
     justify-content: center;
 
     font-family: Inter;
