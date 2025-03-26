@@ -1,3 +1,136 @@
-*{
-    margin: 0;
+.upper-nav {
+  width: 390px;
+  height: 52px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  position: fixed;
+}
+
+.location {
+  /* grow가 아니라 각각 left, right가? */
+  flex-grow: 10;
+  display: flex;
+}
+
+.location-name {
+  font-family: Inter;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 28px;
+}
+
+.location-expand-btn {
+  width: 14px;
+  height: 14px;
+  padding-left: 10px;
+}
+
+.menu-set {
+  flex-grow: 1;
+}
+
+.menu-set-btn {
+  width: 24px;
+  height: 24px;
+}
+
+.market {
+}
+
+.market-item {
+  border-bottom: 1px;
+  border-color: #eeeeee;
+}
+
+.item-img {
+  width: 110px;
+  height: 110px;
+}
+
+.item-info {
+  width: 232px;
+  height: 90px;
+}
+
+.item-name {
+  font-family: Inter;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+}
+
+.item-loc-date {
+  font-family: Inter;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+}
+
+.item-price {
+  font-family: Inter;
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 22px;
+  color: #ff7e36;
+}
+
+.offer-info-img {
+  width: 16;
+  height: 16;
+}
+
+.offer-info-detail {
+  font-family: Inter;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 0%;
+}
+
+.posting-btn-cover {
+  width: 48;
+  height: 48;
+  gap: 10px;
+  padding: 12px;
+  border-radius: 100px;
+  border-color: #ff7e36;
+  background: #ff7e36;
+  box-shadow: 0px 4px 12px 0px #0000001f;
+
+  position: fixed;
+  bottom: 200px;
+  right: 200px;
+}
+
+.lower-nav {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+
+  /* width: 78;
+height: 42;
+gap: 4px;
+ */
+}
+
+.lower-nav-text {
+  font-family: Inter;
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 14px;
+  letter-spacing: 0%;
+}
+
+.lower-nav-menu {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+lower-nav-icon {
+  width: 24;
+  height: 24;
 }
