@@ -1,0 +1,366 @@
+body {
+  margin: 0;
+  padding: 0;
+  width: 422px;
+  /* width: 100vh; */
+  overflow-x: hidden;
+  /* overflow: hidden; */
+  /* overflow-y: hidden; */
+  /* background-color: rgb(219, 247, 255); */
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+.top-bar {
+  display: flex;
+  width: 390px;
+  height: 52px;
+  justify-content: space-between;
+  background: none;
+  padding: 12px 16px 12px 16px;
+}
+
+button {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  width: 24px;
+  height: 24px;
+}
+
+.right-icons,
+.left-icons {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 13px;
+}
+
+.left-icons img[alt="arrow"] {
+  width: 10px;
+  height: 10px;
+}
+
+.left-icons {
+  display: flex;
+  align-items: center;
+  font-weight: 700;
+  gap: 0;
+}
+
+.category {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  align-items: center;
+  width: 424px;
+  height: 36px;
+  padding: 12px 20px 12px 20px;
+  gap: 10px;
+  border: none;
+}
+
+.category-wrapper {
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+/* 스크롤바 없애기 */
+.category-wrapper::-webkit-scrollbar {
+  display: none;
+}
+
+#item,
+#item2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 12px;
+  border: 1px solid rgb(224, 222, 222);
+  border-radius: 100px;
+  width: 70px;
+  /* height: 30px; */
+  padding: 16px 26px 16px 26px;
+  margin: 0;
+  gap: 15px;
+  white-space: nowrap; /* 줄바꿈 없애기 */
+}
+
+#item2 {
+  width: 87px;
+  padding: 14px 30px 14px 30px;
+}
+
+.ad {
+  display: grid;
+  height: 64px;
+  grid-template-columns: 40px auto;
+  align-items: center;
+  border: 1px solid rgb(212, 212, 212);
+  gap: 25px;
+}
+
+.ad_item {
+  /* border: 1px solid red; */
+  width: 310px;
+  height: 38px;
+  margin: 12px;
+  margin-left: 3px;
+  white-space: nowrap;
+  font-family: "Inter", sans-serif; /* 글꼴 적용 안됨 */
+}
+
+.first_item {
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 20px;
+  padding: 2px;
+  padding-bottom: 0;
+}
+
+.second_item {
+  line-height: 16px;
+  padding: 2px;
+}
+
+.ad img[alt="model"] {
+  /* border: 1px solid red; */
+  height: 40px;
+  margin: 10px;
+  margin-left: 20px;
+}
+
+/* frame(article) 속성 */
+/* 프레임 내 글자  */
+.frame_item:first-child {
+  border: 2px solid #eeeeee;
+  border-right: none;
+  border-left: none;
+  height: 182px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 25px;
+}
+
+/* 프레임 안 디자인 */
+.frame_category {
+  background-color: #eeeeee;
+  width: 58px;
+  height: 24px;
+  border-radius: 4px;
+  padding: 3px 6px 3px 6px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.category_comment {
+  white-space: nowrap;
+  font-size: 10px;
+  font-weight: 548;
+  line-height: 18px;
+}
+
+.comments {
+  display: flex;
+  flex-direction: column;
+  /* white-space: nowrap; */
+  font-size: 14px;
+  font-weight: 400px;
+  line-height: 18px;
+  font-family: sans-serif;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  gap: 2px;
+}
+
+.small_comments {
+  white-space: nowrap;
+  line-height: 16px;
+  color: #8c8c8c;
+  margin-top: 3px;
+}
+
+.join_status {
+  display: grid;
+  grid-template-rows: repeat(2, 1fr);
+  grid-template-columns: 16px auto;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 10px;
+}
+
+.frame_info {
+  display: flex;
+  justify-content: space-between;
+  /* margin-top: 10px; */
+  /* margin-bottom: 10px; */
+  width: 358px;
+  height: 16px;
+  font-size: 12px;
+  line-height: 16px;
+  color: #8c8c8c;
+  /* background-color: white; */
+}
+
+/* font-size 10px */
+.icon_font {
+  font-size: 10px;
+  font-weight: 500;
+  line-height: 14px; /* 행간 간격 */
+  font-family: sans-serif;
+}
+/* font-size 12px */
+.second_item,
+.small_comments,
+.joint_status,
+.action_item,
+.map_comment {
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 16px;
+  font-family: sans-serif;
+}
+/* font-size 14px */
+.frame_category--comments {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 22px; /* 행간 간격 */
+  font-family: sans-serif;
+}
+
+.post_action {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  padding: 8px 12px 8px 12px;
+  width: 390px;
+  height: 25px;
+}
+
+.action_item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px;
+  height: 16px;
+  /* background-color: pink; */
+  color: #5e5e5e;
+}
+
+.frame_item {
+  height: 128px;
+  border: 2px solid #eeeeee;
+  border-right: none;
+  border-left: none;
+
+  display: flex;
+  flex-direction: column;
+  /* gap: 14px; */
+  padding: 25px;
+}
+
+#category_comment-food,
+#category_comment-ask {
+  justify-content: center;
+  box-sizing: border-box;
+  width: 55px;
+}
+
+#category_comment-missing {
+  justify-content: center;
+  box-sizing: border-box;
+  width: 70px;
+}
+
+.frame_category--comments {
+  height: 54px;
+  margin-bottom: 30px;
+  margin-top: 15px;
+}
+#comment {
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 18px;
+  font-family: sans-serif;
+  color: #868686;
+}
+
+.frame_item-missing {
+  height: 365px;
+  border: 2px solid #eeeeee;
+  border-right: none;
+  border-left: none;
+
+  display: flex;
+  flex-direction: column;
+  padding: 25px;
+}
+.image {
+  display: flex;
+  flex-wrap: nowrap;
+  margin-top: 15px;
+  border-radius: 4px;
+  height: 180px;
+  gap: 2px;
+}
+
+.map {
+  display: flex;
+  grid-template-columns: 52px auto;
+  align-items: center;
+  border: 1px solid #d9d9d9;
+  border-radius: 4px;
+  gap: 9px;
+  margin-bottom: 13px;
+  margin-top: 15px;
+}
+
+#bottom_navigation_bar {
+  display: flex;
+  position: fixed;
+  background-color: white;
+  border-top: 2px solid #eeeeee;
+  bottom: 0;
+  /* width 설정? */
+  width: 100vh;
+  height: 58px;
+  padding-top: 3px;
+  padding-bottom: 3px;
+}
+
+.bar_item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.bar_item--icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  /* border: 1px solid blue; */
+  gap: 5px;
+  width: 82px;
+  height: 42px;
+}
+
+.plus_fuc {
+  display: flex;
+  position: fixed;
+  background-color: #ff7e36;
+  right: 10px;
+  bottom: 75px;
+  width: 48px;
+  height: 48px;
+  border-radius: 100%;
+  align-items: center;
+  justify-content: center;
+}

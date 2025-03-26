@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="index.css" />
+    <link rel="stylesheet" href="reset.css" />
+    <title>daangn</title>
+    <style>
+      .orange {
+        color: #ff7e36;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <!--상단 바-->
+      <div class="top-bar">
+        <div class="left-icons">
+          <span>군자동</span>
+          <button type="button">
+            <img src="assets/arrow.svg" alt="arrow" />
+          </button>
+        </div>
+        <div class="right-icons">
+          <button type="button">
+            <img src="assets/search.svg" alt="search" />
+          </button>
+          <button type="button">
+            <img src="assets/menu.svg" alt="menu" />
+          </button>
+          <button type="button">
+            <img src="assets/notification.svg" alt="notification" />
+          </button>
+        </div>
+      </div>
+    </header>
+    <!--카테고리 버튼-->
+    <nav>
+      <div class="category-wrapper">
+        <div class="category">
+          <button type="button" id="item">동네소식</button>
+          <button type="button" id="item2">🙌같이해요</button>
+          <button type="button" id="item">동네질문</button>
+          <button type="button" id="item">동네맛집</button>
+          <button type="button" id="item">취미생활</button>
+        </div>
+      </div>
+    </nav>
+    <!--광고배너-->
+    <section>
+      <div class="ad">
+        <img src="assets/image1.svg" alt="model" />
+        <div class="ad_item">
+          <div class="first_item">당근이웃과 함께하는 장도연의 동네생활!🥕</div>
+          <div class="second_item">가나다님 지금 바로 구경해보세요!</div>
+        </div>
+      </div>
+    </section>
+    <!--게시물-->
+    <main>
+      <!-- 1st frame -->
+      <article class="frame_item">
+        <div class="frame_category">
+          <div class="category_comment">🙌같이해요</div>
+        </div>
+        <div class="comments">
+          <div><span class="orange">모집중</span> 맥주마실 사람~~</div>
+          <div class="small_comments">쪽지 주세요 고고!!</div>
+        </div>
+        <div class="join_status">
+          <img src="assets/chatmessage.svg" alt="chatmessage" />
+          <div>누구나 참여 가능</div>
+          <img src="assets/userAccount.svg" alt="userAccount" />
+          <div>2/4명 참여</div>
+        </div>
+        <div class="frame_info">
+          <div>요우우 · 화양동</div>
+          <div>3분전</div>
+        </div>
+      </article>
+      <!-- 2nd frame -->
+      <article class="frame_item">
+        <div class="frame_category" id="category_comment-ask">
+          <div class="category_comment">동네질문</div>
+        </div>
+        <div class="frame_category--comments">
+          <span class="orange">Q.</span> 혼밥은 다들 어디서 하시나요? 뻘쭘하지
+          않고 사장님들께 안 미안한 곳, 어디든 리스트업해서 한번씩 가보려구요.
+          부탁드립니다!
+        </div>
+        <div class="frame_info">
+          <div>도우영 · 화양동</div>
+          <div>15분 전</div>
+        </div>
+      </article>
+      <div class="post_action">
+        <div class="action_item">
+          <img src="assets/vector1.svg" alt="vector" />
+          <div>궁금해요</div>
+        </div>
+        <div class="action_item">
+          <img src="assets/speechbubble.svg" alt="bubble" />
+          <div>답변 2</div>
+        </div>
+      </div>
+      <!-- 3rd frame -->
+      <article class="frame_item">
+        <div class="frame_category" id="category_comment-food">
+          <div class="category_comment">동네맛집</div>
+        </div>
+        <div class="frame_category--comments">
+          <div>
+            송정동 밥집 추천 드려요<br />
+            퇴근하고 뭐 해먹기 귀찮을때 먹을만한 곳이요.
+          </div>
+          <div id="comment">...더보기</div>
+        </div>
+        <div class="frame_info">
+          <div>카리 · 화양동</div>
+          <div>17분 전</div>
+        </div>
+      </article>
+      <div class="post_action">
+        <div class="action_item">
+          <img src="assets/happy.svg" alt="happy" />
+          <div>공감하기</div>
+        </div>
+        <div class="action_item">
+          <img src="assets/speechbubble.svg" alt="bubble" />
+          <div>댓글 2</div>
+        </div>
+      </div>
+      <!-- 4th frame -->
+      <article class="frame_item-missing">
+        <div class="frame_category" id="category_comment-missing">
+          <div class="category_comment">분실/실종센터</div>
+        </div>
+        <div class="frame_category--comments">
+          <div>
+            <span class="orange">찾아요</span> 카드 지갑 분실했습니다.
+            발견하시면 사례하겠습니다. 꼭 찾아주세요.
+          </div>
+          <div class="image">
+            <img src="assets/wallet1.svg" alt="wallet1" />
+            <img src="assets/wallet2.svg" alt="wallet2" />
+          </div>
+          <div class="map">
+            <img src="assets/map.svg" alt="map" />
+            <div class="comment">
+              <div>파리게이츠</div>
+              <div class="small_comments">서울특별시 광진구 동일로 350</div>
+            </div>
+          </div>
+          <div class="frame_info">
+            <div>Maro · 중곡동</div>
+            <div>1시간 전</div>
+          </div>
+        </div>
+      </article>
+      <div class="post_action">
+        <div class="action_item">
+          <img src="assets/happy.svg" alt="happy" />
+          <div>공감하기</div>
+        </div>
+        <div class="action_item">
+          <img src="assets/speechbubble.svg" alt="bubble" />
+          <div>댓글쓰기</div>
+        </div>
+      </div>
+      <!-- 5th frame -->
+      <article class="frame_item-missing">
+        <div class="frame_category" id="category_comment-missing">
+          <div class="category_comment">분실/실종센터</div>
+        </div>
+        <div class="frame_category--comments">
+          <div>
+            <span class="orange">찾아요</span> 카드 지갑 분실했습니다.
+            발견하시면 사례하겠습니다. 꼭 찾아주세요.
+          </div>
+          <div class="image">
+            <img src="assets/wallet1.svg" alt="wallet1" />
+            <img src="assets/wallet2.svg" alt="wallet2" />
+          </div>
+          <div class="map">
+            <img src="assets/map.svg" alt="map" />
+            <div class="map_comment">
+              <div>파리게이츠</div>
+              <div class="small_comments">서울특별시 광진구 동일로 350</div>
+            </div>
+          </div>
+          <div class="frame_info">
+            <div>Maro · 중곡동</div>
+            <div>1시간 전</div>
+          </div>
+        </div>
+      </article>
+    </main>
+    <!-- 고정된 부분 -->
+    <nav id="bottom_navigation_bar">
+      <div class="bar_item">
+        <button type="button" class="bar_item--icon">
+          <img src="assets/home.svg" alt="home" />
+          <div class="icon_font">홈</div>
+        </button>
+        <button type="button" class="bar_item--icon">
+          <img src="assets/doc.svg" alt="doc" />
+          <div class="icon_font">동네생활</div>
+        </button>
+        <button type="button" class="bar_item--icon">
+          <img src="assets/placeMarker.svg" alt="placeMarker" />
+          <div class="icon_font">내 근처</div>
+        </button>
+        <button type="button" class="bar_item--icon">
+          <img src="assets/chat.svg" alt="chat" />
+          <div class="icon_font">채팅</div>
+        </button>
+        <button type="button" class="bar_item--icon">
+          <img src="assets/user.svg" alt="user" />
+          <div class="icon_font">나의 당근</div>
+        </button>
+      </div>
+    </nav>
+    <button type="button" class="plus_fuc">
+      <img src="assets/plus.svg" alt="plus" />
+    </button>
+  </body>
+</html>
