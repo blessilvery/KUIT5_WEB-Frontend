@@ -1,20 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="index.css" />
     <link rel="stylesheet" href="../reset.css" />
     <title>Document</title>
-</head>
-<body>
+  </head>
+  <body>
     <section class="post-header">
-        <header class="post-header__icon-container">
-            
-        </header>
+      <header class="post-header__icon-container">
+        <button class="post-place__btn" type="button">
+          <span class="post-place__name">군자동</span>
+          <img
+            src="../assets/down-chevron.svg"
+            alt="게시물 지역 선택"
+            class="post-place__img"
+          />
+        </button>
+
+        <div class="header__menu-container">
+          <button class="search__btn">
+            <img src="../assets/search.svg" alt="" />
+          </button>
+          <button class="menu__btn">
+            <img src="../assets/menu.svg" alt="" />
+          </button>
+          <button class="notification__btn">
+            <img src="../assets/notification.svg" alt="" />
+          </button>
+        </div>
+      </header>
     </section>
 
+    <!-- content -->
+    <article class="post">
+      <div class="post-product__container">
+        <div class="product-img">
+          <img src="http://placehold.co/110" alt="제품이미지" />
+        </div>
+        <div></div>
+        <span class="product__name">에어팟 프로</span>
+        <span class="product__place">군자동</span>
+        <span>·</span>
+        <span class="product__date">3일전</span>
+      </div>
+    </article>
 
-</body>
+    <!-- nav 바 -->
+    <nav class="bottom__bar"></nav>
+  </body>
 </html>

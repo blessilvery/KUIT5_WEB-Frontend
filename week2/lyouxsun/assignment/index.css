@@ -1,0 +1,47 @@
+/* global styles 정의 */
+button {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  outline: inherit;
+}
+
+.post-header header {
+    display: flex;
+  padding: 12px 16px;
+  width: 100%;
+  justify-content: space-between; /* 자식 요소들을 좌우 끝에 배치하고, 사이 공간은 최대한 벌려준다 -> padding 때문에 b가 화면상에서 사라짐 */
+  box-sizing: border-box;
+}
+
+.post-palce__btn {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.post-place__btn .post-place__name {
+  margin-right: 6px;
+  color: #000;
+  font-family: Inter;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 28px; /* 155.556% */
+}
+
+.post-header .header__menu-container {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.post {
+    padding: 0 16px;
+  }
+  
+  .post-product {
+    padding: 16px 0;
+  }
