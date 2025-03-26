@@ -9,6 +9,15 @@ svg는 가장 최근에 나온 이미지 파일 형식으로 여러 장점을 �
 
 - 단, 복잡한 이미지의 경우 용량이 커지고 출력이 느려지므로 신경써야 한다.
 
+- gap 과 padding, margin의 차이?
+- figma style 복사 시 px 단위 깜박하는 것 주의..
+    - 그렇다고 font-weight에 px 붙이면 적용 안된다.
+- 왜 padding 포함하면 width보다 커짐?
+    - width, height는 content box에만 적용되어, border와 padding에는 계산 밖
+    - box-sizing 활용 
+- border style을 지정하지 않으면 다른 설정을 아무리 해도 안보임.
+
+
 ```
 #특정 브랜치 git clone
 git clone --branch <branchname> <remote-repo-url>

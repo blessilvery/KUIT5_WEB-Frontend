@@ -1,23 +1,44 @@
+button{
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  outline: inherit;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
 body {
-  width: 390;
-  height: 778;
+  width: 390px;
+  height: 778px;
   top: 47px;
 }
 
 .upper-nav {
   width: 390px;
   height: 52px;
+
+  padding-right: 16px;
+  padding-left: 16px;
+  
+  box-sizing: border-box;
+
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   position: sticky;
-  /* position: fixed; */
+  flex-basis: 390px;
+
+  border-bottom: 1px solid #ffffff;
+
 }
 
 .location {
-  /* grow가 아니라 각각 left, right가? */
-  flex-grow: 10;
   display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .location-name {
@@ -34,7 +55,11 @@ body {
 }
 
 .menu-set {
-  flex-grow: 1;
+  width: 104px;
+  height: 24px;
+  display: flex;
+  justify-content: space-between;
+  /* gap: 16px; */
 }
 
 .menu-set-btn {
@@ -43,28 +68,62 @@ body {
 }
 
 .market {
-  margin: 16px;
+  width: 390px;
+  height: 726px;
+  gap: 16px;
+
+  overflow-x: hidden;
+  overflow-y: scroll;
+  position: relative;
+  box-sizing: border-box;
+
+  /* display: flex; */
+  /* flex-direction: column; */
 }
 
 .market-item {
-  border-bottom: 1px;
-  border-color: #eeeeee;
+  width: 358;
+  height: 110;
+
+  padding: 16px;
+  box-sizing: border-box;
+  /* box-sizing: content-box; */
+  /* border-bottom: 1px solid #eeeeee; */
+  
   display: flex;
+
+  position: relative;
+}
+
+.market-item::before{
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: #eeeeee;
 }
 
 .item-img {
-  width: 110;
-  height: 110;
+  width: 110px;
+  height: 110px;
   border-radius: 4px;
   margin-right: 16px;
 }
 
 .item-info {
   width: 232px;
-  height: 90px;
-
+  height: 110px;
   display: flex;
   flex-direction: column;
+  /* justify-content: space-between; */
+}
+
+.item-description{
+  width: 232px;
+  height: 90px;
+  gap: 4px;
 }
 
 .item-name {
@@ -75,6 +134,11 @@ body {
 }
 
 .item-loc-date {
+  width: 232px;
+  height: 16px;
+  gap: 4px;
+  padding-top: 4px;
+  padding-bottom: 4px;
   font-family: Inter;
   font-weight: 400;
   font-size: 12px;
@@ -91,12 +155,27 @@ body {
 }
 
 .offer-info {
+  width: 232px;
+  height: 16px;
+  gap: 4px;
+  padding-top: 2px;
+  justify-content: flex-end;
+  align-items: flex-end;
   display: flex;
 }
 
+.offer-info-box{
+  width: 26px;
+  height: 16px;
+  gap: 2px;
+  display: flex;
+  padding-left: 2px;
+  justify-content: space-around;
+}
+
 .offer-info-img {
-  width: 16;
-  height: 16;
+  width: 16px;
+  height: 16px;
 }
 
 .offer-info-detail {
@@ -108,8 +187,8 @@ body {
 }
 
 .posting-btn-cover {
-  width: 48;
-  height: 48;
+  width: 48px;
+  height: 48px;
   gap: 10px;
   padding: 12px;
   border-radius: 100px;
@@ -117,24 +196,22 @@ body {
   background: #ff7e36;
   box-shadow: 0px 4px 12px 0px #0000001f;
 
-  position: fixed;
-  bottom: 200px;
-  right: 200px;
+  top: 700px;
+  left: 325px;
+
+  position:absolute;
 }
 
 .lower-nav {
   display: flex;
-  width: 390;
-  height: 92;
+  width: 390px;
+  height: 58px;
 
-  justify-content: space-evenly;
+  justify-content: space-around;
   align-items: center;
 
-  position: sticky;
-  /* width: 78;
-height: 42;
-gap: 4px;
- */
+  /* position: sticky; */
+  gap: 4px;
 }
 
 .lower-nav-text {
@@ -146,13 +223,17 @@ gap: 4px;
 }
 
 .lower-nav-menu {
+  width: 78;
+  height: 42;
+  gap: 4px;
+
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
 }
 
 lower-nav-icon {
-  width: 24;
-  height: 24;
+  width: 24px;
+  height: 24px;
 }
