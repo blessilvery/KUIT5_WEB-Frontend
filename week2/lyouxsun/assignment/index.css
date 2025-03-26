@@ -165,7 +165,7 @@ button {
 .add__btn {
   display: flex;
   position: fixed;
-  bottom: 74px;     /* 이렇게 하는게 맞나..? */
+  bottom: 74px; /* 이렇게 하는게 맞나..? */
   right: 16px;
   padding: 12px 12px;
   border-radius: 100px;
