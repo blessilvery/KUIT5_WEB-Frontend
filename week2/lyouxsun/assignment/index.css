@@ -46,6 +46,7 @@ button {
   flex-direction: column;
   padding: 0 16px;
   margin-top: 56px;
+    padding-bottom: 58px; /*아래 nav의 세로가 54px이어서 그만끔 뺀거임 */
 }
 
 .post .post-product__container {
