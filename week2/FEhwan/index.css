@@ -1,3 +1,17 @@
+
+  .chat img,
+  .heart img {
+    width: 16px;           
+    height: 16px;
+    display: block;        
+  }
+  
+  .num {
+    font-size: 20px;
+    line-height: 5;       
+  }
+
+
 .header .header__text {
     width: 50px;
     height: 28px;
@@ -29,11 +43,13 @@
     margin-right: 1px; 
 }
 .nav_btn {
+    
     background: none;
     border: none;
-    padding: 5;
+    padding: 1px;
     cursor: pointer;
     flex-direction: column;
+    padding: 0;
     outline: inherit;
 }
 .nav_btn img {
@@ -41,10 +57,24 @@
     height: 24px !important;
     object-fit: contain; 
 }
+
+span.num {
+    vertical-align: middle;
+    line-height: 1; 
+  }
+  
+
+p.icon-text {
+    margin: 0;         
+    padding: 0;        
+    line-height: 1.5;  
+    font-size: 12px;   
+  }
+
 .nav_btn span {
     font-size: 12px;
     color: #8C8C8C;
-    text-align: center ; /* 글자 가운데 정렬 */
+    text-align: center ; 
 }
 .header .header__icons {
     display: flex;
@@ -145,10 +175,11 @@
 
 .item .item__reaction {
 
-    width: 232px;
+    width: 230px;
     height: 16px;
     background-color: #FFFFFF;
     display: flex;
+    padding: 1px;
     justify-content: flex-end;
     align-items: center;
     margin-top: 110px;
@@ -206,7 +237,7 @@
     font-family: Inter;
     font-weight: 400;
     font-size: 12px;
-    line-height: 16px;
+    line-height: 4px;
     letter-spacing: 0%;
     color: #8C8C8C;
     gap: 10px;
@@ -216,17 +247,26 @@
     position: fixed;
     z-index: 10;
 }
+.plus-btn img {
+    width: 88px;
+    height: 88px;
+    display: block;
+  }
 
 .bottom .plus-btn {
-    width: 48px;
-    height: 48px;
-    padding: 12px;
-    border-radius: 90px;
-    position: fixed;
-    left: 310px;
-    bottom: 120px;
-    z-index: 10;
-    border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  padding: 0; 
+  border-radius: 90px;
+  position: fixed;
+  left: 320px;
+  bottom: 90px;
+  z-index: 10;
+  border: none;
+  background-color: #FF6F1F;
 }
 
 .bottom .bottom__icons {
