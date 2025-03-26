@@ -9,21 +9,67 @@
     <title>2주차 실습 : 당근마켓 클론코딩1</title>
 </head>
 <body>
-    <nav>현재 검색하는 동 스크롤 박스 / 여백 / 검색 버튼 / 메뉴 버튼 / 알람 버튼</nav>
+    <!-- 현재 검색하는 동 스크롤 박스 / 여백 / 검색 버튼 / 메뉴 버튼 / 알람 버튼 -->
+    <nav>
+        <div class="location">
+            <p>군자동</p>
+            <img src="./assets/expand_arrow.svg">
+        </div>
+
+        <div class="menu-set">
+            <img src="./assets/search_btn.svg">
+            <img src="./assets/menu_btn.svg">
+            <img src="./assets/notification_icon.svg">
+        </div>
+    </nav>
     <section>
         <article>
-            <img src="">
-            <p>상품명</p>
-            <p>검색동 / 게시날짜 or 끌올로부터 시간</p>
-            <p>가격</p>
-            <p>채팅 이모지 / 채팅 개수 / 하트 이모지 / 하트 개수 (모두 0이라면 없음)</p>
-        </article>
+            <div>
+                <img src="./dummy_assets/airpot.svg">
+            </div>
+            <div>
+                <p>상품명</p>
+                <p>검색동 / 게시날짜 or 끌올로부터 시간</p>
+                <p>가격</p>
 
-        <button>동그란 주황 배경 흰색+ 버튼 스크롤 영향X viewport 내 위치 고정</button>
+                <!-- <p>채팅 이모지 / 채팅 개수 / 하트 이모지 / 하트 개수 (모두 0이라면 없음)</p> -->
+                <div class="offer-info">
+                    <img src="./assets/offer_chat_count_icon.svg">
+                    <p>chat count</p>
+                    <img src="./assets/heart_icon.svg">
+                    <p>heart count</p>
+                </div>  
+            </div>
+
+            
+        </article>
+        <!-- 주황 배경 흰색+ 버튼 스크롤 영향X viewport 내 위치 고정 -->
+        <button><img src="./assets/posting_icon.svg"> </button>
 
     </section>
-    <nav>집 이모지 아래 '홈' / 신문 이모지 아래 '동네생활' 
-        위치포인터 이모지 아래 '내 근처' / 채팅 이모지 아래 '채팅' / 인물 이모지 아래 '나의 당근'
+    <!-- 집 이모지 아래 '홈' / 신문 이모지 아래 '동네생활' 
+        위치포인터 이모지 아래 '내 근처' / 채팅 이모지 아래 '채팅' / 인물 이모지 아래 '나의 당근' -->
+    <nav>
+        <div class="home-menu">
+            <img src="./assets/home_btn_icon.svg">
+            <p>홈</p>
+        </div>
+        <div class="news-menu">
+            <img src="./assets/villiage_news_icon.svg">
+            <p>동네생활</p>
+        </div>
+        <div class="nearby-menu">
+            <img src="./assets/location_marker_icon.svg">
+            <p>내 근처</p>
+        </div>
+        <div class="chatting-menu">
+            <img src="./assets/chatting_icon.svg">
+            <p>채팅</p>
+        </div>
+        <div class="profile-menu">
+            <img src="./assets/profile_icon.svg">
+            <p>나의 당근</p>
+        </div>
     </nav>
 </body>
 </html>
