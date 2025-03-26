@@ -8,18 +8,21 @@ button {
 }
 
 .post-header header {
-    display: flex;
+  display: flex;
+  position: fixed;
   padding: 12px 16px;
   width: 100%;
   justify-content: space-between; /* 자식 요소들을 좌우 끝에 배치하고, 사이 공간은 최대한 벌려준다 -> padding 때문에 b가 화면상에서 사라짐 */
   box-sizing: border-box;
+  top: 0;
+  background: #FFF;
 }
 
 .post-palce__btn {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
 }
 
 .post-place__btn .post-place__name {
@@ -29,19 +32,103 @@ button {
   font-size: 18px;
   font-style: normal;
   font-weight: 700;
-  line-height: 28px; /* 155.556% */
+  line-height: 28px;
 }
 
 .post-header .header__menu-container {
-    display: flex;
-    align-items: center;
-    gap: 16px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
 }
 
 .post {
-    padding: 0 16px;
-  }
-  
-  .post-product {
-    padding: 16px 0;
-  }
+  display: flex;
+  flex-direction: column;
+  padding: 0 16px;
+  margin-top: 56px;
+}
+
+.post .post-product__container {
+  display: flex;
+  padding: 16px 0;
+}
+
+.post .product__img {
+  border-radius: 4px;
+  background: url(<path-to-image>) lightgray 50% / cover no-repeat, #d9d9d9;
+  margin-right: 16px;
+}
+
+.post .product__content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+  flex: 1 0 0;
+  align-self: stretch;
+}
+
+.post .product-desc__container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  gap: 4px;
+  flex: 1 0 0; /* 단위가 px인가? */
+}
+
+.product-desc__container .product__name {
+  color: #000;
+  font-family: Inter;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
+}
+
+.product-desc__container .product__place-date {
+  gap: 4px;
+  color: #8c8c8c;
+  font-family: Inter;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 16px;
+}
+
+.product-desc__container .product__price {
+  color: #ff7e36;
+  font-family: Inter;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 22px; /* 146.667% */
+}
+
+.product-reaction__container {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 4px;
+  align-self: stretch;
+}
+
+.product__reaction img {
+  width: 16px;
+  height: 16px;
+}
+
+.product-reaction__container .product-reaction {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.product-reaction__container .reaction__num {
+  color: #8c8c8c;
+  font-family: Inter;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 16px;
+}

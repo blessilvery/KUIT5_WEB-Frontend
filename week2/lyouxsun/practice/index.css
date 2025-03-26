@@ -9,8 +9,9 @@ button {
 
 .post-header header {
   display: flex;
+  position: fixed;  
   padding: 14px 16px;
-  position: absolute; /* 위에 뜨는 공간 없어짐 */
+  /* position: absolute; 위에 뜨는 공간 없어짐 */
   width: 100%;
   justify-content: space-between; /* 자식 요소들을 좌우 끝에 배치하고, 사이 공간은 최대한 벌려준다 -> padding 때문에 b가 화면상에서 사라짐 */
   box-sizing: border-box; /* 화면에서 없어진 b가 다시 보임 */
