@@ -52,6 +52,7 @@ button {
 .post .post-product__container {
   display: flex;
   padding: 16px 0;
+  border-bottom: 1px solid #eee;
 }
 
 .post .product__img {
@@ -144,6 +145,7 @@ button {
   padding: 8px 0;
   border-top: 1px solid #d9d9d9; /* nav바 위에 선 그어주기 */
   box-sizing: border-box;
+  background-color: #fff;
 }
 
 .bottom-bar .bottom__btn {
@@ -172,9 +174,4 @@ button {
   align-items: flex-start;
   background: #ff7e36;
   box-shadow: 0px 4px 12px 0px rgba(0, 0, 0, 0.12);
-}
-
-.post > .post-product__container {
-  padding: 16px 0;
-  border-bottom: 1px solid #eee;
 }
