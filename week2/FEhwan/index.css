@@ -1,0 +1,250 @@
+.header .header__text {
+    width: 50px;
+    height: 28px;
+    font-family: Inter;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 28px;
+    letter-spacing: 0%;
+    margin-right: 1px; 
+}
+
+.header .header__icons img {
+    width: 14px;
+    height: 14px;
+}
+
+.btn {
+    background: none;
+    border: none;
+    padding: 5;
+    cursor: pointer;
+    flex-direction: column;
+    outline: inherit;
+}
+.btn img {
+    width: 24px !important;
+    height: 24px !important;
+    object-fit: contain; 
+    margin-right: 1px; 
+}
+.nav_btn {
+    background: none;
+    border: none;
+    padding: 5;
+    cursor: pointer;
+    flex-direction: column;
+    outline: inherit;
+}
+.nav_btn img {
+    width: 24px !important;
+    height: 24px !important;
+    object-fit: contain; 
+}
+.nav_btn span {
+    font-size: 12px;
+    color: #8C8C8C;
+    text-align: center ; /* 글자 가운데 정렬 */
+}
+.header .header__icons {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.header__left {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+    width: 390px;
+    height: 58px;
+    justify-content: space-between;
+    padding: 12px 16px;
+    background-color: #FFFFFF;
+    box-sizing: border-box;
+    border-bottom: 1px solid #D9D9D9;
+}
+
+.screen {
+    width: 390px;
+    height: 726px;
+    top: 47px;
+}
+
+.item img {
+    display: flex;
+    align-items: center;
+    width: 110px;
+    height: 110px;
+    border-radius: 4px;
+    object-fit: cover;
+    display: block;
+    background: #D9D9D9;
+}
+
+.item {
+    width: 358px;
+    height: 110px;
+    gap: 16px;
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+    margin-top: 16px;
+    padding-bottom: 16px;
+    margin-left: 12px;
+    border-bottom: 1px solid #D9D9D9;
+    position: relative;
+}
+
+.item .item__name .item__title {
+    width: 232px;
+    height: 20px;
+    font-family: Inter;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+    letter-spacing: 0%;
+    margin-top: 0px;
+    margin-bottom: 1px;
+    white-space: nowrap;
+}
+
+.item .item__name .item__info {
+    width: 80px;
+    height: 16px;
+    gap: 4px;
+    font-family: Inter;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: 0%;
+    color: #8C8C8C;
+    margin-top: 0px;
+    margin-bottom: 2px;
+    white-space: nowrap;
+}
+
+.item .item__name .price {
+    width: 78px;
+    height: 42px;
+    font-family: Inter;
+    font-weight: 700;
+    font-size: 15px;
+    line-height: 22px;
+    letter-spacing: 0%;
+    color: #FF7E36;
+    margin-top: 0px;
+    white-space: nowrap;
+}
+
+.item .item__reaction {
+
+    width: 232px;
+    height: 16px;
+    background-color: #FFFFFF;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-top: 110px;
+    margin-left: 68px;
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.item .item__reaction .chat {
+    width: 40px;
+    height: 16px;
+    gap: 2px;
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+    position: absolute;
+    z-index: 10;
+    right: 30px;
+    bottom: 0;
+}
+
+
+.item .item__reaction .heart {
+    width: 40px;
+    height: 16px;
+    gap: 2px;
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+    margin-left: -10px;
+    position: absolute;
+    z-index: 10;
+    right: 0;
+    bottom: 0;
+}
+
+.item .item__reaction img {
+ 
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    outline: inherit;
+    display: flex;
+    align-items: center;
+    width: 16px;
+    height: 16px;
+    margin-top: -9px;
+    vertical-align: middle;
+}
+
+.item .item__reaction span {
+    width: 12px;
+    height: 16px;
+    font-family: Inter;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: 0%;
+    color: #8C8C8C;
+    gap: 10px;
+}
+
+.bottom {
+    position: fixed;
+    z-index: 10;
+}
+
+.bottom .plus-btn {
+    width: 48px;
+    height: 48px;
+    padding: 12px;
+    border-radius: 90px;
+    position: fixed;
+    left: 310px;
+    bottom: 120px;
+    z-index: 10;
+    border: none;
+}
+
+.bottom .bottom__icons {
+    border-top: 1px solid #D9D9D9;
+    width: 390px;
+    height: 58px;
+    padding: 8px 0;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    background-color: #FFFFFF;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    z-index: 10;
+}
+
+.bottom .bottom__icons img {
+    width: 78px;
+    height: 42px;
+}
