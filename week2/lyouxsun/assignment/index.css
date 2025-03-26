@@ -161,3 +161,15 @@ button {
   font-weight: 400;
   line-height: 14px;
 }
+
+.add__btn {
+  display: flex;
+  position: fixed;
+  bottom: 74px;     /* 이렇게 하는게 맞나..? */
+  right: 16px;
+  padding: 12px 12px;
+  border-radius: 100px;
+  align-items: flex-start;
+  background: #ff7e36;
+  box-shadow: 0px 4px 12px 0px rgba(0, 0, 0, 0.12);
+}
