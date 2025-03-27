@@ -119,25 +119,15 @@ button {
 
 .plusmenu{
     position: fixed;
-    bottom: 80px;
+    bottom: 60px;
     width: 100%;
     display: flex;
     align-items: center;
     margin-left: 310px;
 }
 .plus__img{
-    position: absolute;
-    z-index: 1001;
-}
-.circle {
-    width: 30px;
-    height: 30px;
-    gap: 10px;
-    padding: 12px;
-    border-radius: 100px;
-    background: #FF7E36;
-    position: relative;
-    z-index: 1000;
+    width: 48px;
+    height: 48px;
 }
 
 .bottom__bar{
