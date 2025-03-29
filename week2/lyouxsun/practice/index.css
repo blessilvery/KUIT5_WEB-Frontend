@@ -1,0 +1,295 @@
+/* global styles 정의 */
+button {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  outline: inherit;
+}
+
+.post-header header {
+  display: flex;
+  position: fixed;  
+  padding: 14px 16px;
+  /* position: absolute; 위에 뜨는 공간 없어짐 */
+  width: 100%;
+  justify-content: space-between; /* 자식 요소들을 좌우 끝에 배치하고, 사이 공간은 최대한 벌려준다 -> padding 때문에 b가 화면상에서 사라짐 */
+  box-sizing: border-box; /* 화면에서 없어진 b가 다시 보임 */
+  /* justify-content만 설정하면 요소의 총 너비를 계산할 때 padding과 border를 포함시킴 */
+  /* 그래서 box-sizing을 통해서 padding이 너비에 추가되지 않고 포함되도록 함 */
+}
+
+.post-header .post-header__icon-container {
+  display: flex;
+  gap: 16px; /* 자식 요소들 사이의 간격 */
+  align-items: center; /* 수직축 상에서 어디에 배치할 것인지 */
+}
+
+.post-header .post__image-container .post__image {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.post {
+  padding: 0 16px;
+  padding-bottom: 54px; /*아래 nav의 세로가 54px이어서 그만큼 뺀거임 */
+}
+
+.post > section {
+  padding: 16px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.post > section:last-child {
+  border-bottom: none;
+}
+
+.post__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.post__header .header__user {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.header__user .user__profile-img {
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;
+}
+
+.header__user .user__info {
+  display: flex;
+  flex-direction: column;
+}
+.header__user .user__info .user__name {
+  margin-bottom: 4px; /*user_info에 gap을 줘도 되는데 flex gap을 지원하는 브라우저가 적어서 margin bottom을 사용하는게 더 좋다 */
+  color: #000;
+  font-family: Inter;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 18px;
+}
+
+.header__user .user__info .user__address {
+  color: #4f4f4f;
+  font-family: Inter;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 16px;
+}
+
+.post__header .temperature__description {
+  color: #8c8c8c;
+  font-family: Inter;
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 12px;
+  text-decoration-line: underline;
+  text-decoration-style: solid;
+  text-decoration-skip-ink: none;
+  text-decoration-thickness: auto;
+  text-underline-offset: auto;
+  text-underline-position: from-font;
+}
+
+.post__header .temperature__container {
+  display: flex;
+  margin-bottom: 4px;
+  align-items: center;
+}
+
+.post__header .header__temperature {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.header__temperature .temperature__indicator {
+  display: flex;
+  flex-direction: column;
+  margin-right: 4px;
+}
+
+.header__temperature .temperature__value {
+  color: #4ac1db;
+  font-family: Inter;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 18px;
+}
+
+.temperature__indicator .temperature__bar {
+  height: 2px;
+  width: 100%;
+  background-color: #d9d9d9;
+  border-radius: 10px;
+}
+.temperature__indicator .temperature__bar--value {
+  width: 37.2%;
+  height: 2px;
+  border-radius: 10px;
+  background-color: #4ac1db;
+}
+
+.post__content {
+  align-items: center;
+}
+
+.post__content .post__title {
+  color: #000;
+  font-family: Inter;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 28px;
+  margin-bottom: 8px;
+}
+
+.post__content .desc__container {
+  color: #8c8c8c;
+  font-family: Inter;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 16px;
+}
+
+.post__content .desc__category {
+  line-height: 18px; /* .desc__category에 대하여 중복 적용하면 여기 쓰여져있는게 더 우선 적용되는건가? */
+  text-decoration-line: underline;
+  text-decoration-style: solid;
+  text-decoration-skip-ink: none;
+  text-decoration-thickness: auto;
+  text-underline-offset: auto;
+  text-underline-position: from-font;
+}
+
+.post__content .post__text {
+  color: #000;
+  font-family: Inter;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 18px;
+  margin: 16px 0;
+}
+
+.post .section__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.section__header .section__title {
+  color: #000;
+  font-family: Inter;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 20px;
+}
+
+.post .products__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px 16px;
+  margin: 16px 0 8px;
+}
+
+.product__container {
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+}
+
+.product__container .product__name {
+  color: #000;
+  font-family: Inter;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 18px;
+  margin: 8px 0;
+}
+
+.product__price {
+  color: #000;
+  font-family: Inter;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 18px;
+}
+
+.product__container .product__img {
+  max-height: 118px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.bottom-bar {
+  display: flex;
+  justify-content: space-between;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: #fff;
+  padding: 8px 16px 12px;
+
+  border-top: 1px solid #d9d9d9; /* nav바 위에 선 그어주기 */
+  box-sizing: border-box;
+}
+
+.bottom-bar .bar__chat-btn {
+  padding: 8px 14px;
+  border-radius: 4px;
+  background: #ff7e36;
+  color: var(--white, #fff);
+  font-family: Inter;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 18px;
+}
+
+.bottom-bar .info__suggestable {
+  color: #8c8c8c;
+  font-family: Inter;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 18px;
+}
+
+.bottom-bar .product__price {
+  margin-bottom: 2px;
+}
+
+.bar__info-container .divider {
+  width: 1px;
+  align-self: stretch;
+  stroke: #eee;
+  border-right: 1px solid #d9d9d9; /* nav바 위에 선 그어주기 */
+}
+.bar__info-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+}
+
+.bar__info-container .bar__info {
+  display: flex;
+  flex-direction: column;
+}
