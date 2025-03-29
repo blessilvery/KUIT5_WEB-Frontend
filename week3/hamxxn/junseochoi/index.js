@@ -69,9 +69,6 @@ function render() {
       const input = document.createElement("input");
       input.type = "text";
       input.value = todo.text;
-      input.onblur = () => {
-        updateTodo(todo.id, input.value);
-      };
       input.onkeydown = (e) => {
         if (e.key === "Enter") {
           updateTodo(todo.id, input.value);
