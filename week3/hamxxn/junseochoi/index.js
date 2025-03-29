@@ -62,7 +62,7 @@ function render() {
     delBtn.textContent = "삭제";
     delBtn.onclick = () => deleteTodo(todo.id);
 
-    const editBtn = document.createElement("button.edit");
+    const editBtn = document.createElement("button");
     editBtn.className = "edit";
     editBtn.textContent = "수정";
     editBtn.onclick = () => {
