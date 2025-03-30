@@ -46,10 +46,10 @@ ul {
   padding: 0;
 }
 
-li {
+li { 
+  display: flex;
   padding: 10px;
   border-bottom: 1px solid #ddd;
-  display: flex;
   justify-content: space-between;
   align-items: center;
 }
@@ -63,6 +63,7 @@ li.done button {
   text-decoration: none;
   color: white;
 }
+
 
 li button {
   background-color: #f44336;
