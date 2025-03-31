@@ -43,12 +43,10 @@ function render() {
     span.onclick = () => toggleDone(todo.id);
 
     const updateBtn = document.createElement("button");
-    updateBtn.className = "update-btn";
     updateBtn.textContent = "수정";
     updateBtn.onclick = () => updateTodo(todo.id, li, span);
 
     const delBtn = document.createElement("button");
-    delBtn.className = "delete-btn";
     delBtn.textContent = "삭제";
     delBtn.onclick = () => deleteTodo(todo.id);
 
