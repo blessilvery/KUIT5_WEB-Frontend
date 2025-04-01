@@ -1,6 +1,9 @@
 # KUIT5_WEB-Frontend
 
 ### 3주차
+js 배열의 index 번 째 삭제하기
+
+array.splice(자르기 시작하는 index, 삭제할 요소 개수)
 
 -----------------------
 ### 2주차
