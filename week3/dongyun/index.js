@@ -27,7 +27,9 @@ form.addEventListener("submit", (e) => {
       text,
       done: false
     };
-   
+    todos.push(newTodo)
+    console.log(todos)
+    render()
   }
 });
 
