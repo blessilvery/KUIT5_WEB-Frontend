@@ -30,15 +30,26 @@ form.addEventListener("submit", (e) => {
     todos.push(newTodo)
     console.log(todos)
     render()
+    input.value = ""
   }
 });
 
 function deleteTodo(id) {
-  
+
 }
 
 function toggleDone(id) {
-  
+    const selected_todo = document.getElementById(id)
+
+    if (selected_todo == null){
+        alert(`해당하는 할 일의 id : ${id}를 찾을 수 없습니다.`)
+    }
+    else{
+        if(selected_todo.className === '')
+            selected_todo.className = 'done'
+        else
+            selected_todo.className = ''
+    }
 }
 
 function render() {
@@ -46,7 +57,7 @@ function render() {
   todos.forEach(todo => {
     const li = document.createElement("li");
     li.className = todo.done ? "done" : "";
-    
+    li.id = todo.id
     const span = document.createElement("span");
     span.textContent = todo.text;
     span.style.cursor = "pointer";
