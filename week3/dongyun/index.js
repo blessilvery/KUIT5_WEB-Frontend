@@ -78,12 +78,25 @@ function render() {
     span.style.cursor = "pointer";
     span.onclick = () => toggleDone(todo.id);
     
+    const div = document.createElement("div");
+    div.className = 'btn-set'
+
+    const updateBtn = document.createElement("button");
+    updateBtn.id = 'updateBtn'
+    updateBtn.textContent = "수정";
+    updateBtn.onclick = () => updateTodo(todo.id);
+
     const delBtn = document.createElement("button");
+    delBtn.id = 'delBtn'
     delBtn.textContent = "삭제";
     delBtn.onclick = () => deleteTodo(todo.id);
 
     li.appendChild(span);
-    li.appendChild(delBtn);
+    li.appendChild(div)
+    div.appendChild(updateBtn)
+    div.appendChild(delBtn)
+    // li.appendChild(updateBtn)
+    // li.appendChild(delBtn);
     list.appendChild(li);
   });
 }
