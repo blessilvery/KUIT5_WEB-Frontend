@@ -13,7 +13,9 @@ form.addEventListener("submit", (e) => {
       text,
       done: false
     };
-   
+    todos.push(newTodo);
+    document.getElementById("todo-input").value = "";
+    render();
   }
 });
 
