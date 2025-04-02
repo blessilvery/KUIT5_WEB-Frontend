@@ -20,7 +20,14 @@ form.addEventListener("submit", (e) => {
 });
 
 function deleteTodo(id) {
+  // 배열을 순회하며 id가 동일한 todo를 찾는다. -> 해당 요소를 제거하기
   
+  const deleteTodo = todos.filter(todo => {
+    todo.id == id;
+  });
+  console.log(deleteTodo.id);
+  console.log(deleteTodo.text);
+  todos.delete(deleteTodo);
 }
 
 function toggleDone(id) {
