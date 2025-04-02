@@ -42,13 +42,20 @@ function deleteTodo(id) {
     const selected_todo = document.getElementById(id)
     const selected_text = selected_todo.children[0]
 
-    todos.map((e, index)=>{
-        if(e.id === id){
-            console.log(e, index)
-            todos.splice(index, 1)
-            render()
-        }
-    })
+    // map 사용처 - todos 배열을 순회하면서 일치하는 id 탐색 및 index 추출
+    // todos.map((e, index)=>{
+    //     if(e.id === id){
+    //         console.log(e, index)
+    //         todos.splice(index, 1)
+    //         render()
+    //     }
+    // })
+
+    // filter로 간단히 해당 id를 목록에서 제외한 배열 생성
+    // spread연산자를 통한 깊은 복사
+    const deletedTodos = todos.filter((todo)=> todo.id !== id)
+    todos = [...deletedTodos]
+    render()
 }
 
 function toggleDone(id) {
