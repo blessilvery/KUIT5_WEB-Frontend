@@ -53,15 +53,17 @@ function deleteTodo(id) {
 
 function toggleDone(id) {
     const selected_todo = document.getElementById(id)
+    const selected_text = selected_todo.children[0]
 
+    console.log(selected_text)
     if (selected_todo == null){
         alert(`해당하는 할 일의 id : ${id}를 찾을 수 없습니다.`)
     }
     else{
-        if(selected_todo.className === '')
-            selected_todo.className = 'done'
+        if(selected_text.className === '')
+            selected_text.className = 'done'
         else
-            selected_todo.className = ''
+            selected_text.className = ''
     }
 }
 
