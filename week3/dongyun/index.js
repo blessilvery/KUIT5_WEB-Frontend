@@ -8,8 +8,8 @@
 // [x]. todo 리스트 항목 클릭시, 취소선 + 회색처리 (done className 추가)
 // [x]. 한 번 더 클릭 시 원상복귀
 // [x]. 각 todo 리스트 항목은 서로 다른 id를 가져야함 -> Date 객체 활용
-// 9. 삭제 버튼 옆에 수정버튼을 추가하고 클릭 시 리스트 항목을 span -> input
-// 10. 수정 완료 후 렌더링되도록
+// [x]. 삭제 버튼 옆에 수정버튼을 추가하고 클릭 시 리스트 항목을 span -> input
+// [x]. 수정 완료 후 렌더링되도록
 // 11. PR 할 때 spread, map, filter를 어디에 사용했는지 명시 할 것
 
 let todos = [];
@@ -73,7 +73,9 @@ function render() {
     const li = document.createElement("li");
     li.className = todo.done ? "done" : "";
     li.id = todo.id
+
     const span = document.createElement("span");
+    span.className = 'todo-text'
     span.textContent = todo.text;
     span.style.cursor = "pointer";
     span.onclick = () => toggleDone(todo.id);
@@ -95,9 +97,43 @@ function render() {
     li.appendChild(div)
     div.appendChild(updateBtn)
     div.appendChild(delBtn)
-    // li.appendChild(updateBtn)
-    // li.appendChild(delBtn);
     list.appendChild(li);
   });
 }
-function updateTodo(){}
+
+function updateTodo(id){
+  const selected_todo = document.getElementById(id)
+  const selected_text = selected_todo.children[0]
+
+  const updateBtn = selected_todo.children[1].children[0]
+
+  console.log(selected_text.tagName)
+
+  if (selected_text.tagName === 'SPAN'){
+    // 수정 전 버튼 클릭 경우
+    const updateInput = document.createElement('input')
+    updateInput.type = 'text'
+    updateInput.id = 'updateInput'
+    updateInput.value = selected_text.textContent
+  
+    selected_text.replaceWith(updateInput)
+    updateBtn.textContent = "완료"
+  }
+  else if(selected_text.tagName === 'INPUT' && selected_text.value === ''){
+    deleteTodo(id)
+  }
+  else if(selected_text.tagName === 'INPUT'){
+    const span = document.createElement("span");
+    span.className = 'todo-text'
+    span.textContent = selected_text.value;
+    span.style.cursor = "pointer";
+    span.onclick = () => toggleDone(id);
+
+    selected_text.replaceWith(span)
+    updateBtn.textContent = "수정"
+  }
+  else{
+    alert(`할 일 이름의 tagName 정보를 확인해주세요\n 현재 tagName = ${selected_text.tagName}`)
+  }
+
+}
