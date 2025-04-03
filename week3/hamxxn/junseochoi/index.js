@@ -13,52 +13,52 @@ form.addEventListener("submit", (e) => {
       text,
       done: false,
     };
-    todos.push(newTodo); 
-    render(); 
-    input.value = ""; 
-   
+    todos.push(newTodo);
+    render();
+    input.value = "";
   }
 });
 
 function deleteTodo(id) {
-  todos
-    = todos.filter((todo) => todo.id !== id);
+  todos = todos.filter((todo) => todo.id !== id);
   render();
-  
 }
 
 function toggleDone(id) {
-  todos = todos.map(todo => 
+  todos = todos.map((todo) =>
     todo.id === id ? { ...todo, done: !todo.done } : todo
-  ); 
-  render(); 
+  );
+  render();
 }
 
 function updateTodo(id, newText) {
-  // submit event를 이용해 수정을 누르면 span이 input이 되고 
-  // 엔터를 치면 input이 span으로 되고 todo에 업데이트하고 
+  // submit event를 이용해 수정을 누르면 span이 input이 되고
+  // 엔터를 치면 input이 span으로 되고 todo에 업데이트하고
   // 다시 render하면 된다.
-  todos = todos.map(todo => 
+  todos = todos.map((todo) =>
     todo.id === id ? { ...todo, text: newText } : todo
   );
-  render();
-  
+
+  // 수정 부분이 빈칸일 때 예외처리
+  if (newText !== "") {
+    render();
+  }
 }
 
 function render() {
   list.innerHTML = "";
-  todos.forEach(todo => {
+  todos.forEach((todo) => {
     const li = document.createElement("li");
     li.className = todo.done ? "done" : "";
-    
+
     const span = document.createElement("span");
     span.textContent = todo.text;
     span.style.cursor = "pointer";
-    span.className = "todo"
+    span.className = "todo";
     span.onclick = () => toggleDone(todo.id);
-    
+
     const delBtn = document.createElement("button");
-    delBtn.className = "delete"
+    delBtn.className = "delete";
     delBtn.textContent = "삭제";
     delBtn.onclick = () => deleteTodo(todo.id);
 
@@ -66,6 +66,8 @@ function render() {
     editBtn.className = "edit";
     editBtn.textContent = "수정";
     editBtn.onclick = () => {
+      editBtn.textContent = "완료";
+      editBtn.className = "complete";
       const input = document.createElement("input");
       input.type = "text";
       input.value = todo.text;
