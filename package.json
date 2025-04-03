@@ -1,0 +1,30 @@
+{
+  "name": "kuit5_web-frontend",
+  "version": "1.0.0",
+  "description": "KUIT 5기 WEB Part 스터디 실습, 미션 저장소입니다.    5th WEB Part Lead : @ho0010 @Jinho1011 @Turtle-Hwan @hamxxn   > 한 학기 동안 많은 것을 얻어갈 수 있으면 좋겠습니다.",
+  "main": "index.js",
+  "scripts": {
+    "test": "playwright test",
+    "test:ui": "playwright test --ui",
+    "test:codegen": "playwright codegen",
+    "test:chromium": "playwright test --project=chromium",
+    "test:firefox": "playwright test --project=firefox",
+    "test:webkit": "playwright test --project=webkit"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Konkuk-KUIT/KUIT5_WEB-Frontend.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Konkuk-KUIT/KUIT5_WEB-Frontend/issues"
+  },
+  "homepage": "https://github.com/Konkuk-KUIT/KUIT5_WEB-Frontend#readme",
+  "devDependencies": {
+    "@playwright/test": "^1.51.1",
+    "@types/node": "^22.14.0"
+  }
+}
