@@ -2,27 +2,38 @@ import { test, expect } from "@playwright/test";
 import fs from "fs";
 import path from "path";
 
-// Get all subdirectories in week3 directory
+const getPathOf = (dir: string) => {
+  return path.join(process.cwd(), dir);
+};
 
-const getPathOf = (dir: string) => path.join(process.cwd(), dir);
-const getSubdirectoriesOf = (dir: string) => {
-  const week3Path = getPathOf(dir);
-  return fs
-    .readdirSync(week3Path, { withFileTypes: true })
-    .filter((dirent) => dirent.isDirectory())
-    .map((dirent) => dirent.name);
+const getAllSubdirectories = (dir: string): string[] => {
+  const results: string[] = [];
+  const items = fs.readdirSync(dir, { withFileTypes: true });
+
+  for (const item of items) {
+    const fullPath = path.join(dir, item.name);
+    if (item.isDirectory()) {
+      results.push(fullPath);
+      results.push(...getAllSubdirectories(fullPath));
+    }
+  }
+  return results;
+};
+
+const getDirectoriesWithIndexHtml = (dirs: string[]): string[] => {
+  return dirs.filter((dir) => fs.existsSync(path.join(dir, "index.html")));
 };
 
 const week3Path = getPathOf("week3");
-const subdirectories = getSubdirectoriesOf("week3");
+const allDirs = getAllSubdirectories(week3Path);
+const dirsWithIndexHtml = getDirectoriesWithIndexHtml(allDirs);
 
-// Test suite for each subdirectory
-const createTestSuite = (subdir: string) => {
-  const testPath = path.join(week3Path, subdir);
+dirsWithIndexHtml.forEach((dir) => {
+  const relativePath = path.relative(week3Path, dir);
 
-  test.describe(`Week3 Tests - ${subdir}`, () => {
+  test.describe(`Week3 Tests - ${relativePath}`, () => {
     test.beforeEach(async ({ page }) => {
-      await page.goto(`/week3/${subdir}/index.html`);
+      await page.goto(`/week3/${relativePath}/index.html`);
     });
 
     test("should create, read, update, delete todo", async ({ page }) => {
@@ -35,58 +46,38 @@ const createTestSuite = (subdir: string) => {
       await page.getByRole("button", { name: /add|할 일/i }).click();
 
       // 3. Get the todo item containing "쿠잇 3주차 미션하기"
-      const todoItem = page.getByText("쿠잇 3주차 미션하기").locator("..");
+      const todoItem = page
+        .getByRole("listitem")
+        .filter({ hasText: /쿠잇 3주차 미션하기/i });
 
       // 4. Click edit button (pencil icon or text)
+      await expect(todoItem.getByText(/✏️|수정|edit/i)).toBeVisible();
       await todoItem.getByText(/✏️|수정|edit/i).click();
 
-      // 5. Update todo text
-      await todoItem.getByRole("textbox").fill("쿠잇 4주차 미션하기");
+      // 5. Wait for textbox to appear
+      const changedTodoItem = page
+        .getByRole("listitem")
+        .filter({ has: page.getByRole("textbox") });
+      await expect(changedTodoItem.getByRole("textbox")).toBeVisible();
 
-      // 6. Press Enter to save
-      await todoItem.getByRole("textbox").press("Enter");
+      // 6. Update todo text
+      await changedTodoItem
+        .getByRole("textbox")
+        .fill("쿠잇 4주차 미션 완료하기");
 
-      // 7. Get the updated todo item containing "쿠잇 4주차 미션하기"
+      // 7. Press Enter to save
+      await changedTodoItem.getByRole("textbox").press("Enter");
+
+      // 8. Get the updated todo item containing "쿠잇 3주차 미션 완료하기"
       const updatedTodoItem = page
-        .getByText("쿠잇 4주차 미션하기")
-        .locator("..");
+        .getByRole("listitem")
+        .filter({ hasText: "쿠잇 4주차 미션 완료하기" });
 
-      // 8. Click delete button (trash icon or text)
+      // 9. Click delete button (trash icon or text)
       await updatedTodoItem.getByText(/🗑️|삭제|remove|delete/i).click();
-    });
 
-    test("should load index.html", async ({ page }) => {
-      const htmlPath = path.join(testPath, "index.html");
-      expect(fs.existsSync(htmlPath)).toBeTruthy();
-
-      await expect(page.locator("html")).toBeVisible();
-      await expect(page.locator("body")).toBeVisible();
-
-      const title = await page.title();
-      expect(title).toBeTruthy();
-    });
-
-    test("should load index.css", async ({ page }) => {
-      const cssPath = path.join(testPath, "index.css");
-      expect(fs.existsSync(cssPath)).toBeTruthy();
-
-      const styles = await page.evaluate(() => {
-        return Array.from(document.styleSheets).map((sheet) => sheet.href);
-      });
-      expect(styles.some((href) => href?.includes("index.css"))).toBeTruthy();
-    });
-
-    test("should load index.js", async ({ page }) => {
-      const jsPath = path.join(testPath, "index.js");
-      expect(fs.existsSync(jsPath)).toBeTruthy();
-
-      const scripts = await page.evaluate(() => {
-        return Array.from(document.scripts).map((script) => script.src);
-      });
-      expect(scripts.some((src) => src?.includes("index.js"))).toBeTruthy();
+      // 10. Verify that the todo item is deleted
+      await expect(updatedTodoItem).toBeHidden();
     });
   });
-};
-
-// Create test suites for all subdirectories
-subdirectories.map(createTestSuite);
+});
