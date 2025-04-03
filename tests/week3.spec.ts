@@ -21,7 +21,10 @@ const getAllSubdirectories = (dir: string): string[] => {
 };
 
 const getDirectoriesWithIndexHtml = (dirs: string[]): string[] => {
-  return dirs.filter((dir) => fs.existsSync(path.join(dir, "index.html")));
+  return dirs.filter(
+    (dir) =>
+      fs.existsSync(path.join(dir, "index.html")) && !dir.includes("hamxxn")
+  );
 };
 
 const week3Path = getPathOf("week3");
