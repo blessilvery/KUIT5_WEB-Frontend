@@ -67,11 +67,24 @@ function toggleDone(id) {
         alert(`해당하는 할 일의 id : ${id}를 찾을 수 없습니다.`)
     }
     else{
-        if(selected_text.className === 'todo-text')
-            selected_text.className = 'done'
-        else
-            selected_text.className = 'todo-text'
+        // if(selected_text.className === 'todo-text')
+        //     selected_text.className = 'done'
+        // else
+        //     selected_text.className = 'todo-text'
+        const todos_dummy = [...todos]
+        todos_dummy.map((e)=>{
+          if(e.id === id){
+            console.log(e)
+            if(e.done === false)
+              e.done = true
+            else
+              e.done = false
+          }
+        })
+        todos = [...todos_dummy]
+        console.log(todos)
     }
+    render()
 }
 
 function render() {
