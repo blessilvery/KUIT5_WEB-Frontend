@@ -43,13 +43,18 @@ function render() {
     span.className = todo.done ? "text done" : "text";
     span.onclick = () => toggleDone(todo.id);
 
-    const delBtn = document.createElement("button1");
+    const delBtn = document.createElement("button");
+    delBtn.className = "delete";
     delBtn.textContent = "삭제";
     delBtn.onclick = () => deleteTodo(todo.id);
 
-    const editBtn = document.createElement("button2");
+    const editBtn = document.createElement("button");
+    editBtn.className = "edit";
     editBtn.textContent = "수정";
     editBtn.onclick = () => {
+      editBtn.className = "done1";
+      editBtn.textContent = "완료";
+
       const input = document.createElement("input");
       input.type = "text";
       input.value = todo.text;
