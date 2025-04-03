@@ -25,6 +25,40 @@ const createTestSuite = (subdir: string) => {
       await page.goto(`/week3/${subdir}/index.html`);
     });
 
+    test("should create, read, update, delete todo", async ({ page }) => {
+      // 1. Add new todo
+      await page
+        .getByRole("textbox", { name: /to be done|할 일/i })
+        .fill("쿠잇 3주차 미션하기");
+
+      // 2. Click add button
+      await page.getByRole("button", { name: /add|할 일/i }).click();
+
+      // 3. Click edit button (pencil icon or text)
+      await page
+        .locator("#todo-1743689779538")
+        .getByText(/✏️|수정|edit/i)
+        .click();
+
+      // 4. Update todo text
+      await page
+        .locator("#todo-1743689779538")
+        .getByRole("textbox")
+        .fill("쿠잇 4주차 미션하기");
+
+      // 5. Press Enter to save
+      await page
+        .locator("#todo-1743689779538")
+        .getByRole("textbox")
+        .press("Enter");
+
+      // 6. Click delete button (trash icon or text)
+      await page
+        .locator("#todo-1743689779538")
+        .getByText(/🗑️|삭제|remove|delete/i)
+        .click();
+    });
+
     test("should load index.html", async ({ page }) => {
       const htmlPath = path.join(testPath, "index.html");
       expect(fs.existsSync(htmlPath)).toBeTruthy();
