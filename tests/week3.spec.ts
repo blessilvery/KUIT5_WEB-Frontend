@@ -34,29 +34,25 @@ const createTestSuite = (subdir: string) => {
       // 2. Click add button
       await page.getByRole("button", { name: /add|할 일/i }).click();
 
-      // 3. Click edit button (pencil icon or text)
-      await page
-        .locator("#todo-1743689779538")
-        .getByText(/✏️|수정|edit/i)
-        .click();
+      // 3. Get the todo item containing "쿠잇 3주차 미션하기"
+      const todoItem = page.getByText("쿠잇 3주차 미션하기").locator("..");
 
-      // 4. Update todo text
-      await page
-        .locator("#todo-1743689779538")
-        .getByRole("textbox")
-        .fill("쿠잇 4주차 미션하기");
+      // 4. Click edit button (pencil icon or text)
+      await todoItem.getByText(/✏️|수정|edit/i).click();
 
-      // 5. Press Enter to save
-      await page
-        .locator("#todo-1743689779538")
-        .getByRole("textbox")
-        .press("Enter");
+      // 5. Update todo text
+      await todoItem.getByRole("textbox").fill("쿠잇 4주차 미션하기");
 
-      // 6. Click delete button (trash icon or text)
-      await page
-        .locator("#todo-1743689779538")
-        .getByText(/🗑️|삭제|remove|delete/i)
-        .click();
+      // 6. Press Enter to save
+      await todoItem.getByRole("textbox").press("Enter");
+
+      // 7. Get the updated todo item containing "쿠잇 4주차 미션하기"
+      const updatedTodoItem = page
+        .getByText("쿠잇 4주차 미션하기")
+        .locator("..");
+
+      // 8. Click delete button (trash icon or text)
+      await updatedTodoItem.getByText(/🗑️|삭제|remove|delete/i).click();
     });
 
     test("should load index.html", async ({ page }) => {
