@@ -4,3 +4,10 @@
 ._.DS_Store
 **/.DS_Store
 **/._.DS_Store
+
+# Playwright
+node_modules/
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/
