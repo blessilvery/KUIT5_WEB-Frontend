@@ -67,10 +67,10 @@ function toggleDone(id) {
         alert(`해당하는 할 일의 id : ${id}를 찾을 수 없습니다.`)
     }
     else{
-        if(selected_text.className === '')
+        if(selected_text.className === 'todo-text')
             selected_text.className = 'done'
         else
-            selected_text.className = ''
+            selected_text.className = 'todo-text'
     }
 }
 
@@ -130,14 +130,25 @@ function updateTodo(id){
     deleteTodo(id)
   }
   else if(selected_text.tagName === 'INPUT'){
-    const span = document.createElement("span");
-    span.className = 'todo-text'
-    span.textContent = selected_text.value;
-    span.style.cursor = "pointer";
-    span.onclick = () => toggleDone(id);
 
-    selected_text.replaceWith(span)
-    updateBtn.textContent = "수정"
+    // spread를 쓰지 않은 경우. 직접 span을 새로 생성 후 교체
+    // const span = document.createElement("span");
+    // span.className = 'todo-text'
+    // span.textContent = selected_text.value;
+    // span.style.cursor = "pointer";
+    // span.onclick = () => toggleDone(id);
+    // selected_text.replaceWith(span)
+    // updateBtn.textContent = "수정"
+
+    todos.map((e, index)=>{
+      if(e.id === id){
+        const todo = {...todos[index]}
+        todo.text = selected_text.value
+        todos[index] = {...todo}
+      }
+    })
+    render()
+
   }
   else{
     alert(`할 일 이름의 tagName 정보를 확인해주세요\n 현재 tagName = ${selected_text.tagName}`)
