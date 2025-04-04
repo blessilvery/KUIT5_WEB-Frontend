@@ -51,6 +51,7 @@ function render() {
     const editBtn = document.createElement("button");
     editBtn.className = "edit";
     editBtn.textContent = "수정";
+    editBtn.disabled = todo.done;
     editBtn.onclick = () => {
       editBtn.className = "done1";
       editBtn.textContent = "완료";
