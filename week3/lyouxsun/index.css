@@ -89,3 +89,16 @@ li button {
   display: flex;
   gap: 5px;
 }
+
+.edit-done {
+  background-color: #87CEEB;
+  border: none;
+  padding: 5px 10px;
+  color: white;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+.edit-done:hover {
+  background-color: #6495ED;
+}
