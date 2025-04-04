@@ -1,0 +1,185 @@
+body {
+  margin: 0;
+  padding: 0;
+  width: 422px;
+  /* width: 100vh; */
+  overflow-x: hidden;
+  /* overflow: hidden; */
+  /* overflow-y: hidden; */
+  /* background-color: rgb(219, 247, 255); */
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+/* 상단바  */
+.top-bar {
+  display: flex;
+
+  width: 390px;
+  height: 48px;
+  justify-content: space-between;
+  background: none;
+  padding: 6px 18px 6px 18px;
+}
+
+button {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  width: 24px;
+  height: 24px;
+}
+
+.right-icons,
+.left-icons {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 13px;
+}
+
+.left-icons img[alt="arrow"] {
+  width: 10px;
+  height: 10px;
+}
+
+.left-icons {
+  display: flex;
+  align-items: center;
+  font-weight: 700;
+  gap: 0;
+}
+
+/* frame(article) 속성 */
+.frame {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 390px;
+  height: 726px;
+  padding: 0 16px 0 16px;
+  background-color: white;
+}
+
+.small_frame {
+  display: grid;
+  grid-template-columns: 110px auto;
+  width: 358px;
+  height: 110px;
+  gap: 16px;
+  /* margin: 16px 0 16px 0; */
+  padding-top: 16px;
+  padding-bottom: 16px;
+  background-color: white;
+  border-bottom: 1px solid #eeeeee;
+}
+
+.image {
+  width: 110px;
+  height: 110px;
+  border-radius: 4px;
+}
+
+.simg {
+  margin-left: 5px;
+}
+
+.frame_comments {
+  height: 110px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.post_action {
+  display: flex;
+  justify-content: end;
+  width: 232px;
+  height: 16px;
+  gap: 2px;
+}
+
+/* 프레임 내 글자  */
+.item_name {
+  line-height: 20px;
+  font-size: 16px;
+  font-weight: 540;
+}
+
+.item_info,
+.post_action {
+  line-height: 16px;
+  font-size: 12px;
+  font-weight: 450;
+  color: #8c8c8c;
+  font-family: sans-serif;
+}
+
+.item_price {
+  line-height: 22px;
+  font-size: 15px;
+  font-weight: 700;
+  color: #ff7e36;
+}
+.comments {
+  display: flex;
+  flex-direction: column;
+  height: 90px;
+  font-size: 14px;
+  font-weight: 400px;
+  line-height: 18px;
+  font-family: sans-serif;
+  gap: 3px;
+}
+
+/* 고정된 부분 */
+#bottom_navigation_bar {
+  display: flex;
+  position: fixed;
+  background-color: white;
+  border-top: 2px solid #eeeeee;
+  bottom: 0;
+  /* width 설정? */
+  width: 100vh;
+  height: 58px;
+  padding-top: 3px;
+  padding-bottom: 3px;
+}
+
+.bar_item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.bar_item--icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  width: 82px;
+  height: 42px;
+}
+/* font-size 10px */
+.icon_font {
+  font-size: 10px;
+  font-weight: 500;
+  line-height: 14px; /* 행간 간격 */
+  font-family: sans-serif;
+}
+
+.plus_fuc {
+  display: flex;
+  position: fixed;
+  background-color: #ff7e36;
+  right: 15px;
+  bottom: 80px;
+  width: 48px;
+  height: 48px;
+  border-radius: 100%;
+  align-items: center;
+  justify-content: center;
+}

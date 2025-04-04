@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2주차 실습: 당근 클론코딩</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="init.css">
+</head>
+<body>
+<div class="header_header">
+    <section class="post-header">
+        <header>
+            <div class="place_live_button">
+                <button type="button">
+                    <span class="place_live_letter">
+                        군자동
+                    </span>
+                    <span class="arrow_container">
+                        <img src="./assets/expan-arrow.svg">
+                    </span>
+                </button>
+            </div>
+            <div class="post-header__icon-container">
+                <button type="button">
+                    <img id="search" src="./assets/search.svg" alt="검색 버튼">
+                </button>
+                <button type="button">
+                    <img id="menu" src="./assets/menu.svg" alt="메뉴 버튼">
+                </button>
+                <button type="button">
+                    <img id="bell" src="./assets/bell.svg" alt="벨 버튼">
+                </button>
+            </div>
+        </header>
+    </section>
+   
+    <div class="product_container">
+        <article class="product_bottombanner_container">
+            <section class="item1">
+                <div class="product_image">
+                    <img src="./assets/airpod.jpg" alt="에어팟">
+                </div>
+                <div class="product_info_container">
+                    <ul class="product_info">
+                        <li class="product_name">에어팟 프로</li>
+                        <li class="place_buy_container">
+                            <span class="place_buy">군자동</span>
+                            <span>·</span>
+                            <span class="date_buy">3일 전</span>
+                        </li>
+                        <li class="price">220,000원</li>
+                    </ul>
+                    <div class="comment_emogi_container">
+                        <div class="heart">
+                            <img src="./assets/heart.svg" alt="좋아요">
+                            <span class="heart_num">1</span>
+                        </div>
+                        <div class="comment">
+                            <img src="./assets/chat.svg" alt="채팅">
+                            <span class="chat_num">3</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="item2">
+                <div class="product_image">
+                    <img src="./assets/blanche.jpg" alt="블랑쉬">
+                </div>
+                <div class="product_info_container">
+                    <ul class="product_info">
+                        <li class="product_name">바이레도 블랑쉬 50ml</li>
+                        <li class="place_buy_container">
+                            <span class="place_buy">광진구 구의2제3동</span>
+                            <span>·</span>
+                            <span class="date_buy">26초 전</span>
+                        </li>
+                        <li class="price">4,000원</li>
+                    </ul>
+                    <div class="comment_emogi_container">
+                        <div class="heart">
+                            <img src="./assets/heart.svg" alt="좋아요">
+                            <span class="heart_num">2</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="item3">
+                <div class="product_image">
+                    <img src="./assets/sandwitch.jpg" alt="샌드위치">
+                </div>
+                <div class="product_info_container">
+                    <ul class="product_info">
+                        <li class="product_name">샌드위치</li>
+                        <li class="place_buy_container">
+                            <span class="place_buy">동대문구 휘경동</span>
+                            <span>·</span>
+                            <span class="date_buy">끌올 59초 전</span>
+                        </li>
+                        <li class="price">8,000원</li>
+                    </ul>
+                </div>
+            </section>
+            <section class="item4">
+                <div class="product_image">
+                    <img src="./assets/iphone.jpg" alt="아이폰13">
+                </div>
+                <div class="product_info_container">
+                    <ul class="product_info">
+                        <li class="product_name">아이폰 13프로맥스</li>
+                        <li class="place_buy_container">
+                            <span class="place_buy">군자동</span>
+                            <span>·</span>
+                            <span class="date_buy">1일 전</span>
+                        </li>
+                        <li class="price">1,000,000원</li>
+                    </ul>
+                </div>
+            </section>
+            <section class="item5">
+                <div class="product_image">
+                    <img src="./assets/coffeemachine.jpg" alt="커피머신">
+                </div>
+                <div class="product_info_container">
+                    <ul class="product_info">
+                        <li class="product_name">커피머신</li>
+                        <li class="place_buy_container">
+                            <span class="place_buy">구리시 교문1동</span>
+                            <span>·</span>
+                            <span class="date_buy">1초 전</span>
+                        </li>
+                        <li class="price">100,000원</li>
+                    </ul>
+                </div>
+            </section>
+        </article>
+    </div>
+    <button class="plus_container">
+        <div class="plus_button">
+            <img src="./assets/plus.svg" alt="더하기">
+        </div>
+    </button>
+</div>
+
+    <!-- 하단바 -->
+    <nav class="bottom-bar">
+        <button type="button">
+            <div class="bottom_home">
+                <span>
+                    <img src="./assets/home.svg" alt="홈">
+                </span>
+                <span class="bottom_nav_letter">
+                    홈
+                </span>
+            </div>
+        </button>
+        <button type="button">
+            <div class="bottom_news">
+                <span>
+                    <img src="./assets/new.svg" alt="동네생활">
+                </span>
+                <span class="bottom_nav_letter">
+                    동네생활
+                </span>
+            </div>
+        </button>
+        <button type="button">
+            <div class="bottom_loc">
+                <span>
+                    <img src="./assets/location.svg" alt="내 근처처">
+                </span>
+                <span class="bottom_nav_letter">
+                    내 근처
+                </span>
+            </div>
+        </button>
+        <button type="button">
+            <div class="bottom_chat">
+                <span>
+                    <img src="./assets/chat_bottom.svg" alt="채팅">
+                </span>
+                <span class="bottom_nav_letter">
+                    채팅
+                </span>
+            </div>
+        </button>
+        <button type="button">
+            <div class="bottom_my">
+                <span>
+                    <img src="./assets/my.svg" alt="나의 당근">
+                </span>
+                <span class="bottom_nav_letter">
+                    나의 당근
+                </span>
+            </div>
+        </button>
+    </nav>
+
+</body>
+</html>
