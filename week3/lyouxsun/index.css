@@ -68,6 +68,24 @@ li button {
   margin-left: 10px;
 }
 
-li button:hover {
+.delete:hover {
   background-color: #d32f2f;
+}
+
+.update {
+  background-color: #87CEEB;
+  border: none;
+  padding: 5px 10px;
+  color: white;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+.update:hover {
+  background-color: #6495ED;
+}
+
+.actions {
+  display: flex;
+  gap: 5px;
 }
