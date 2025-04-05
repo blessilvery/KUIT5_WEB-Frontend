@@ -6,7 +6,7 @@ import BottomNav from "./components/BottomNav";
 
 const Home = () => {
   return (
-    <div>
+    <div className="screen">
       <Header location={marketModel.location} />
       <Content items={marketModel.items} />
       <BottomNav />

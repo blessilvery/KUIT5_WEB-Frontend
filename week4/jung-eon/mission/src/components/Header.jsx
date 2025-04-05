@@ -2,7 +2,7 @@ import React from "react";
 
 const Header = ({ location }) => {
   return (
-    <div>
+    <div className="post-header">
       <div className="post-header__left">
         <h1 className="post-header__text">{location}</h1>
         <img src="./assets/expand-arrow.svg" alt="expand-button" />

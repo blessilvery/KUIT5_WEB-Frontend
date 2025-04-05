@@ -2,7 +2,7 @@ import React from "react";
 
 const BottomNav = () => {
   return (
-    <section>
+    <section class="post-bottom">
       <button className="plus-button">
         <img src="/assets/plus-button.svg" alt="plus-button" />
       </button>

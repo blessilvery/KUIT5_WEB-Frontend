@@ -2,7 +2,7 @@ import React from "react";
 
 const Content = ({ items }) => {
   return (
-    <div>
+    <section class="post-list">
       {items.map(
         (
           { title, image, location, timeAgo, price, comments, likes, isSold },
@@ -36,7 +36,7 @@ const Content = ({ items }) => {
         )
       )}
       ;
-    </div>
+    </section>
   );
 };
 

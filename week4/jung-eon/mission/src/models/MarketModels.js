@@ -24,7 +24,7 @@ const marketModel = {
     {
       title: "샌드위치",
       location: "동대문구 휘경동",
-      timeAgo: "끝물 59초 전",
+      timeAgo: "끌올 59초 전",
       price: "8,000원",
       image: "/assets/post__img3.svg",
       comments: 0,
