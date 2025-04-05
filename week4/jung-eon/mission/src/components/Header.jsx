@@ -1,8 +1,6 @@
 import React from "react";
-import marketModel from "../models/MarketModels";
 
-const Header = () => {
-  const location = marketModel.location;
+const Header = ({ location }) => {
   return (
     <div>
       <div className="post-header__left">

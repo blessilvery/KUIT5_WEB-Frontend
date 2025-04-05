@@ -1,5 +1,4 @@
 import React from "react";
-import marketModel from "../models/MarketModels";
 
 const BottomNav = () => {
   return (
