@@ -1,0 +1,96 @@
+/* 
+method 채우기 + 삭제 옆 수정 버튼 만들고 update to do 도 구현
+각 todo는 다른 id 가져야함 -> date() 객체 사용
+스프레드 연산자, map(), filter() 어디서 사용했는지를 꼭 언급해서 PR 올릴 것!
+*/
+
+body {
+  background-color: #f5f5f5;
+  padding: 30px;
+}
+
+.container {
+  max-width: 500px;
+  margin: 0 auto;
+  background: white;
+  padding: 20px 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  text-align: center;
+}
+
+form {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+input[type="text"] {
+  flex: 1;
+  padding: 10px;
+  font-size: 16px;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.content {
+  width: 200px;
+}
+
+li.done > .content {
+  text-decoration: line-through;
+  color: gray;
+}
+
+li .delete {
+  background-color: #f44336;
+  border: none;
+  padding: 5px 10px;
+  color: white;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+li .delete:hover {
+  background-color: #d32f2f;
+}
+
+li .update {
+  background-color: #4375ff;
+  border: none;
+  padding: 5px 10px;
+  color: white;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+li .edit:hover {
+  background-color: #3760cf;
+}
