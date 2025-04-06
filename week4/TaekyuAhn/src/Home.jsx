@@ -1,9 +1,10 @@
 import React from "react";
 import styles from "./index.module.scss";
+import Item from "./components/Item";
 
 const Header = () => {
   return (
-    <div className={styles.header}>
+    <div className={styles.headerSection}>
       <div className={styles.locationBox}>
         <div className={styles.locationBox__text}>군자동</div>
         <img src="./imgs/down-chevron.svg" alt="" />
@@ -17,7 +18,13 @@ const Header = () => {
   );
 };
 
-const Content = () => {};
+const Content = () => {
+  return (
+    <div className={styles.contentSection}>
+      <Item></Item>
+    </div>
+  );
+};
 
 const BottomNav = () => {};
 
