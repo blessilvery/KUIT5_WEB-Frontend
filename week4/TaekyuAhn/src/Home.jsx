@@ -29,13 +29,39 @@ const Content = () => {
   );
 };
 
-const BottomNav = () => {};
+const BottomNav = () => {
+  return (
+    <div className={styles.bottomNavSection}>
+      <div className={styles.bottomNavSection__element}>
+        <img src="./imgs/home.svg" alt="" />
+        <div className={styles.bottomNavSection__element__text}>홈</div>
+      </div>
+      <div className={styles.bottomNavSection__element}>
+        <img src="./imgs/news.svg" alt="" />
+        <div className={styles.bottomNavSection__element__text}>동네생활</div>
+      </div>
+      <div className={styles.bottomNavSection__element}>
+        <img src="./imgs/location.svg" alt="" />
+        <div className={styles.bottomNavSection__element__text}>내 근처</div>
+      </div>
+      <div className={styles.bottomNavSection__element}>
+        <img src="./imgs/chats.svg" alt="" />
+        <div className={styles.bottomNavSection__element__text}>채팅</div>
+      </div>
+      <div className={styles.bottomNavSection__element}>
+        <img src="./imgs/person.svg" alt="" />
+        <div className={styles.bottomNavSection__element__text}>나의 당근</div>
+      </div>
+    </div>
+  );
+};
 
 const Home = () => {
   return (
     <div className={styles.contents}>
       <Header></Header>
       <Content></Content>
+      <img className={styles.plusButton} src="./imgs/plus-button.svg" alt="" />
       <BottomNav />
     </div>
   );
