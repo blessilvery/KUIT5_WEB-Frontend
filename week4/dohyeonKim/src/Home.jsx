@@ -9,7 +9,7 @@ const Home = () => {
 
   return (
     <div className='body'>
-      <Header></Header>
+      <Header location={"군자동"}></Header>
       <Content></Content>
       <BottomNav></BottomNav>
     </div>
