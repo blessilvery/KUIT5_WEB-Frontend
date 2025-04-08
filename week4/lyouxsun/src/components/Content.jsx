@@ -8,29 +8,32 @@ import plus from "../assets/plus.svg";
 const Content = ({ items }) => {
   return (
     <ul class="post">
-      {items.map((item, index) => (
-        <li key={index}>
-          <button type="button" className="post-product__container">
-            <ProductImg />
-            <div class="product__content">
-              <div class="product-desc__container">
-                <span className="product__name">{item.title}</span>
-                <div className="product__place-date">
-                  <span className="product__place">{item.location}</span>
-                  <span>·</span>
-                  <span className="product__date">{item.timeAge}</span>
-                </div>
-                <span className="product__price">{item.price}</span>
-              </div>
+      {items.map(
+        ({ title, location, timeAgo, price, comments, likes, isSold }, index) =>
+          isSold ? (
+            <li key={index}>
+              <button type="button" className="post-product__container">
+                <ProductImg />
+                <div class="product__content">
+                  <div class="product-desc__container">
+                    <span className="product__name">{title}</span>
+                    <div className="product__place-date">
+                      <span className="product__place">{location}</span>
+                      <span>·</span>
+                      <span className="product__date">{timeAgo}</span>
+                    </div>
+                    <span className="product__price">{price}</span>
+                  </div>
 
-              <div className="product-reaction__container">
-                <Comments comments={item.comments} />
-                <Likes likes={item.likes} />
-              </div>
-            </div>
-          </button>
-        </li>
-      ))}
+                  <div className="product-reaction__container">
+                    <Comments comments={comments} />
+                    <Likes likes={likes} />
+                  </div>
+                </div>
+              </button>
+            </li>
+          ) : null
+      )}
       <IconButton src={plus} alt="추가 버튼" className="add__btn" />
     </ul>
   );

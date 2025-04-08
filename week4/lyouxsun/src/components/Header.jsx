@@ -1,5 +1,4 @@
 import React from "react";
-import "../Home.css";
 
 import downChevron from "../assets/down-chevron.svg";
 import search from "../assets/search.svg";
