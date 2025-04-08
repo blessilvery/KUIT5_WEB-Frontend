@@ -8,32 +8,31 @@ import plus from "../assets/plus.svg";
 const Content = ({ items }) => {
   return (
     <ul class="post">
-      {items.map(
-        ({ title, location, timeAgo, price, comments, likes, isSold }, index) =>
-          isSold ? (
-            <li key={index}>
-              <button type="button" className="post-product__container">
-                <ProductImg />
-                <div class="product__content">
-                  <div class="product-desc__container">
-                    <span className="product__name">{title}</span>
-                    <div className="product__place-date">
-                      <span className="product__place">{location}</span>
-                      <span>·</span>
-                      <span className="product__date">{timeAgo}</span>
-                    </div>
-                    <span className="product__price">{price}</span>
+      {items
+        .filter((item) => item.isSold)
+        .map(({ title, location, timeAgo, price, comments, likes }, index) => (
+          <li key={index}>
+            <button type="button" className="post-product__container">
+              <ProductImg />
+              <div class="product__content">
+                <div class="product-desc__container">
+                  <span className="product__name">{title}</span>
+                  <div className="product__place-date">
+                    <span className="product__place">{location}</span>
+                    <span>·</span>
+                    <span className="product__date">{timeAgo}</span>
                   </div>
-
-                  <div className="product-reaction__container">
-                    <Comments comments={comments} />
-                    <Likes likes={likes} />
-                  </div>
+                  <span className="product__price">{price}</span>
                 </div>
-              </button>
-            </li>
-          ) : null
-      )}
+
+                <div className="product-reaction__container">
+                  <Comments comments={comments} />
+                  <Likes likes={likes} />
+                </div>
+              </div>
+            </button>
+          </li>
+        ))}
       <IconButton src={plus} alt="추가 버튼" className="add__btn" />
     </ul>
   );
