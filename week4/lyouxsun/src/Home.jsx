@@ -1,4 +1,5 @@
 import React from "react";
+import "./Home.css";
 
 import downChevron from "./assets/down-chevron.svg";
 import search from "./assets/search.svg";
@@ -11,116 +12,120 @@ import news from "./assets/news.svg";
 import placeMarker from "./assets/place-marker.svg";
 import chat from "./assets/chat.svg";
 import user from "./assets/user.svg";
+import plus from "./assets/plus.svg";
 
 import marketModel from "./models/MarketModel";
 
 const Header = ({ location }) => {
   return (
-    <div>
-      <div>
-        <span>{location}</span>
-        <IconButton src={downChevron} alt="지역 선택" />
-      </div>
-      <div>
-        <IconButton src={search} alt="검색" />
-        <IconButton src={menu} alt="메뉴" />
-        <IconButton src={notification} alt="알림" />
-      </div>
-    </div>
+    <section className="post-header">
+      <header className="post-header__icon-container">
+        <button className="post-place__btn" type="button">
+          <span className="post-place__name">{location}</span>
+          <IconButton
+            src={downChevron}
+            alt="지역 선택"
+            className="post-place__img"
+          />
+        </button>
+        <div class="header__menu-container">
+          <IconButton src={search} alt="검색" className="search__btn" />
+          <IconButton src={menu} alt="메뉴" className="menu__btn" />
+          <IconButton
+            src={notification}
+            alt="알림"
+            className="notification__btn"
+          />
+        </div>
+      </header>
+    </section>
   );
 };
 
-const IconButton = ({ src, alt }) => {
+const IconButton = ({ src, alt, className }) => {
   return (
-    <button type="button">
+    <button type="button" className={className}>
       <img src={src} alt={alt} />
     </button>
   );
 };
 
-/**
-{
-  title: "에어팟 프로",
-  location: "군자동",
-  timeAgo: "3일 전",
-  price: "220,000원",
-  image: "airpods-pro.png",   // 질문 : 보통은 이미지가 url로 적혀있어서 배열 랜더링이 가능하죠?
-  comments: 3,
-  likes: 11,
-  isSold: true,
-},
-*/
-
 const Content = ({ items }) => {
   return (
-    <ul>
+    <ul class="post">
       {items.map((item, index) => (
         <li key={index}>
-          <button type="button">
+          <button type="button" className="post-product__container">
             <ProductImg />
-            <div>
-              <span>{item.title}</span>
-              <div>
-                <span>{item.location}</span>
-                <span>·</span>
-                <span>{item.timeAge}</span>
+            <div class="product__content">
+              <div class="product-desc__container">
+                <span className="product__name">{item.title}</span>
+                <div className="product__place-date">
+                  <span className="product__place">{item.location}</span>
+                  <span>·</span>
+                  <span className="product__date">{item.timeAge}</span>
+                </div>
+                <span className="product__price">{item.price}</span>
               </div>
-              <span>{item.price}</span>
-            </div>
 
-            <div>
-              <Comments comments={item.comments} />
-              <Likes likes={item.likes} />
+              <div className="product-reaction__container">
+                <Comments comments={item.comments} />
+                <Likes likes={item.likes} />
+              </div>
             </div>
           </button>
         </li>
       ))}
-      ;
+      <IconButton src={plus} alt="추가 버튼" className="add__btn" />
     </ul>
   );
 };
 
 const ProductImg = () => {
   return (
-    <img class="product__img" src="http://placehold.co/110" alt="제품이미지" />
+    <img
+      className="product__img"
+      src="http://placehold.co/110"
+      alt="제품이미지"
+    />
   );
 };
 
 const Comments = ({ comments }) => {
   return comments > 0 ? (
-    <div>
+    <div className="product-reaction">
       <IconButton src={bxChat} alt="댓글 수" />
-      <span>{comments}</span>
+      <span className="reaction__num">{comments}</span>
     </div>
-  ) : null;
+  ) : null
 };
 
 const Likes = ({ likes }) => {
   return likes > 0 ? (
-    <div>
+    <div className="product-reaction">
       <IconButton src={reactionHeart} alt="좋아요 수" />
-      <span>{likes}</span>
+      <span className="reaction__num">{likes}</span>
     </div>
-  ) : null;
+  ) : null
 };
 
 const BottomNav = () => {
   return (
-    <div>
+    <nav className="bottom-bar">
       <BottomMenu src={home} alt="홈 메뉴" title="홈" />
       <BottomMenu src={news} alt="동네생활 메뉴" title="동네생활" />
       <BottomMenu src={placeMarker} alt="근처 메뉴" title="내 근처" />
       <BottomMenu src={chat} alt="채팅 메뉴" title="채팅" />
       <BottomMenu src={user} alt="나의당근 메뉴" title="나의 당근" />
-    </div>
+    </nav>
   );
 };
 
 const BottomMenu = ({ src, alt, title }) => {
   return (
-    <button type="button">
+    <button type="button" className="bottom__btn">
       <img src={src} alt={alt} />
-      <span>{title}</span>
+      <span className="btn__name">{title}</span>
     </button>
   );
 };
