@@ -19,6 +19,8 @@ button {
   box-sizing: border-box;
   top: 0;
   background: #fff;
+  border-bottom: 1px solid #eee;
+
 }
 
 .post-palce__btn {
