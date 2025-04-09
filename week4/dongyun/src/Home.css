@@ -108,8 +108,29 @@ body {
 .item-img {
   width: 110px;
   height: 110px;
-  border-radius: 4px;
   margin-right: 16px;
+
+  /* 2안 : absolute로 띄우고, 정렬 */
+  /* overflow: hidden;
+  position: relative; */
+}
+
+.item-img > img {
+  border-radius: 4px;
+
+  /* 1안 : img 태그에 object-fit 사용용 */
+  width: 110px;
+  height: 110px;
+  object-fit: cover;
+
+  /* 2안 : absolute로 띄우고, 정렬 */
+  /* position: absolute;
+  width: 100%;
+  width: 110px;
+  height: 110px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); */
 }
 
 .item-info {
