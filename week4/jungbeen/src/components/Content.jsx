@@ -29,7 +29,7 @@ function Content({ data }) {
       } = item;
       return (
         isSold === true && (
-          <article>
+          <article className="post">
             <img className="thumbnail" src={IMGS[image.split(".")[0]]} />
             <div className="item-description">
               <p className="item-name">{title}</p>
