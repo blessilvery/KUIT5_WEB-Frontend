@@ -8,12 +8,12 @@ import marketModel from "../public/dummy_assets/MarketModel"
 function Home() {
 
   return (
-    <body>
+    <>
       <UpperNav location={marketModel.location}></UpperNav>
       <Market items={marketModel.items}></Market>
       <PostingBtn></PostingBtn>
       <LowerNav></LowerNav>
-    </body>
+    </>
   )
 }
 
