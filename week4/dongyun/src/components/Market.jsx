@@ -7,7 +7,7 @@ function Market({ items }) {
         <section className="market">
             {
                 items.map(
-                    item => <MarketItem item={item} key={item.title}></MarketItem>
+                    item => item.isSold ? <MarketItem item={item} key={item.title} /> : null
                 )
             }
         </section>
