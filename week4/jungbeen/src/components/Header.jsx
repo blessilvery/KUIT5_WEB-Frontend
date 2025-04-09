@@ -1,14 +1,13 @@
-import marketModel from "../models/MarketModel";
 import expandArrow from "../assets/expand-arrow.svg";
 import search from "../assets/search.svg";
 import menu from "../assets/menu.svg";
 import notification from "../assets/notification.svg";
 
-function Header() {
+function Header({ data }) {
   return (
     <header className="page-header">
       <span className="dong-selector">
-        {marketModel.location}
+        {data.location}
         <button>
           <img src={expandArrow} alt="expand-arrow"></img>
         </button>
