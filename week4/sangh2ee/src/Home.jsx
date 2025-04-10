@@ -6,6 +6,7 @@ import styles from "./index.css";
 import marketModel from './models/MarketModel';
 
 const Home = () => {
+    
   return (
     <div>
       <div>
@@ -17,6 +18,7 @@ const Home = () => {
             <Content key={index} item={item} /> 
           )
         ))}
+
         <BottomNav />
       </div>
     </div>
