@@ -1,0 +1,20 @@
+.container{
+    display: flex;
+    justify-content: space-between;
+
+    padding: 10px;
+    background-color: purple;
+    border-radius: 8px;
+}
+
+.item{
+    flex-basis: 150px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: orange;
+    border: 1.5px solid black;
+    width: 30px;
+    border-radius: 4px;
+}
