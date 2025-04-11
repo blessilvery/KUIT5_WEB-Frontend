@@ -3,7 +3,7 @@ import React from 'react';
 const Content = ({ items }) => {
     return (
         <div>
-            <div className="product_container">
+        <div className="product_container">
                 <article className="product_bottombanner_container">
                     {items.map(
                         (
@@ -36,10 +36,10 @@ const Content = ({ items }) => {
                                     </div>
                                 </div>
                             </section>
-                        )
-                    )}
-                </article>
-            </div>
+                     )
+             )}
+        </article>
+    </div>
             <button className="plus_container">
                 <div className="plus_button">
                     <img src="/assets/plus.svg" alt="더하기" />
