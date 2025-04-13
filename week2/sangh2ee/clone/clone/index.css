@@ -1,0 +1,143 @@
+/*Global Styles*/
+button{
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    outline: inherit;
+}
+
+/*Daangn Styles*/
+
+.post-header {
+    position : relative;
+}
+
+.post-header header{
+    width:100%;
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 16px;
+    box-sizing: border-box;
+}
+
+.post-header .post-header__icon-container{
+    display: flex;
+    gap:16px;
+    align-items: center;
+}
+
+.post-header .post__image img{
+    max-width:100%;
+    max-height:100%
+}
+
+.post{
+    padding: 0 16px;
+}
+
+.post__header,
+.post__content {
+    padding:16px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.post__header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.post__header .header__user{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.post > section:last-child{
+    border-bottom: none;
+}
+
+.header__user .user__profile-img{
+    width:40px;
+    height:40px;
+    border-radius: 100%;
+}
+
+.header__user .user__info{
+    display: flex;
+    flex-direction: column;
+}
+
+.header__user .user__info .user__name{
+    margin-bottom: 4px;
+    color: #000;
+    font-family: Inter;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 18px; /* 128.571% */
+}
+
+
+.header__user .user__info .user__address{
+    color: #4F4F4F;
+
+    /* 12 */
+    font-family: Inter;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 16px; /* 133.333% */
+}
+
+.post__header .header__temperature{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.header__temperature .temperature__container{
+    display: flex;
+    margin-bottom: 4px;
+    align-items: center;
+}
+
+.temperature__container .temperature__indicator{
+    margin-right: 4px;
+    color: #4AC1DB;
+    font-family: Inter;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 18px; /* 128.571% */
+}
+
+.temperature__indicator .temperature__bar{
+    height: 2px;
+    width: 100%;
+    background-color: #d9d9d9;
+    border-radius: 10px;
+}
+
+.temperature__bar--value{
+    width: 37%
+    height: 2px;
+    border-radius: 10px;
+    background-color: #4ac1db;
+}
+
+.header__temperature .temperature__desc{
+    color: #8C8C8C;
+    font-family: Inter;
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 12px; /* 120% */
+    text-decoration-line: underline;
+    text-decoration-style: solid;
+    text-decoration-skip-ink: none;
+    text-decoration-thickness: auto;
+    text-underline-offset: auto;
+    text-underline-position: from-font;
+}
