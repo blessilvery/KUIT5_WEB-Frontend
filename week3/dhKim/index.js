@@ -47,16 +47,15 @@ function updateTodo(id){
 
   
     const li=[...list.children].find(li=>
-        li.querySelector("span").textContent===todos.find(todo=>todo.id===id).text
+        li.id===String(id)
     );
-//const li는 
-//list의 자식요소들(li) 중에 li의 span요소의 textContent와 
-// 매개변수 id에 해당하는 todos의 text가 일치하는 li를 설정
-
+    //const li는 
+    //list의 자식요소들(li) 중에 li의 span요소의 textContent와 
+    // 매개변수 id에 해당하는 todos의 text가 일치하는 li를 설정
 
     if(!li) return;
     //todo.id에 있다...그게....
-    const todo=todos.find(todo=>todo.id===id);//이 때 todo는 객체
+    const todo=todos.find(todo=>String(todo.id)===li.id);//이 때 todo는 객체
     const mend_input=document.createElement("input");
 
     mend_input.type="text";
@@ -67,7 +66,7 @@ function updateTodo(id){
             const newText=mend_input.value.trim();
             if(newText){
                 todos=todos.map(todo=>
-                    todo.id===id?{...todo,text:newText}:todo
+                    String(todo.id)===li.id?{...todo,text:newText}:todo
                 );//todos에 수정된 text 업데이트
             }
             render();//렌더를 한번더 해준다.
@@ -87,7 +86,8 @@ function render() {
     const li = document.createElement("li");
     li.className = todo.done ? "done" : "";
     //todo.done이 true라면 li에 클래스명은 done으로 변경
-
+    //li의 id를 객체의 id로 설정한다. 
+    li.id=String(todo.id);
     const span = document.createElement("span");
     span.textContent = todo.text;
     span.style.cursor = "pointer";
