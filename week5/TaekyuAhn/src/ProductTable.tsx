@@ -7,9 +7,10 @@ type Props = {
   products: ProductType[];
   filterText: string;
   isStockOnly: boolean;
+  deleteProduct: (product: ProductType) => void;
 };
 
-const ProductTable = ({ isStockOnly, filterText, products }: Props) => {
+const ProductTable = ({ isStockOnly, filterText, products, deleteProduct }: Props) => {
   const rows: JSX.Element[] = [];
   let lastCategory: string = "";
 
@@ -36,7 +37,9 @@ const ProductTable = ({ isStockOnly, filterText, products }: Props) => {
           ></ProductCategoryRow>
         );
       }
-      rows.push(<ProductRow product={product} key={product.name}></ProductRow>);
+      rows.push(
+        <ProductRow product={product} key={product.name} deleteProduct={deleteProduct}></ProductRow>
+      );
 
       lastCategory = product.category;
     });

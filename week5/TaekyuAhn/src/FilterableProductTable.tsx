@@ -17,6 +17,10 @@ const FilterableProductTable = ({ products, setProducts }: Props) => {
     setProducts((prev) => [...prev, product]);
   };
 
+  const deleteProduct = (product: ProductType) => {
+    setProducts((prev) => prev.filter((item) => item !== product));
+  };
+
   return (
     <div>
       <SearchBar
@@ -29,6 +33,7 @@ const FilterableProductTable = ({ products, setProducts }: Props) => {
         products={products}
         filterText={filterText}
         isStockOnly={inStockOnly}
+        deleteProduct={deleteProduct}
       ></ProductTable>
       <InputBar addProduct={addProduct}></InputBar>
     </div>
