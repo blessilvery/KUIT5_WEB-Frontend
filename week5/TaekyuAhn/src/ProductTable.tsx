@@ -8,9 +8,16 @@ type Props = {
   filterText: string;
   isStockOnly: boolean;
   deleteProduct: (product: ProductType) => void;
+  updateProduct: (prevProduct: ProductType, newProduct: ProductType) => void;
 };
 
-const ProductTable = ({ isStockOnly, filterText, products, deleteProduct }: Props) => {
+const ProductTable = ({
+  isStockOnly,
+  filterText,
+  products,
+  deleteProduct,
+  updateProduct,
+}: Props) => {
   const rows: JSX.Element[] = [];
   let lastCategory: string = "";
 
@@ -38,7 +45,12 @@ const ProductTable = ({ isStockOnly, filterText, products, deleteProduct }: Prop
         );
       }
       rows.push(
-        <ProductRow product={product} key={product.name} deleteProduct={deleteProduct}></ProductRow>
+        <ProductRow
+          product={product}
+          key={product.name}
+          deleteProduct={deleteProduct}
+          updateProduct={updateProduct}
+        ></ProductRow>
       );
 
       lastCategory = product.category;
