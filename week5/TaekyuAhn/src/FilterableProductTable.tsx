@@ -1,15 +1,22 @@
-import React, { useState } from "react";
+import React, { Dispatch, SetStateAction, useState } from "react";
 import SearchBar from "./SearchBar";
 import ProductTable from "./ProductTable";
 import { ProductType } from "./App";
+import InputBar from "./InputBar";
 
 type Props = {
   products: ProductType[];
+  setProducts: Dispatch<SetStateAction<ProductType[]>>;
 };
 
-const FilterableProductTable = ({ products }: Props) => {
+const FilterableProductTable = ({ products, setProducts }: Props) => {
   const [filterText, setFilterText] = useState("");
   const [inStockOnly, setInStockOnly] = useState(false);
+
+  const addProduct = (product: ProductType) => {
+    setProducts((prev) => [...prev, product]);
+  };
+
   return (
     <div>
       <SearchBar
@@ -23,6 +30,7 @@ const FilterableProductTable = ({ products }: Props) => {
         filterText={filterText}
         isStockOnly={inStockOnly}
       ></ProductTable>
+      <InputBar addProduct={addProduct}></InputBar>
     </div>
   );
 };

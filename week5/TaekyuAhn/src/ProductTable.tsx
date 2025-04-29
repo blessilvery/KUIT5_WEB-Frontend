@@ -13,24 +13,33 @@ const ProductTable = ({ isStockOnly, filterText, products }: Props) => {
   const rows: JSX.Element[] = [];
   let lastCategory: string = "";
 
-  products.map((product, index) => {
-    if (product.name.toLowerCase().indexOf(filterText.toLowerCase()) === -1) {
-      return;
-    }
+  products
+    .sort((a, b) => {
+      if (a.category > b.category) return 1;
+      if (a.category < b.category) return -1;
+      return 0;
+    })
+    .map((product, index) => {
+      if (product.name.toLowerCase().indexOf(filterText.toLowerCase()) === -1) {
+        return;
+      }
 
-    if (isStockOnly && !product.stocked) {
-      return;
-    }
+      if (isStockOnly && !product.stocked) {
+        return;
+      }
 
-    if (product.category !== lastCategory) {
-      rows.push(
-        <ProductCategoryRow category={product.category} key={product.category}></ProductCategoryRow>
-      );
-    }
-    rows.push(<ProductRow product={product} key={product.name}></ProductRow>);
+      if (product.category !== lastCategory) {
+        rows.push(
+          <ProductCategoryRow
+            category={product.category}
+            key={product.category}
+          ></ProductCategoryRow>
+        );
+      }
+      rows.push(<ProductRow product={product} key={product.name}></ProductRow>);
 
-    lastCategory = product.category;
-  });
+      lastCategory = product.category;
+    });
 
   return (
     <table>
