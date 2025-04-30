@@ -25,7 +25,7 @@ const SearchBar = ({
       <label>
         <input
           type="checkbox"
-          ckecked={inStockOnly}
+          checked={inStockOnly}
           onChange={handleCheckboxChange}
         />
         Only show products in stock
