@@ -17,7 +17,8 @@ function FilterableProductTable({products, setProducts}){
             <ProductTable
                 products={products}
                 filterText={filterText}
-                inStockOnly={inStockOnly}/>
+                inStockOnly={inStockOnly}
+                setProducts={setProducts}/>
             <InputBar addProduct={setProducts}/>
         </>
     )

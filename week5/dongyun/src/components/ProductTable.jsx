@@ -1,7 +1,7 @@
 import ProductCategoryRow from "./ProductCategoryRow.jsx";
 import ProductRow from "./ProductRow.jsx";
 
-function ProductTable({products, filterText, inStockOnly}) {
+function ProductTable({products, filterText, inStockOnly, setProducts}) {
     let lastCategory = ""
     const rows = []
 
@@ -16,11 +16,18 @@ function ProductTable({products, filterText, inStockOnly}) {
         }
 
         if (product.category !== lastCategory) {
-            rows.push(<ProductCategoryRow key={product.category}
-                                       category={product.category}/>)
+            rows.push(
+                <ProductCategoryRow key={product.category}
+                                       category={product.category}/>
+            )
         }
-        rows.push(<ProductRow product={product} key={product.name}/>)
-        lastCategory = product.category
+        rows.push(
+                <ProductRow product={product}
+                            products={products}
+                              setProducts={setProducts}
+                              key={product.name}/>
+)
+        lastCategory = product.category;
     });
 
     return (
