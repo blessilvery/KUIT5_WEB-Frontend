@@ -8,7 +8,10 @@ function InputBar({addProduct}) {
         setNewProduct((prevState) => ({...prevState, [label]: value}));
     }
 
-    const handleAddNewProduct = () => addProduct(newProduct);
+    const handleAddNewProduct = () => {
+        console.log(newProduct);
+        addProduct((prevState) =>  ([...prevState, newProduct]))
+    };
 
     return (
         <form>
