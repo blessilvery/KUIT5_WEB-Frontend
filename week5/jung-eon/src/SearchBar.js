@@ -7,7 +7,7 @@ const SearchBar = ({
   onInStockOnlyChange,
 }) => {
   const handleTextChange = (e) => {
-    console.log(e);
+    onFilterTextChange(e.target.value);
   };
 
   const handleCheckboxChange = (e) => {
