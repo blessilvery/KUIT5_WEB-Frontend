@@ -1,8 +1,9 @@
 import SearchBar from "./SearchBar.jsx";
 import ProductTable from "./ProductTable.jsx";
 import {useState} from "react";
+import InputBar from "./InputBar.jsx";
 
-function FilterableProductTable({products}){
+function FilterableProductTable({products, setProducts}){
     const [filterText, setFilterText] = useState("");
     const [inStockOnly, setInStockOnly] = useState(false);
 
@@ -18,6 +19,7 @@ function FilterableProductTable({products}){
                 products={products}
                 filterText={filterText}
                 inStockOnly={inStockOnly}/>
+            <InputBar addProduct={setProducts}/>
         </>
     )
 }
