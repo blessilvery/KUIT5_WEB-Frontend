@@ -1,12 +1,29 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
-const InputBar = ({ addProduct, categories }) => {
+const InputBar = ({
+  addProduct,
+  categories,
+  editingName,
+  onEdit,
+  handleUpdateProduct,
+  setEditingName,
+  products,
+}) => {
   const [newProduct, setNewProduct] = useState({
     category: "",
+    name: "",
     price: "",
     stocked: true,
-    name: "",
   });
+
+  useEffect(() => {
+    if (editingName) {
+      const productToEdit = products.find((p) => p.name === editingName);
+      if (productToEdit) setNewProduct({ ...productToEdit });
+    } else {
+      setNewProduct({ category: "", name: "", price: "", stocked: true });
+    }
+  }, [editingName, products]);
 
   const handleChange = (value, label) => {
     setNewProduct({ ...newProduct, [label]: value });
@@ -16,11 +33,23 @@ const InputBar = ({ addProduct, categories }) => {
     addProduct(newProduct);
   };
 
+  const handleSubmit = () => {
+    if (editingName) {
+      handleUpdateProduct();
+    } else {
+      addProduct(newProduct);
+      setNewProduct({ category: "", name: "", price: "", stocked: true });
+    }
+  };
+
   const [isCustom, setIsCustom] = useState(true);
   const getEnabledCategories = categories;
 
   return (
     <form>
+      <button onClick={handleSubmit} type="button">
+        {editingName ? "update product" : "add new product"}
+      </button>
       <select
         value={isCustom ? "__custom__" : newProduct.category}
         onChange={(e) => {
@@ -64,7 +93,7 @@ const InputBar = ({ addProduct, categories }) => {
         onChange={(e) => handleChange(e.target.value, "name")}
         placeholder="name..."
       />
-      <button onClick={handleAddNewProduct} type={"button"}>
+      <button onClick={handleAddNewProduct} type="button">
         add new product
       </button>
       <input
