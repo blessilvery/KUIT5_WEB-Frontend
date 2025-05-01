@@ -1,70 +1,83 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react';
 
+const InputBar = ({ addProduct, productToEdit }) => {
+  const [newProduct, setNewProduct] = useState({
+    id: null,
+    category: '',
+    price: '',
+    stocked: true,
+    name: '',
+  });
 
-const InputBar = ({addProduct, productToEdit}) => {
-    const[newProduct,setNewProduct] = useState({
-        category:"",
-        price:"",
-        stocked: true,
-        name:"",
-    });
-
+  // productToEdit이 있을 경우 해당 상품으로 상태 초기화
+  useEffect(() => {
     if (productToEdit) {
       setNewProduct(productToEdit);
-      var change = document.getElementById("category");
-      change.value = newProduct.category;
-      change = document.getElementById("price");
-      change.value = newProduct.price;
-      change = document.getElementById("name");
-      change.value = newProduct.name;
+    } else {
+      setNewProduct({
+        id: null,
+        category: '',
+        price: '',
+        stocked: true,
+        name: '',
+      });
     }
+  }, [productToEdit]);
 
-    const handleChange = (value,label) => {
-        setNewProduct((prev) => ({...prev,[label]:value}));
-    };
+  const handleChange = (value, label) => {
+    setNewProduct((prev) => ({
+      ...prev,
+      [label]: label === 'stocked' ? value === 'true' : value,
+    }));
+  };
 
-    const handleAddNewProduct = () => {
-        addProduct(newProduct);
-    };
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    addProduct(newProduct); // 상품 추가 또는 수정
+    setNewProduct({
+      id: null,
+      category: '',
+      price: '',
+      stocked: true,
+      name: '',
+    }); // 폼 초기화
+  };
 
   return (
-    <form>
+    <form onSubmit={handleSubmit}>
       <input
-        id = "category"
+        id="category"
         type="text"
         value={newProduct.category}
-        onChange={(e) => handleChange(e.target.value, "category")}
+        onChange={(e) => handleChange(e.target.value, 'category')}
         placeholder="Category..."
       />
       <input
-      id = "price"
+        id="price"
         type="text"
         value={newProduct.price}
-        onChange={(e) => handleChange(e.target.value, "price")}
+        onChange={(e) => handleChange(e.target.value, 'price')}
         placeholder="Price..."
       />
       <select
-        value={newProduct.stocked}
-        onChange={(e) => handleChange(e.target.value, "stocked")}
+        value={newProduct.stocked.toString()}
+        onChange={(e) => handleChange(e.target.value, 'stocked')}
       >
         <option value="true">In Stock</option>
         <option value="false">Out of Stock</option>
       </select>
       <input
-        id = "name"
+        id="name"
         type="text"
         value={newProduct.name}
-        onChange={(e) => handleChange(e.target.value, "name")}
-        style={{
-          color: newProduct.stocked ?  "black" : "red", // stocked가 true면 검정색, false면 빨간색
-        }}
+        onChange={(e) => handleChange(e.target.value, 'name')}
         placeholder="Name..."
       />
-      <button onClick={handleAddNewProduct} type="button">
-        Add New Product
+      <button type="submit">
+        {productToEdit ? 'Save Changes' : 'Add New Product'}
       </button>
     </form>
-  )
-}
+  );
+};
 
-export default InputBar
+export default InputBar;

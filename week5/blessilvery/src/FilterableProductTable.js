@@ -1,42 +1,55 @@
-import React, { useState } from 'react'
-import ProductTable from './ProductTable'
-import SearchBar from './SearchBar'
-import InputBar from "./InputBar.js";
-import ProductRow from "./ProductRow";
+import React, { useState } from 'react';
+import ProductTable from './ProductTable';
+import SearchBar from './SearchBar';
+import InputBar from './InputBar';
 
-const FilterableProductTable = ({products , setProducts}) => {
-    const[filterText,setFilterText] = useState("");
-    const [inStockOnly,setInStockOnly] = useState(false);
+const FilterableProductTable = ({ products, setProducts }) => {
+  const [filterText, setFilterText] = useState('');
+  const [inStockOnly, setInStockOnly] = useState(false);
+  const [productToEdit, setProductToEdit] = useState(null); // 수정할 상품 상태
 
-    const addProduct = (product) => {
-        setProducts((prev) => [...prev,product]);
-    };
+  // 새 상품 추가
+  const addProduct = (product) => {
+    if (product.id) {
+      // 수정 모드일 경우
+      setProducts((prev) =>
+        prev.map((p) => (p.id === product.id ? product : p)) // id가 일치하는 상품 수정
+      );
+    } else {
+      // 새 상품 추가 모드일 경우
+      setProducts((prev) => [...prev, { ...product, id: Date.now() }]); // 새 상품 추가
+    }
+  };
 
-    const handleDeleteProduct = (productToDelete) => {
-      setProducts((prev) => prev.filter((p) => p !== productToDelete));
-    };
+  // 상품 삭제
+  const handleDeleteProduct = (productToDelete) => {
+    setProducts((prev) => prev.filter((p) => p.id !== productToDelete.id));
+  };
 
-    const handleEditProduct = (productToEdit) => {
-      console.log('수정할 상품:', productToEdit);
-      // 여기서 InputBar로 값을 보내거나 수정 상태 저장
-      <InputBar addProduct ={productToEdit} />
-      handleDeleteProduct(productToEdit);
-    };
+  // 상품 수정
+  const handleEditProduct = (productToEdit) => {
+    setProductToEdit(productToEdit); // 수정할 상품 정보를 상태로 저장
+  };
 
   return (
     <div>
-        <SearchBar filterText = {filterText} inStockOnly = {inStockOnly} onFilterTextChange = {setFilterText} onInStockOnlyChange = {setInStockOnly}/>
-        <ProductTable
+      <SearchBar
+        filterText={filterText}
+        inStockOnly={inStockOnly}
+        onFilterTextChange={setFilterText}
+        onInStockOnlyChange={setInStockOnly}
+      />
+      <ProductTable
         products={products}
         filterText={filterText}
         inStockOnly={inStockOnly}
-        onDelete={handleDeleteProduct}  // 삭제 처리 함수 전달
-        onEdit={handleEditProduct}  // 수정 처리 함수 전달
+        onDelete={handleDeleteProduct}
+        onEdit={handleEditProduct}
       />
-        <InputBar addProduct = {addProduct}/>
-
+      {/* productToEdit이 있을 경우 InputBar를 수정 모드로 렌더링 */}
+      <InputBar addProduct={addProduct} productToEdit={productToEdit} />
     </div>
-  )
-}
+  );
+};
 
-export default FilterableProductTable
+export default FilterableProductTable;
