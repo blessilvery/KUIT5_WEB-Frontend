@@ -7,28 +7,34 @@ const ProductTable = ({ products, filterText, inStockOnly }) => {
     const rows = [];
     let lastCategory = null;
 
-    products.map((product) => {
-        if (product.name.toLowerCase().indexOf(filterText.toLowerCase()) === -1) {
-            return;
-        }
+    products
+        .sort((a,b)=>{
+            if(a.category<b.category) return -1;
+            if(a.category>b.category) return 1;
+            return 0;
+        })
+        .map((product) => {
+            if (product.name.toLowerCase().indexOf(filterText.toLowerCase()) === -1) {
+                return;
+            }
 
-        if (inStockOnly && !product.stocked) {
-            return;
-        }
+            if (inStockOnly && !product.stocked) {
+                return;
+            }
 
 
-        if (product.category !== lastCategory) {
-            rows.push(
-                <ProductCategoryRow
-                    category={product.category}
-                    key={product.category} />
-            );
+            if (product.category !== lastCategory) {
+                rows.push(
+                    <ProductCategoryRow
+                        category={product.category}
+                        key={product.category} />
+                );
 
-        }
+            }
 
-        rows.push(<ProductRow product={product} key={product.name} />);
-        lastCategory = product.category;
-    });
+            rows.push(<ProductRow product={product} key={product.name} />);
+            lastCategory = product.category;
+        });
 
 
 
