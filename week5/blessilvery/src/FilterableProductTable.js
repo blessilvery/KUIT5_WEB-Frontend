@@ -28,6 +28,7 @@ const FilterableProductTable = ({ products, setProducts }) => {
 
   // 상품 수정
   const handleEditProduct = (productToEdit) => {
+    handleDeleteProduct(productToEdit);
     setProductToEdit(productToEdit); // 수정할 상품 정보를 상태로 저장
   };
 
