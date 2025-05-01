@@ -1,10 +1,12 @@
-import React from "react";
+import { useState } from "react";
 import DeleteProductRow from "./DeleteProductRow";
 import ModifyProductRow from "./ModidyProductRow";
 
-const ProductRow = ({ product }) => {
-  const deleteProduct = (newProduct) => {
-    setProducts((previousData) => [...previousData, newProduct]);
+const ProductRow = ({ product, setProducts }) => {
+  const deleteProduct = (productToDelete) => {
+    setProducts((prevProducts) =>
+      prevProducts.filter((p) => p.name !== productToDelete.name)
+    );
   };
 
   return (
@@ -14,7 +16,7 @@ const ProductRow = ({ product }) => {
       </td>
       <td>{product.price}</td>
       <td>
-        <DeleteProductRow deleteProduct={deleteProduct} />
+        <DeleteProductRow product={product} deleteProduct={deleteProduct} />
       </td>
       <td>
         <ModifyProductRow />

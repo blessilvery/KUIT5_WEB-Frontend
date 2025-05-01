@@ -25,6 +25,7 @@ const FilterableProductTable = ({ products, setProducts }) => {
         inStockOnly={inStockOnly}
         onFilterTextChange={setFilterText}
         onInStockOnlyChange={setInStockOnly}
+        setProducts={setProducts}
       />
       <InputBar addProduct={addProduct} />
     </div>
