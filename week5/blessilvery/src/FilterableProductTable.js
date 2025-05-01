@@ -10,7 +10,7 @@ const FilterableProductTable = ({products , setProducts}) => {
 
     const addProduct = (product) => {
         setProducts((prev) => [...prev,product]);
-    }
+    };
 
     const handleDeleteProduct = (productToDelete) => {
       setProducts((prev) => prev.filter((p) => p !== productToDelete));
@@ -19,6 +19,8 @@ const FilterableProductTable = ({products , setProducts}) => {
     const handleEditProduct = (productToEdit) => {
       console.log('수정할 상품:', productToEdit);
       // 여기서 InputBar로 값을 보내거나 수정 상태 저장
+      <InputBar addProduct ={productToEdit} />
+      handleDeleteProduct(productToEdit);
     };
 
   return (

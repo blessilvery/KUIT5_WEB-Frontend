@@ -28,8 +28,8 @@ const ProductTable = ({ products, filterText, inStockOnly, onDelete, onEdit }) =
         if(product.category!=lastCategory){
             rows.push(<ProductCategoryRow category = {product.category} key={product.category}/> );
         }
-        rows.push(<ProductRow product = {product} key = {product.name}/>)
-
+        rows.push(<ProductRow product = {product} key = {product.name} onDelete = {onDelete} onEdit = {onEdit}/>)
+        
         lastCategory = product.category;
     })
 
@@ -42,14 +42,7 @@ const ProductTable = ({ products, filterText, inStockOnly, onDelete, onEdit }) =
             </tr>
         </thead>
         <tbody>
-        {filteredProducts.map((product) => (
-          <ProductRow
-            key={product.name}
-            product={product}
-            onDelete={onDelete}
-            onEdit={onEdit}
-          />
-        ))}
+        {rows}
       </tbody>
     </table>
    );

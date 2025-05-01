@@ -6,7 +6,7 @@ const ProductRow = ({ product, onDelete, onEdit }) => {
         <td style={{color:product.stocked ? "black" : "red"}}>{product.name}</td>
         <td>{product.price}</td>
 
-        <td>{product.category}</td>
+    
         <td>
           <button onClick={() => onEdit(product)}>수정</button>
           <button onClick={() => onDelete(product)}>삭제</button>
