@@ -3,14 +3,16 @@ import ProductCategoryRow from "./ProductCategoryRow";
 import ProductRow from "./ProductRow";
 
 
-const ProductTable = ({ products, filterText, inStockOnly }) => {
+const ProductTable = ({ products, filterText, inStockOnly,deleteProduct,editProduct }) => {
     const rows = [];
     let lastCategory = null;
 
+
+
     products
-        .sort((a,b)=>{
-            if(a.category<b.category) return -1;
-            if(a.category>b.category) return 1;
+        .sort((a, b) => {
+            if (a.category < b.category) return -1;
+            if (a.category > b.category) return 1;
             return 0;
         })
         .map((product) => {
@@ -32,7 +34,7 @@ const ProductTable = ({ products, filterText, inStockOnly }) => {
 
             }
 
-            rows.push(<ProductRow product={product} key={product.name} />);
+            rows.push(<ProductRow product={product} deleteProduct={deleteProduct} editProduct={editProduct} key={product.name} />);
             lastCategory = product.category;
         });
 
@@ -40,18 +42,19 @@ const ProductTable = ({ products, filterText, inStockOnly }) => {
 
 
     return (
-
-        <table>
-            <thead>
-                <tr>
-                    <th>Name</th>
-                    <th>Price</th>
-                </tr>
-            </thead>
-            <tbody>
-                {rows}
-            </tbody>
-        </table>
+        <form>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Price</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {rows}
+                </tbody>
+            </table>
+        </form>
     );
 };
 
