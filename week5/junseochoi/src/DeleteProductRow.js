@@ -7,7 +7,7 @@ const DeleteProductRow = ({ product, deleteProduct }) => {
 
   return (
     <button onClick={handleDeleteProduct} type="button">
-      삭제
+      ❌
     </button>
   );
 };

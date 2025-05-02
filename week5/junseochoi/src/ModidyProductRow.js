@@ -1,7 +1,7 @@
 import React from "react";
 
 const ModifyProductRow = () => {
-  return <div>Modify</div>;
+  return <div></div>;
 };
 
 export default ModifyProductRow;

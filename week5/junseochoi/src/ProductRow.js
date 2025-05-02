@@ -51,9 +51,9 @@ const ProductRow = ({ product, setProducts }) => {
       </td>
       <td>
         {isEditing ? (
-          <button onClick={productToModify}>저장</button>
+          <button onClick={productToModify}>💾</button>
         ) : (
-          <button onClick={() => setIsEditing(true)}>수정</button>
+          <button onClick={() => setIsEditing(true)}>✏️</button>
         )}
       </td>
     </tr>
