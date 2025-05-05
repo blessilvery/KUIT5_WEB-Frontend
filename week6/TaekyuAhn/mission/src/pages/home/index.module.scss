@@ -1,0 +1,14 @@
+.contents {
+  width: 100%;
+  height: 100%;
+  padding: 24px;
+  padding-top: 70px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 70px;
+
+  &__textArea {
+  }
+}
