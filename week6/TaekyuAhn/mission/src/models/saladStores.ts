@@ -1,4 +1,4 @@
-const saladStores = [
+export const saladStores = [
   {
     rank: 1,
     name: "샐로리 한남점",
@@ -43,8 +43,8 @@ const saladStores = [
     rank: null,
     name: "힘난다 샐러드",
     rating: 4.8,
-    reviews: null, // 리뷰 수는 이미지에 잘려있음
-    deliveryTime: null,
-    deliveryFee: null,
+    reviews: 321,
+    deliveryTime: "10~20분",
+    deliveryFee: "1,500원",
   },
 ];
