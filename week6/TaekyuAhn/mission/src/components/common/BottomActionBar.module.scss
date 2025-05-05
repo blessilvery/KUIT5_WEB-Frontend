@@ -6,6 +6,7 @@
 
   border-radius: 16px 16px;
   box-shadow: 0px -8px 16px 0px #0000001a;
+  background-color: white;
 
   display: flex;
   flex-direction: row;
@@ -29,7 +30,5 @@
       line-height: 100%;
       letter-spacing: 0px;
     }
-  }
-  &__textArea {
   }
 }

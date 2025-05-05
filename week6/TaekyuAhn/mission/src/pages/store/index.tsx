@@ -3,6 +3,7 @@ import StoreInfoBox from "../../components/store/StoreInfoBox";
 import TopNav from "../../components/common/TopNav";
 import MenuList from "../../components/store/MenuList";
 import styles from "./index.module.scss";
+import BottomActionBar from "../../components/common/BottomActionBar";
 
 const index = () => {
   return (
@@ -10,6 +11,7 @@ const index = () => {
       <TopNav />
       <StoreInfoBox />
       <MenuList />
+      <BottomActionBar />
     </div>
   );
 };
