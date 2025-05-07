@@ -1,12 +1,10 @@
 import React from "react";
 
-import Router from './routes/Router'
-import GlobalStyles from "./components/GlobalStyles";
+import Router from './pages/Router'
 
 const App = () => {
 
   return(<>
-    <GlobalStyles/>
     <Router/>
     </>
   )
