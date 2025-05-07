@@ -5,15 +5,20 @@ import { createBrowserRouter, RouterProvider} from "react-router-dom";
 import Home from "./routes/Home.jsx";
 import Stores from "./routes/Stores.jsx"
 import Cart from "./routes/Cart.jsx"
+import GreetingPage from "./components/GreetingPage.jsx";
 const router = createBrowserRouter([
     {
         path:"/",
         element: <Home />,
         children:[
             {
+                path:"/",
+                element: <GreetingPage/>,
+            },
+            {
                 path:"/store",
                 // path:"/store/:storeId",
-                element: <Stores />
+                element: <Stores category="샐러드"/>
             },
             {
                 path:"/cart",
