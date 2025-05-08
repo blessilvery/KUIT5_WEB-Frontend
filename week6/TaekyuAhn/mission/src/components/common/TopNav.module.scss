@@ -9,6 +9,10 @@
 
   padding: 0px 18px;
 
+  &__backArrow {
+    cursor: pointer;
+  }
+
   &__text {
     font-weight: 600;
     font-size: 16px;

@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "./TopNav.module.scss";
+import { useNavigate } from "react-router-dom";
 
 type Props = {
   text?: string;
@@ -7,9 +8,16 @@ type Props = {
 };
 
 const TopNav = ({ text, clickHandler }: Props) => {
+  const navigate = useNavigate();
+
   return (
     <div className={styles.navBar}>
-      <img src="/imgs/left-chevron.svg" alt="왼쪽 화살표 이미지" />
+      <img
+        className={styles.navBar__backArrow}
+        src="/imgs/left-chevron.svg"
+        alt="왼쪽 화살표 이미지"
+        onClick={() => navigate(-1)}
+      />
       <div onClick={clickHandler} className={styles.navBar__text}>
         {text}
       </div>
