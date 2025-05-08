@@ -3,7 +3,7 @@ import {useNavigate} from "react-router-dom";
 
 const StoreRankingCard = ({store}) =>{
     const navigate = useNavigate()
-    const { rank, name, rating, reviews, deliveryTime, deliveryFee, minOrder, purMethod } = store;
+    const { rank, name, rating, reviews, deliveryTime, deliveryFee} = store;
     const goToStoreMenu = () => {
         navigate('/store/1')
     }

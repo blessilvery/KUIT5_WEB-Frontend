@@ -9,9 +9,9 @@ const StoreInfo = ({storeInfo}) =>{
             <span className="store-detail-name">{name}</span>
             <span className="store-detail-reviews">⭐ {rating} 리뷰{reviews}</span>
             <div className="store-detail-order">
-                <span className="store-detail-order-info">결제방법 {purMethod}</span>
-                <span className="store-detail-order-info">최소주문 {minOrder}</span>
-                <span className="store-detail-order-info">배달시간 {deliveryTime}</span>
+                <span className="store-detail-order-info">결제방법  {purMethod}</span>
+                <span className="store-detail-order-info">최소주문  {minOrder}원</span>
+                <span className="store-detail-order-info">배달시간  {deliveryTime}</span>
             </div>
         </div>
     )
