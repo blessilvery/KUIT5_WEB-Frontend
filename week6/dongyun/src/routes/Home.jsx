@@ -9,7 +9,7 @@ import HomeIndicator from "../components/shared/HomeIndicator.jsx";
 const Home = () => {
 
     return (
-        <>
+        <div style={{position:"absolute"}}>
             <SectionHeader/>
 
             {/*<DeliveryLocationHeaderBase/>*/}
@@ -19,7 +19,7 @@ const Home = () => {
 
             <OrderFooter/>
             <HomeIndicator/>
-        </>
+        </div>
     )
 }
 

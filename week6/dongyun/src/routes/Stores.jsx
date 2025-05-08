@@ -5,7 +5,7 @@ import StoreRankingCard from "../components/StoreRankingCard.jsx";
 const Stores = ({category}) => {
 
     return (
-        <>
+        <div style={{position:"relative", overflow:"hidden"}}>
             <DeliveryLocationHeaderBase mainText={category} isDeleverd={false}/>
             {
                 storeList.map((store )=>{
@@ -16,7 +16,7 @@ const Stores = ({category}) => {
                 })
             }
 
-        </>
+        </div>
     )
 }
 
