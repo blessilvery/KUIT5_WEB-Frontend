@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 import Button from "./Button";
 
@@ -30,7 +31,9 @@ function OrderBar({ total = 0, className }) {
         총 주문금액
       </p>
       <p style={{ fontSize: "17px" }}>{total.toLocaleString()}원</p>
-      <FixedButton value="주문하기" />
+      <Link to={"/cart"}>
+        <FixedButton value="주문하기" />
+      </Link>
     </Bar>
   );
 }

@@ -15,13 +15,28 @@ const HeaderBar = styled.div`
     height: 24px;
   }
 `;
+const HeaderBtn = styled.button`
+  border: none;
+  background-color: inherit;
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-weight: 600;
+  color: #333d4b;
+`;
 
-function Header() {
+function Header({ headerBtn, to }) {
   return (
     <HeaderBar>
       <Link to={"/"}>
         <img src={backArrow} alt="back-arrow" />
       </Link>
+      {headerBtn && (
+        <Link to={to}>
+          <HeaderBtn>{headerBtn}</HeaderBtn>
+        </Link>
+      )}
     </HeaderBar>
   );
 }
