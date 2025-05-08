@@ -2,7 +2,20 @@ import styled from "styled-components";
 
 import Button from "./Button";
 
-const Bar = styled.div``;
+const Bar = styled.div`
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 16px 16px 0 0;
+  padding: 16px 24px;
+  height: 111px;
+  box-sizing: border-box;
+  max-width: 1080px;
+  margin: 0 auto;
+  background-color: white;
+`;
 
 const FixedButton = styled(Button)`
   position: absolute;
