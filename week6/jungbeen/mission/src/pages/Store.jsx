@@ -5,6 +5,7 @@ import Header from "../common/Header";
 import OrderBar from "../common/OrderBar";
 import { menu } from "../models/stores";
 import MenuItem from "../common/MenuItem";
+import star from "../assets/images/star.svg";
 
 const Main = styled.div`
   margin: 0 auto;
@@ -40,7 +41,8 @@ function Store() {
           {store.name}
         </p>
         <p>
-          {store.rating} 리뷰{store.ratingTotal.toLocaleString()}
+          <img src={star} alt="star" /> {store.rating} 리뷰
+          {store.ratingTotal.toLocaleString()}
         </p>
         <p>결제방법 {store.paymethod}</p>
         <p>최소주문 {store.minOrder.toLocaleString()}원</p>

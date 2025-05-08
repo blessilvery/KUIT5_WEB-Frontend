@@ -1,6 +1,8 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 
+import star from "../assets/images/star.svg";
+
 const Item = styled.div`
   padding: 24px 0;
   display: flex;
@@ -44,8 +46,11 @@ function StoresItem({ store, cateName }) {
           >
             {store.name}
           </p>
-          <p>{`${store.rating} (${store.ratingTotal})`}</p>
-          <p>{`${store.eta} ∙ 배달비 ${store.rideTip}원`}</p>
+          <p>
+            <img src={star} alt="star" />
+            {` ${store.rating} (${store.ratingTotal.toLocaleString()})`}
+          </p>
+          <p>{`${store.eta} ∙ 배달비 ${store.rideTip.toLocaleString()}원`}</p>
         </div>
       </Item>
     </StyledLink>

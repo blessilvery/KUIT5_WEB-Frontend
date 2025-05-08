@@ -37,7 +37,7 @@ function Home() {
   const renderButtons = () =>
     category.map((c, idx) => (
       <StyledLink to="/store" state={{ cateName: c.name }}>
-        <GridButton key={idx} cateName={c.name} imgSrc={c.imgName} />
+        <GridButton key={idx} cateName={c.name} imgSrc={c.imgName} idx={idx} />
       </StyledLink>
     ));
   return (
