@@ -25,7 +25,8 @@ const Contents = styled.div`
 function Stores() {
   const location = useLocation();
   const { cateName } = location.state || {};
-  const renderRows = () => stores.map((store) => <StoresItem store={store} />);
+  const renderRows = () =>
+    stores.map((store) => <StoresItem store={store} cateName={cateName} />);
 
   return (
     <Main>

@@ -124,3 +124,48 @@ export const stores = [
     minOrder: 13000,
   },
 ];
+
+export const menu = [
+  {
+    name: "토마트 샐러드",
+    isBest: true,
+    price: 7600,
+    ingredient: "계란, 옥수수, 양파, 올리브, 베이컨, 시저드레싱",
+  },
+  {
+    name: "토마트 샐러드",
+    isBest: false,
+    price: 7600,
+    ingredient: "계란, 옥수수, 양파, 올리브, 베이컨, 시저드레싱",
+  },
+  {
+    name: "토마트 샐러드",
+    isBest: false,
+    price: 7600,
+    ingredient: "계란, 옥수수, 양파, 올리브, 베이컨, 시저드레싱",
+  },
+  {
+    name: "토마트 샐러드",
+    isBest: false,
+    price: 7600,
+    ingredient: "계란, 옥수수, 양파, 올리브, 베이컨, 시저드레싱",
+  },
+  {
+    name: "토마트 샐러드",
+    isBest: false,
+    price: 7600,
+    ingredient: "계란, 옥수수, 양파, 올리브, 베이컨, 시저드레싱",
+  },
+  {
+    name: "토마트 샐러드",
+    isBest: false,
+    price: 7600,
+    ingredient: "계란, 옥수수, 양파, 올리브, 베이컨, 시저드레싱",
+  },
+  {
+    name: "토마트 샐러드",
+    isBest: false,
+    price: 7600,
+    ingredient: "계란, 옥수수, 양파, 올리브, 베이컨, 시저드레싱",
+  },
+];

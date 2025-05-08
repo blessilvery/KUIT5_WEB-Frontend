@@ -19,9 +19,12 @@ const StyledLink = styled(Link)`
   color: inherit;
 `;
 
-function StoresItem({ store }) {
+function StoresItem({ store, cateName }) {
   return (
-    <StyledLink to={`/store/${store.id}`} state={{ store: store }}>
+    <StyledLink
+      to={`/store/${store.id}`}
+      state={{ store: store, cateName: cateName }}
+    >
       <Item>
         <StoreImage />
         <div>
