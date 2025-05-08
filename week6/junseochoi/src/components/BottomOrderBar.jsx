@@ -21,6 +21,7 @@ const BottomDiv = styled.div`
   position: fixed;
   bottom: 0;
   width: 100%;
+  /* box-sizing: border-box; */
   height: 111px;
   flex-shrink: 0;
   border-radius: 16px 16px 0px 0px;

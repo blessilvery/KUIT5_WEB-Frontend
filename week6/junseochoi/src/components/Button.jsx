@@ -10,17 +10,16 @@ const Button = ({ value, width, height }) => {
 };
 
 const StyledButton = styled.button`
-  display: inline-flex;
-  padding: 10px 16px;
-  justify-content: center;
-  align-items: center;
+  display: flex;
   border-radius: 8px;
   background: #3182f6;
   width: ${({ $width }) => $width || "auto"};
   height: ${({ $height }) => $height || "auto"};
+  align-items: center;
+  justify-content: center;
 `;
 
-const ButtonText = styled.span`
+const ButtonText = styled.div`
   color: #fff;
   text-align: center;
   font-family: Pretendard;
