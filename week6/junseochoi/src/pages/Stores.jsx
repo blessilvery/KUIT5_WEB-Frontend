@@ -1,7 +1,8 @@
 import React from "react";
+import BottomOrderBar from "../components/BottomOrderBar";
 
 const Stores = () => {
-  return <div>Stores</div>;
+  return <BottomOrderBar />;
 };
 
 export default Stores;
