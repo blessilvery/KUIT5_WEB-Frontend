@@ -18,7 +18,19 @@ const Stores = () => {
             to={category.path}
             className="category-item"
           >
-            <div>{category.name}</div>
+            <div className="store-info">
+              {category.rank && (
+                <div className="store-rank">{category.rank}위</div>
+              )}
+
+              <div className="store-name">{category.name}</div>
+              <div className="store-rating">
+                ⭐ {category.rating} ({category.reviewCount} 리뷰)
+              </div>
+              <div className="store-delivery">
+                {category.deliveryTime} · 배달비 {category.deliveryFee}
+              </div>
+            </div>
           </Link>
         ))}
       </div>

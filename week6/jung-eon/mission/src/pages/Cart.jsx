@@ -1,5 +1,5 @@
 import React from "react";
-import OrderBar from "../components/OrderBar";
+import Button from "../components/Button";
 
 const Cart = () => {
   return (
@@ -11,22 +11,33 @@ const Cart = () => {
 
       <div className="menu-cart">
         <h1>샐로리 한남점</h1>
-        <h2>최소금액 미달</h2>
+        <p>최소금액 미달</p>
         <div className="menu">
-          <h3>토마토 샐러드</h3>
-          <h4>추천소스, 채소볼, 베이컨추가, 시저드레싱 추가</h4>
-          <h5>10,600원</h5>
-          <h6>1개</h6>
+          <p>토마토 샐러드</p>
+          <p>추천소스, 채소볼, 베이컨추가, 시저드레싱 추가</p>
+          <p>10,600원</p>
+          <p>1개</p>
           <button></button>
         </div>
         <div className="plus-cart">
-          <h7>더 담기 +</h7>
+          <p>더 담기 +</p>
         </div>
-        <div className="receipt"></div>
-      </div>
-
-      <div>
-        <OrderBar />
+        <div className="receipt">
+          <div className="receipt-bar">
+            <p>주문금액</p>
+            <p>10,600원</p>
+          </div>
+          <div className="receipt-bar">
+            <p>배달요금</p>
+            <p>2,000원</p>
+          </div>
+          <div className="receipt-last-bar">
+            <p>총 결제금액</p>
+            <p>12,600원</p>
+          </div>
+          <p>최소 주문금액 13,000원</p>
+          <Button>12,600원 결제하기</Button>
+        </div>
       </div>
     </div>
   );

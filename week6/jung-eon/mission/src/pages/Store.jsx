@@ -18,21 +18,22 @@ const Store = () => {
         <button></button>
       </div>
       <h1>샐로리 한남점</h1>
-      <h2>⭐4.9 리뷰3,919</h2>
+      <p>⭐4.9 리뷰3,919</p>
       <div className="menu-top">
-        <h3>결제방법 토스결제만 현장결제 안됨</h3>
-        <h4>최소주문 13,000원</h4>
-        <h5>배달시간 약 15-25분</h5>
+        <p>결제방법 토스결제만 현장결제 안됨</p>
+        <p>최소주문 13,000원</p>
+        <p>배달시간 약 15-25분</p>
         <div />
-        <h6>샐러드</h6>
+        <p>샐러드</p>
         <div className="menu">
-          {menucategories.map((category) => (
-            <Link
-              key={category.name}
-              to={category.path}
-              className="category-item"
-            >
-              <div>{category.name}</div>
+          {menucategories.map((item) => (
+            <Link key={item.name} to={item.path} className="menu-item">
+              <div className="menu-header">
+                <strong>{item.name}</strong>
+                {item.isBest && <span className="badge"> BEST</span>}
+              </div>
+              <p className="desc">{item.desc}</p>
+              <p className="price">{item.price.toLocaleString()}</p>
               <Button>담기</Button>
             </Link>
           ))}
