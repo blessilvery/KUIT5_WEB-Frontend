@@ -2,31 +2,36 @@ import React from "react";
 import OrderBar from "../components/OrderBar";
 import { Link } from "react-router-dom";
 import foodcategories from "../models/foodcategories";
+import {
+  Screen,
+  Title,
+  SubTitle,
+  CategoryGrid,
+  CategoryItem,
+  CategoryName,
+  CategoryIcon,
+} from "../styles/HomeStyles";
 
 const Home = () => {
   return (
-    <div className="screen">
-      <div className="top-screen">
-        <button></button>
-      </div>
-      <h1>오늘은 무엇을 먹을까요?</h1>
-      <h2>한남중앙로 40길 (한남 빌리지)(으)로 배달</h2>
+    <Screen>
+      <Title>오늘은 무엇을 먹을까요?</Title>
+      <SubTitle>한남중앙로 40길 (한남 빌리지)(으)로 배달</SubTitle>
 
-      <div className="category-grid">
+      <CategoryGrid>
         {foodcategories.map((category) => (
-          <Link
-            key={category.name}
-            to={category.path}
-            className="category-item"
-          >
-            <div>{category.name}</div>
+          <Link key={category.name} to={category.path} className="CategoryBox">
+            <CategoryItem>
+              <CategoryIcon src={category.img} alt={category.name} />
+              <CategoryName>{category.name}</CategoryName>
+            </CategoryItem>
           </Link>
         ))}
-      </div>
+      </CategoryGrid>
       <div>
         <OrderBar />
       </div>
-    </div>
+    </Screen>
   );
 };
 

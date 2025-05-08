@@ -1,11 +1,8 @@
 import React from "react";
+import { BlueBotton } from "../styles/ButtonStyle";
 
 const Button = ({ children, ...props }) => {
-  return (
-    <button className="blue-button" {...props}>
-      {children}
-    </button>
-  );
+  return <BlueBotton {...props}>{children}</BlueBotton>;
 };
 
 export default Button;

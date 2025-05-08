@@ -1,12 +1,13 @@
 const marketcategories = [
   {
-    name: "샐러리 한남점",
+    name: "샐로리 한남점",
     rank: 1,
     rating: 4.9,
     reviewCount: 3919,
     deliveryTime: "13분~30분",
     deliveryFee: "2,000원",
     path: "/store/1",
+    img: "/images/categories/Frame.svg",
   },
   {
     name: "옐로우푸드 샐러드",
@@ -16,6 +17,7 @@ const marketcategories = [
     deliveryTime: "13분~30분",
     deliveryFee: "2,000원",
     path: "/store/2",
+    img: "/images/categories/Frame.svg",
   },
   {
     name: "씬더볼드 한남점",
@@ -25,6 +27,7 @@ const marketcategories = [
     deliveryTime: "13분~30분",
     deliveryFee: "2,000원",
     path: "/store/3",
+    img: "/images/categories/Frame.svg",
   },
   {
     name: "THE 샐러드가득담은",
@@ -33,6 +36,7 @@ const marketcategories = [
     deliveryTime: "13분~30분",
     deliveryFee: "2,000원",
     path: "/store/4",
+    img: "/images/categories/Frame.svg",
   },
   {
     name: "파스토보이",
@@ -41,6 +45,7 @@ const marketcategories = [
     deliveryTime: "13분~30분",
     deliveryFee: "2,000원",
     path: "/store/5",
+    img: "/images/categories/Frame.svg",
   },
   {
     name: "힘난다 샐러드",
@@ -49,6 +54,7 @@ const marketcategories = [
     deliveryTime: "13분~30분",
     deliveryFee: "2,000원",
     path: "/store/6",
+    img: "/images/categories/Frame.svg",
   },
 ];
 

@@ -1,39 +1,56 @@
 import React from "react";
 import OrderBar from "../components/OrderBar";
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import marketcategories from "../models/marketcategories";
+import {
+  Top,
+  Back,
+  MarketList,
+  Market,
+  StoreInfo,
+  CategoryImg,
+  StoreTitle,
+  StoreSubTitle,
+} from "../styles/StoresStyles";
+import { Title } from "../styles/HomeStyles";
 
 const Stores = () => {
+  const navigate = useNavigate();
+
   return (
     <div>
-      <div className="top-screen">
-        <button></button>
-      </div>
-      <h1>샐러드</h1>
+      <Top>
+        <Back onClick={() => navigate(-1)}>
+          <img src="/images/categories/back.svg" alt="뒤로가기" />
+        </Back>
+      </Top>
+      <Title>샐러드</Title>
 
-      <div className="market">
+      <MarketList>
         {marketcategories.map((category) => (
-          <Link
-            key={category.name}
-            to={category.path}
-            className="category-item"
-          >
-            <div className="store-info">
-              {category.rank && (
-                <div className="store-rank">{category.rank}위</div>
-              )}
+          <Market>
+            <Link
+              key={category.name}
+              to={category.path}
+              className="category-item"
+            >
+              <CategoryImg src={category.img} alt={category.name} />
+              <StoreInfo>
+                {category.rank && <StoreTitle>{category.rank}위</StoreTitle>}
 
-              <div className="store-name">{category.name}</div>
-              <div className="store-rating">
-                ⭐ {category.rating} ({category.reviewCount} 리뷰)
-              </div>
-              <div className="store-delivery">
-                {category.deliveryTime} · 배달비 {category.deliveryFee}
-              </div>
-            </div>
-          </Link>
+                <StoreTitle>{category.name}</StoreTitle>
+                <StoreSubTitle>
+                  ⭐ {category.rating} ({category.reviewCount})
+                </StoreSubTitle>
+                <StoreSubTitle>
+                  {category.deliveryTime} · 배달비 {category.deliveryFee}
+                </StoreSubTitle>
+              </StoreInfo>
+            </Link>
+          </Market>
         ))}
-      </div>
+      </MarketList>
       <div>
         <OrderBar />
       </div>
