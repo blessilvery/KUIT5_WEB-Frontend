@@ -35,3 +35,25 @@ export const OrderPrice = styled.h2`
   font-weight: 600;
   line-height: normal;
 `;
+
+export const Bottom2 = styled.div`
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  bottom: 0px;
+  width: 390px;
+  height: 129px;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+`;
+
+export const OrderText2 = styled.h1`
+  color: #6b7684;
+  text-align: center;
+  font-family: Pretendard;
+  font-size: 17px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+`;

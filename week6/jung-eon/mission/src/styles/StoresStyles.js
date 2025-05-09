@@ -3,6 +3,9 @@ import styled from "styled-components";
 export const Top = styled.div`
   width: 390px;
   height: 41px;
+  display: flex;
+  flex-direction: row;
+  gap: 285px;
   position: relative;
   background: #fff;
 `;

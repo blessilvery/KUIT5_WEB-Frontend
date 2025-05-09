@@ -1,51 +1,80 @@
 import React from "react";
-import Button from "../components/Button";
+import OrderBar2 from "../components/OrderBar2";
 import { useNavigate } from "react-router-dom";
+import { Back, Top, StoreTitle } from "../styles/StoresStyles";
+import {
+  Cancel,
+  Border,
+  MenucartTop,
+  Warn,
+  Count,
+  Plus,
+  PlusCart,
+  Receipt,
+  ReceiptBar,
+  LastReceiptBar,
+} from "../styles/CartStyles";
+import {
+  Salad,
+  Line,
+  MenuItem,
+  MenuP,
+  MenuD,
+  MenuInfo,
+} from "../styles/StoreStyles";
+import { Screen } from "../styles/HomeStyles";
 
 const Cart = () => {
   const navigate = useNavigate();
 
   return (
-    <div>
-      <div className="top-screen">
-        <button onClick={() => navigate(-1)} className="back-button">
+    <Screen>
+      <Top>
+        <Back onClick={() => navigate(-1)}>
           <img src="/images/categories/back.svg" alt="뒤로가기" />
-        </button>
-        <button>주문취소</button>
-      </div>
+        </Back>
+        <Cancel>주문취소</Cancel>
+      </Top>
 
       <div className="menu-cart">
-        <h1>샐로리 한남점</h1>
-        <p>최소금액 미달</p>
-        <div className="menu">
+        <Border></Border>
+        <MenucartTop>
+          <Salad>샐로리 한남점</Salad>
+          <Warn>최소금액 미달</Warn>
+        </MenucartTop>
+        <MenuItem>
           <img src="/images/categories/Frame.svg" />
-          <p>토마토 샐러드</p>
-          <p>추천소스, 채소볼, 베이컨추가, 시저드레싱 추가</p>
-          <p>10,600원</p>
-          <p>1개</p>
-          <button></button>
-        </div>
-        <div className="plus-cart">
-          <p>더 담기 +</p>
-        </div>
-        <div className="receipt">
-          <div className="receipt-bar">
-            <p>주문금액</p>
-            <p>10,600원</p>
-          </div>
-          <div className="receipt-bar">
-            <p>배달요금</p>
-            <p>2,000원</p>
-          </div>
-          <div className="receipt-last-bar">
-            <p>총 결제금액</p>
-            <p>12,600원</p>
-          </div>
-          <p>최소 주문금액 13,000원</p>
-          <Button>12,600원 결제하기</Button>
-        </div>
+          <MenuInfo>
+            <StoreTitle>토마토 샐러드</StoreTitle>
+            <MenuD>추천소스, 채소볼, 베이컨추가, 시저드레싱 추가</MenuD>
+            <MenuP>10,600원</MenuP>
+          </MenuInfo>
+          <Count>1개</Count>
+        </MenuItem>
+        <Line></Line>
+        <PlusCart>
+          <Plus>더 담기 +</Plus>
+        </PlusCart>
+        <Border></Border>
       </div>
-    </div>
+      <Receipt>
+        <ReceiptBar>
+          <p>주문금액</p>
+          <p>10,600원</p>
+        </ReceiptBar>
+        <ReceiptBar>
+          <p>배달요금</p>
+          <p>2,000원</p>
+        </ReceiptBar>
+        <LastReceiptBar>
+          <strong>총 결제금액</strong>
+          <strong>12,600원</strong>
+        </LastReceiptBar>
+      </Receipt>
+      <div>
+        <OrderBar2 />
+      </div>
+    </Screen>
   );
 };
 

@@ -1,11 +1,10 @@
 import React from "react";
 import Button from "../components/Button";
 import OrderBar from "../components/OrderBar";
-import { Link } from "react-router-dom";
 import { useParams } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import menucategories from "../models/menucategories";
-import { Back, Top, StoreTitle, StoreSubTitle } from "../styles/StoresStyles";
+import { Back, Top, StoreTitle } from "../styles/StoresStyles";
 import { Title } from "../styles/HomeStyles";
 import {
   StoreEval,
@@ -15,7 +14,13 @@ import {
   Line,
   Salad,
   Menu,
-  ItemImg,
+  MenuInfo,
+  Badge,
+  MenuTitle,
+  MenuImg,
+  MenuP,
+  MenuD,
+  MenuItem,
 } from "../styles/StoreStyles";
 
 const Store = () => {
@@ -46,23 +51,29 @@ const Store = () => {
       <Salad>샐러드</Salad>
       <Menu>
         {menucategories.map((item) => (
-          <Link key={item.name} to={item.path} className="menu-item">
-            <img src={item.img} alt={item.name} />
-            <StoreTitle>
-              <strong>{item.name}</strong>
-              {item.isBest && <span className="badge"> BEST</span>}
-            </StoreTitle>
-            <StoreSubTitle>{item.desc}</StoreSubTitle>
-            <StoreSubTitle>{item.price.toLocaleString()}</StoreSubTitle>
-            <div style={{ position: "absolute", right: "24px", top: "38px" }}>
-              <Button>담기</Button>
-            </div>
-          </Link>
+          <MenuItem key={item.name} to={item.path}>
+            <MenuImg src={item.img} alt={item.name} />
+            <MenuInfo>
+              <MenuTitle>
+                <StoreTitle>{item.name}</StoreTitle>
+                {item.isBest && <Badge> BEST</Badge>}
+              </MenuTitle>
+              <MenuP>{item.price.toLocaleString()}</MenuP>
+              <MenuD>{item.desc}</MenuD>
+
+              <div
+                style={{ position: "relative", left: "250px", bottom: "70px" }}
+              >
+                <Button>담기</Button>
+              </div>
+            </MenuInfo>
+          </MenuItem>
         ))}
+
+        <div>
+          <OrderBar />
+        </div>
       </Menu>
-      <div>
-        <OrderBar />
-      </div>
     </div>
   );
 };
