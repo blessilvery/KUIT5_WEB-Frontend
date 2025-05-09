@@ -6,5 +6,4 @@ export const Greeting =  styled.div`
     width: 298px;
     height: 59px;
     margin: 0 4px;
-    //margin: 0 24px 4px;
 `

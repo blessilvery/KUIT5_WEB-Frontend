@@ -3,6 +3,7 @@
     flex-direction: row;
     padding: 16px 24px 17px;
     box-sizing:border-box;
+    height: 110px;
 }
 
 .cart-image{
@@ -14,6 +15,7 @@
 }
 
 .cart-info{
+    width: 210px;
     display: flex;
     flex-direction: column;
     row-gap: 4px;
@@ -38,7 +40,8 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    position: relative;
+    justify-content: space-evenly;
+    width: 86px;
 }
 
 .cart-menu-count{
@@ -50,10 +53,9 @@
 }
 
 .cart-menu-option{
-    width: 6.63px;
-    height: 11.65px;
-    left: 4.70px;
-    top: 2px;
-    position: absolute;
-    background: #6B7684;
+    /*width: 6.63px;*/
+    /*height: 11.65px;*/
+    /*left: 4.70px;*/
+    /*top: 2px;*/
+    /*position: absolute;*/
 }

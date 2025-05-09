@@ -37,5 +37,7 @@
     font-size: 15px;
     font-family: Pretendard;
     font-weight: 500;
-    word-wrap: break-word
+    word-wrap: break-word;
+    display: flex;
+    flex-direction: row;
 }

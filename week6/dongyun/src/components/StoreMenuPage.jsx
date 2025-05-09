@@ -1,23 +1,23 @@
-import DeliveryLocationHeaderBase from "./DeliveryLocationHeaderBase.jsx";
 import {storeList, saladMenu} from "../models/stores.js";
-import StoreRankingCard from "./StoreRankingCard.jsx";
 import StoreMenuCard from "./StoreMenuCard.jsx";
 import StoreInfo from "./StoreInfo.jsx";
+import styled from "styled-components";
 
-const StoreMenuPage = ({storeName}) =>{
+const MenuCategoryName = styled.div`
+    color: #6B7684;
+    font-size: 17px;
+    font-family: Pretendard;
+    font-weight: 600;
+    word-wrap: break-word;
+    padding: 26px 321px 11px 24px;
+`
+
+const StoreMenuPage = () =>{
 
     return (
         <div>
             <StoreInfo storeInfo={storeList[0]}/>
-            <div
-                style={{color: '#6B7684',
-                    fontSize: '17px',
-                    fontFamily: 'Pretendard',
-                    fontWeight: '600',
-                    wordWrap: 'break-word',
-                    padding: '26px 321px 11px 24px'}}>
-                        샐러드
-            </div>
+            <MenuCategoryName>샐러드</MenuCategoryName>
             {
                 saladMenu.map((salad) => {
                     console.log(salad)

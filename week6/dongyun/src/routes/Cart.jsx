@@ -1,7 +1,7 @@
 import CartCard from "../components/CartCard.jsx";
 import './Cart.css'
 
-function Seperator() {
+const Seperator= () => {
     return (
         <div style={{width: '390px', height: '16px', background: '#F2F4F6'}}></div>
     )
@@ -17,16 +17,18 @@ const Cart = () => {
                     샐로리 한남점
                 </div>
                 <div className="warning-min-order">
-                    최소금액 미달 🚫
+                    최소금액 미달 <img className='warning-min-order-icon' src="/public_assets/warning-icon.svg"/>
                 </div>
             </div>
 
             <CartCard/>
             
             <div className="add-more-cart">
-                더담기 +
+                더담기 <img className="add-more-cart-icon" src="/public_assets/blue-plus-icon.svg"/>
             </div>
+
             <Seperator/>
+
             <div className="cost-info-set">
                 <div className="cost-order">
                     <div className="cost-item">

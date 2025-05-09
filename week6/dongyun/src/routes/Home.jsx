@@ -17,12 +17,7 @@ const Home = () => {
     return (
         <div style={{position:"absolute"}}>
             <SectionHeader/>
-
-            {/*<DeliveryLocationHeaderBase/>*/}
-            {/*<FoodCategory/>*/}
-
             <Outlet/>
-
             {isOrderNow ? null : <OrderFooter/>}
             <HomeIndicator/>
         </div>

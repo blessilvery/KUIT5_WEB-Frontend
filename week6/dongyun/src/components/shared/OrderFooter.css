@@ -17,6 +17,7 @@
 .order-price{
     display: flex;
     flex-direction: column;
+    row-gap: 5px;
 }
 
 .total-price-nav{

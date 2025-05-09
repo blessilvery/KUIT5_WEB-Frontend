@@ -21,7 +21,19 @@
     font-size: 15px;
     font-family: Pretendard;
     font-weight: 500;
-    word-wrap: break-word
+    word-wrap: break-word;
+
+    display: flex;
+    text-align:center;
+    justify-content: center;
+    align-items: center;
+}
+
+.warning-min-order-icon{
+    width: 13px;
+    height: 13px;
+    flex-shrink: 0;
+    margin-left: 6px;
 }
 
 .add-more-cart{
@@ -35,8 +47,17 @@
     font-weight: 600;
     word-wrap: break-word;
 
+    display: flex;
     text-align:center;
     justify-content: center;
+    align-items: center;
+}
+
+.add-more-cart-icon{
+    width: 12px;
+    height: 12px;
+    flex-shrink: 0;
+    margin-left: 3px;
 }
 
 .cost-info-set{
@@ -44,8 +65,7 @@
     flex-direction: column;
     width: 390px;
     box-sizing: border-box;
-    padding-left: 24px;
-    padding-right: 24px;
+    padding: 16px 23px 17px 24px;
 }
 
 .cost-order{
