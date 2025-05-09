@@ -1,27 +1,15 @@
 import React from "react";
 import styled from "styled-components";
 import Button from "./Button";
-import { useNavigate } from "react-router-dom";
 
 const BottomOrderBar = () => {
-  const navigate = useNavigate();
-
-  const handleClick = () => {
-    navigate("/cart");
-  };
-
   return (
     <BottomDiv>
       <div>
         <NavDiv>총 주문금액</NavDiv>
         <CashDiv>12,100원</CashDiv>
       </div>
-      <Button
-        value="주문하기"
-        width="84px"
-        height="38px"
-        onClick={handleClick}
-      />
+      <Button value="주문하기" width="84px" height="38px" LinkBtn="/cart" />
     </BottomDiv>
   );
 };

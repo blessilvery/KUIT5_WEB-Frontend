@@ -1,11 +1,14 @@
 import React from "react";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
-const Button = ({ value, width, height, onClick }) => {
+const Button = ({ value, width, height, LinkBtn }) => {
   return (
-    <StyledButton $width={width} $height={height} onClick={onClick}>
-      <ButtonText>{value}</ButtonText>
-    </StyledButton>
+    <Link to={LinkBtn} style={{ textDecoration: "none" }}>
+      <StyledButton $width={width} $height={height}>
+        <ButtonText>{value}</ButtonText>
+      </StyledButton>
+    </Link>
   );
 };
 
