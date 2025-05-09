@@ -5,11 +5,18 @@ import Title from "../components/Title";
 import StoreList from "../components/StoreList";
 import StoresList from "../models/StoresList";
 import GoBack from "../components/GoBack";
+import { useNavigate } from "react-router-dom";
 
 const Stores = () => {
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    navigate("/");
+  };
+
   return (
     <>
-      <GoBack />
+      <GoBack onClick={handleClick} />
       <S.Header>
         <Title value="샐러드" />
       </S.Header>

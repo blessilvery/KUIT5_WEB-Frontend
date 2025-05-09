@@ -6,11 +6,17 @@ import GoBack from "../components/GoBack";
 import star from "../img/star.svg";
 import MenuList from "../components/MenuList";
 import MenuContentList from "../models/MenuContentList";
+import { useNavigate } from "react-router-dom";
 
 const Store = () => {
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    navigate("/store");
+  };
   return (
     <>
-      <GoBack />
+      <GoBack onClick={handleClick} />
       <S.Header>
         <Title value="샐로리 한남점" />
       </S.Header>

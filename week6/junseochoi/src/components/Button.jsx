@@ -1,15 +1,16 @@
 import React from "react";
 import styled from "styled-components";
 
-const Button = ({ value, width, height }) => {
+const Button = ({ value, width, height, onClick }) => {
   return (
-    <StyledButton $width={width} $height={height}>
+    <StyledButton $width={width} $height={height} onClick={onClick}>
       <ButtonText>{value}</ButtonText>
     </StyledButton>
   );
 };
 
 const StyledButton = styled.button`
+  border: 0;
   display: flex;
   border-radius: 8px;
   background: #3182f6;

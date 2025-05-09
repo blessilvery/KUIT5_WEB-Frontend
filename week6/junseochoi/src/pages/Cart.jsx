@@ -4,11 +4,17 @@ import OrderContentList from "../models/OrderContentList";
 import OrderList from "../components/OrderList";
 import * as C from "./Cart.styles";
 import Button from "../components/Button";
+import { useNavigate } from "react-router-dom";
 
 const Cart = () => {
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    navigate("/store/1");
+  };
   return (
     <>
-      <GoBack value="주문취소" />
+      <GoBack value="주문취소" onClick={handleClick} />
       {OrderContentList.map((item, index) => (
         <OrderList
           key={index}

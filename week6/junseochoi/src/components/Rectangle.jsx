@@ -1,16 +1,24 @@
 import React from "react";
 import styled from "styled-components";
+import { useNavigate } from "react-router-dom";
 
 const Rectangle = ({ img_src, value }) => {
+  const navigate = useNavigate();
+
+  const handleCilck = () => {
+    navigate("/store");
+  };
+
   return (
-    <StyledRectangle>
+    <StyledRectangle onClick={handleCilck}>
       <StyledImage src={img_src} alt="이미지" />
       <StyledText>{value}</StyledText>
     </StyledRectangle>
   );
 };
 
-const StyledRectangle = styled.div`
+const StyledRectangle = styled.button`
+  border: 0;
   display: flex;
   width: 108px;
   padding: 12px 0px 13px 0px;

@@ -1,10 +1,10 @@
 import styled from "styled-components";
 import left_chevron from "../img/left_chevron.svg";
 
-const GoBack = ({ value }) => {
+const GoBack = ({ value, onClick }) => {
   return (
     <GoBackWrap>
-      <GoBackStyle>
+      <GoBackStyle onClick={onClick}>
         <img src={left_chevron} alt="뒤로가기" width="24px" height="24px" />
       </GoBackStyle>
       <GoBackText>{value}</GoBackText>
