@@ -1,0 +1,16 @@
+.contents {
+  width: 20%;
+  height: 50%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+
+  &__title {
+  }
+  &__img {
+    width: 80%;
+  }
+}
