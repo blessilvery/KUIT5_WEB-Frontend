@@ -1,16 +1,19 @@
 import { create } from "zustand";
 import { cardData } from "../models/Data";
-import { dataLength } from "../components/MainBoard/MainBoard";
 
 type StoreType = {
   clickNum: number;
   addClickNum: () => void;
+  resetClickNum: () => void;
   cardStateList: boolean[];
   clickCard: (index: number) => void;
 };
 
+const dataLength = cardData.length;
+
 const useStore = create<StoreType>((set) => ({
   clickNum: 0,
+  resetClickNum: () => set((state) => ({ clickNum: 0 })),
   addClickNum: () => set((state) => ({ clickNum: state.clickNum + 1 })),
   cardStateList: new Array(dataLength).fill(false),
   clickCard: (index) =>

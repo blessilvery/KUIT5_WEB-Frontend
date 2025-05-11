@@ -6,19 +6,27 @@ import CardItem from "../CardItem/CardItem";
 type CardRowProps = {
   cardArray: CardType[];
   cardStateArray: boolean[];
+  compareItem: () => boolean;
+  idx: number;
 };
 
-const CardRow = ({ cardArray, cardStateArray }: CardRowProps) => {
+const CardRow = ({ cardArray, cardStateArray, idx, compareItem }: CardRowProps) => {
+  const start = (idx - 1) * 5;
+  const end = idx * 5;
+  const slicedCardArray = cardArray.slice(start, end);
+  const slicedCardStateArray = cardStateArray.slice(start, end);
   return (
     <div className={styles.contents}>
       <div className={styles.contents__row}>
-        {cardArray.map((item, index) => (
+        {slicedCardArray.map((item, index) => (
           <CardItem
             key={item.id}
             name={item.name}
             imgPath={item.imgPath}
             backImgPath={item.backImgPath}
-            cardState={cardStateArray[index]}
+            cardState={slicedCardStateArray[index]}
+            index={start + index}
+            compareItem={compareItem}
           />
         ))}
       </div>

@@ -8,26 +8,29 @@ type CardProps = {
   backImgPath: string;
   cardState: boolean;
   index: number;
+  compareItem: () => boolean;
 };
 
-const CardItem = ({ name, imgPath, backImgPath, cardState, index }: CardProps) => {
-  const [flip, setFlip] = useState(false);
+const CardItem = ({ name, imgPath, backImgPath, cardState, index, compareItem }: CardProps) => {
   const clickNum = useStore((state) => state.clickNum);
   const clickCard = useStore((state) => state.clickCard);
   const addClickNum = useStore((state) => state.addClickNum);
 
   const clickHandler = () => {
-    if (clickNum >= 2) {
-    } else {
-      setFlip(true);
-      clickCard(index);
+    addClickNum();
+    clickCard(index);
+    const updatedClickNum = useStore.getState().clickNum;
+    // console.log("click handler");
+    // console.log(updatedClickNum);
+    if (updatedClickNum === 2) {
+      compareItem();
     }
   };
 
   return (
     <div className={styles.contents} onClick={clickHandler}>
-      <div className={styles.contents__title}>{flip ? name : ""}</div>
-      <img className={styles.contents__img} src={flip ? imgPath : backImgPath} alt={name} />
+      <div className={styles.contents__title}>{cardState ? name : ""}</div>
+      <img className={styles.contents__img} src={cardState ? imgPath : backImgPath} alt={name} />
     </div>
   );
 };
