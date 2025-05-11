@@ -3,10 +3,11 @@ import styles from "./BotBar.module.scss";
 
 type Props = {
   setNewGame: React.Dispatch<React.SetStateAction<boolean>>;
+  setVictory: React.Dispatch<React.SetStateAction<boolean>>;
   setCorrectCount: React.Dispatch<React.SetStateAction<number>>;
 };
 
-const BotBar = ({ setNewGame, setCorrectCount }: Props) => {
+const BotBar = ({ setNewGame, setCorrectCount, setVictory }: Props) => {
   return (
     <div className={styles.botbar}>
       <button
@@ -14,6 +15,7 @@ const BotBar = ({ setNewGame, setCorrectCount }: Props) => {
         onClick={() => {
           setNewGame(true);
           setCorrectCount(0);
+          setVictory(false);
         }}
       >
         Reset

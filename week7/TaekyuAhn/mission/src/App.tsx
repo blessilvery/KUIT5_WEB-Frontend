@@ -14,11 +14,11 @@ const App = () => {
     if (correctCount === 5) {
       setVictory(true);
 
-      setTimeout(() => {
-        setVictory(false);
-        setCorrectCount(0);
-        setNewGame(true);
-      }, 5000);
+      // setTimeout(() => {
+      //   setVictory(false);
+      //   setCorrectCount(0);
+      //   setNewGame(true);
+      // }, 5000);
     }
   }, [correctCount]);
 
@@ -26,7 +26,7 @@ const App = () => {
     <div className={styles.contents}>
       <TopBar correctCount={correctCount} victory={victory} />
       <MainBoard setCorrectCount={setCorrectCount} newGame={newGame} setNewGame={setNewGame} />
-      <BotBar setNewGame={setNewGame} setCorrectCount={setCorrectCount} />
+      <BotBar setNewGame={setNewGame} setCorrectCount={setCorrectCount} setVictory={setVictory} />
     </div>
   );
 };
