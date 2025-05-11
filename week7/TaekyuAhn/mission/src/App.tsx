@@ -17,7 +17,8 @@ const App = () => {
     <div className={styles.contents}>
       <TopBar correctCount={correctCount} />
       <MainBoard setCorrectCount={setCorrectCount} newGame={newGame} setNewGame={setNewGame} />
-      <BotBar />
+
+      <BotBar setNewGame={setNewGame} setCorrectCount={setCorrectCount} />
     </div>
   );
 };

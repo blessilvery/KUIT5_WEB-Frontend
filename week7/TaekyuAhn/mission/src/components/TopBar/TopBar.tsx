@@ -8,7 +8,7 @@ type Props = {
 const TopBar = ({ correctCount }: Props) => {
   return (
     <div className={styles.topbar}>
-      <div>맞힌 갯수: {correctCount}</div>
+      <div className={styles.topbar__text}>맞힌 갯수: {correctCount}</div>
     </div>
   );
 };

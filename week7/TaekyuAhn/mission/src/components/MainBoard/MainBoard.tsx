@@ -38,7 +38,6 @@ const MainBoard = ({ setNewGame, setCorrectCount, newGame }: Props) => {
   }, [newGame]);
 
   const compareItem = () => {
-    console.log("compareItem");
     const [a, b] = matchingIdx;
     // const updatedCardStateList = useStore.getState().cardStateList;
     // updatedCardStateList.forEach((item, index) => {
