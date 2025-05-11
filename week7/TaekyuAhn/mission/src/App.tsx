@@ -7,17 +7,25 @@ import styles from "./App.module.scss";
 
 const App = () => {
   const [correctCount, setCorrectCount] = useState(0);
+  const [victory, setVictory] = useState(false);
   const [newGame, setNewGame] = useState(false);
-  if (correctCount === 5) {
-    setCorrectCount(0);
-    setNewGame(true);
-  }
+
+  useEffect(() => {
+    if (correctCount === 5) {
+      setVictory(true);
+
+      setTimeout(() => {
+        setVictory(false);
+        setCorrectCount(0);
+        setNewGame(true);
+      }, 5000);
+    }
+  }, [correctCount]);
 
   return (
     <div className={styles.contents}>
-      <TopBar correctCount={correctCount} />
+      <TopBar correctCount={correctCount} victory={victory} />
       <MainBoard setCorrectCount={setCorrectCount} newGame={newGame} setNewGame={setNewGame} />
-
       <BotBar setNewGame={setNewGame} setCorrectCount={setCorrectCount} />
     </div>
   );

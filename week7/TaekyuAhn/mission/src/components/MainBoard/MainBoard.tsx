@@ -30,23 +30,13 @@ const MainBoard = ({ setNewGame, setCorrectCount, newGame }: Props) => {
   const resetCardState = useStore((state) => state.resetCardState);
 
   useEffect(() => {
-    setTimeout(() => {
-      setCardArray(shuffleData(doubledData));
-      resetCardState();
-      setNewGame(false);
-    }, 3000);
+    setCardArray(shuffleData(doubledData));
+    resetCardState();
+    setNewGame(false);
   }, [newGame]);
 
   const compareItem = () => {
     const [a, b] = matchingIdx;
-    // const updatedCardStateList = useStore.getState().cardStateList;
-    // updatedCardStateList.forEach((item, index) => {
-    //   if (item === true && matchingIdx[index]) {
-    //     compareIdx.push(index);
-    //     console.log("idx:", index);
-    //   }
-    // });
-
     if (cardArray[a].name === cardArray[b].name) {
       // 서로 같은 카드인 경우
       setCorrectCount((prev) => prev + 1);

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "./CardRow.module.scss";
 import type { CardType } from "../MainBoard/MainBoard";
 import CardItem from "../CardItem/CardItem";
