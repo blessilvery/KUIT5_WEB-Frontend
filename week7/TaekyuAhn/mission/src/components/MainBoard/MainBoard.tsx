@@ -27,10 +27,14 @@ const MainBoard = ({ setNewGame, setCorrectCount, newGame }: Props) => {
   const cardStateList = useStore((state) => state.cardStateList);
   const resetClickNum = useStore((state) => state.resetClickNum);
   const clickCard = useStore((state) => state.clickCard);
+  const resetCardState = useStore((state) => state.resetCardState);
 
   useEffect(() => {
-    setCardArray(shuffleData(doubledData));
-    setNewGame(false);
+    setTimeout(() => {
+      setCardArray(shuffleData(doubledData));
+      resetCardState();
+      setNewGame(false);
+    }, 3000);
   }, [newGame]);
 
   const compareItem = () => {

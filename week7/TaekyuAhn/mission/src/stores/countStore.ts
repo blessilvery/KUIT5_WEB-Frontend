@@ -6,6 +6,7 @@ type StoreType = {
   addClickNum: () => void;
   resetClickNum: () => void;
   cardStateList: boolean[];
+  resetCardState: () => void;
   clickCard: (index: number) => void;
 };
 
@@ -16,6 +17,10 @@ const useStore = create<StoreType>((set) => ({
   resetClickNum: () => set((state) => ({ clickNum: 0 })),
   addClickNum: () => set((state) => ({ clickNum: state.clickNum + 1 })),
   cardStateList: new Array(dataLength).fill(false),
+  resetCardState: () =>
+    set(() => ({
+      cardStateList: new Array(dataLength).fill(false),
+    })),
   clickCard: (index) =>
     set((state) => {
       const newList = [...state.cardStateList];
