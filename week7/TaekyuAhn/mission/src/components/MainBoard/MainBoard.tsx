@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { cardData } from "../../models/Data";
 import CardRow from "../CardRow/CardRow";
 
@@ -13,6 +13,8 @@ export type CardType = {
   backImgPath: string;
 };
 
+export const matchingIdx: number[] = [];
+
 type Props = {
   setCorrectCount: React.Dispatch<React.SetStateAction<number>>;
   setNewGame: React.Dispatch<React.SetStateAction<boolean>>;
@@ -21,6 +23,7 @@ type Props = {
 
 const MainBoard = ({ setNewGame, setCorrectCount, newGame }: Props) => {
   const [cardArray, setCardArray] = useState<CardType[]>([]);
+
   const cardStateList = useStore((state) => state.cardStateList);
   const resetClickNum = useStore((state) => state.resetClickNum);
   const clickCard = useStore((state) => state.clickCard);
@@ -32,27 +35,30 @@ const MainBoard = ({ setNewGame, setCorrectCount, newGame }: Props) => {
 
   const compareItem = () => {
     console.log("compareItem");
-    const compareIdx: number[] = [];
-    const updatedCardStateList = useStore.getState().cardStateList;
-    updatedCardStateList.forEach((item, index) => {
-      if (item === true) {
-        compareIdx.push(index);
-        console.log("idx:", index);
-      }
-    });
+    const [a, b] = matchingIdx;
+    // const updatedCardStateList = useStore.getState().cardStateList;
+    // updatedCardStateList.forEach((item, index) => {
+    //   if (item === true && matchingIdx[index]) {
+    //     compareIdx.push(index);
+    //     console.log("idx:", index);
+    //   }
+    // });
 
-    if (cardArray[compareIdx[0]].name === cardArray[compareIdx[1]].name) {
+    if (cardArray[a].name === cardArray[b].name) {
+      // 서로 같은 카드인 경우
       setCorrectCount((prev) => prev + 1);
       resetClickNum();
+      matchingIdx.length = 0;
       return true;
     } else {
       // 서로 다른 카드인 경우
       resetClickNum();
 
       setTimeout(() => {
-        compareIdx.forEach((item) => {
+        matchingIdx.forEach((item) => {
           clickCard(item);
         });
+        matchingIdx.length = 0;
       }, 1000);
       return false;
     }

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import styles from "./CardItem.module.scss";
 import useStore from "../../stores/countStore";
+import { matchingIdx } from "../MainBoard/MainBoard";
 
 type CardProps = {
   name: string;
@@ -19,10 +20,9 @@ const CardItem = ({ name, imgPath, backImgPath, cardState, index, compareItem }:
   const clickHandler = () => {
     addClickNum();
     clickCard(index);
-    const updatedClickNum = useStore.getState().clickNum;
-    // console.log("click handler");
-    // console.log(updatedClickNum);
-    if (updatedClickNum === 2) {
+    matchingIdx.push(index);
+
+    if (useStore.getState().clickNum === 2) {
       compareItem();
     }
   };
