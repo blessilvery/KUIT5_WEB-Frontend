@@ -1,4 +1,3 @@
-import { useState } from "react"
 import styled from "styled-components"
 import type {CardArray} from "./types/card.ts";
 
@@ -7,6 +6,7 @@ type CardPairProps = {
     cards: CardArray[]
     addScore: () => void
     setCard: (newCardArray: CardArray[]) => CardArray[]
+    cardCount: number
 }
 
 const Card = styled.div`
@@ -16,23 +16,27 @@ const Card = styled.div`
     display: flex;
 `
 
-const CardPair = ({num, cards, setCard, addScore}:CardPairProps) =>{
+const CardPair = ({num, cards, setCard, addScore, cardCount}: CardPairProps) => {
 
     return (
-    <div>
-        <Card onClick={
-            () => {
-                const openedCardSet = [...cards]
-                openedCardSet[num].isOpened = true;
-                setCard(openedCardSet);
+        <div>
+            <Card onClick={
+                () => {
+                    const openedCardSet = [...cards]
+                    openedCardSet[num].isOpened = true;
+                    setCard(openedCardSet);
 
-                if(cards[num].isOpened && cards[9-num].isOpened)
-                    addScore()
-            }}>
-            {num}
-            {cards[num] && cards[num].isOpened ? "열렸음!!" : "닫혔음."}
-        </Card>
-    </div>
+                    if (cards[num].isOpened && cards[cardCount - 1 - num].isOpened
+                        && !cards[num].isCorrect && !cards[cardCount - 1 - num].isCorrect) {
+                        addScore()
+                        cards[num].isCorrect = true;
+                        cards[cardCount - 1 - num].isCorrect = true;
+                    }
+                }}>
+                {num}
+                {cards[num].isCorrect || (cards[num] && cards[num].isOpened) ? "열렸음!!" : "닫혔음."}
+            </Card>
+        </div>
     )
 }
 
