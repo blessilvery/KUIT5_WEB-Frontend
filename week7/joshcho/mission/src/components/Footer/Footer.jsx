@@ -1,6 +1,6 @@
 import React from "react";
 import { FooterWrapper, ResetButton } from "./Footer.styles";
-import { useGameStore } from "./gameStore";
+import { useGameStore } from "../GameStore/gameStore";
 
 const Footer = () => {
   const resetGame = useGameStore((state) => state.resetGame);

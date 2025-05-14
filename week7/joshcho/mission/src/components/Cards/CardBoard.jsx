@@ -1,6 +1,6 @@
 import Card from "./Card";
 import styled from "styled-components";
-import { useGameStore } from "./gameStore";
+import { useGameStore } from "../GameStore/gameStore";
 
 const CardGrid = styled.div`
   display: grid;

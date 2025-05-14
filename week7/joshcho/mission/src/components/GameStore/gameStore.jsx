@@ -1,6 +1,6 @@
 import { create } from "zustand";
 
-import cardImages from "./CardImages";
+import cardImages from "../Cards/CardImages";
 
 const shuffleCards = () => {
   const duplicated = [...cardImages, ...cardImages];

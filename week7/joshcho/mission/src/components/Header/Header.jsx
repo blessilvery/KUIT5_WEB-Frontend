@@ -1,6 +1,6 @@
 import React from "react";
 import { HeaderWrapper, Score, Message } from "./Header.styles";
-import { useGameStore } from "./gameStore";
+import { useGameStore } from "../GameStore/gameStore";
 
 const Header = () => {
   const score = useGameStore((state) => state.score);
