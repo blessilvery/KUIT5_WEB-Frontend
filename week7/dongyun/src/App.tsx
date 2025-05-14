@@ -108,7 +108,7 @@ function App() {
 
     return (
         <Container>
-            <NavBar><h3>Score : {score}</h3></NavBar>
+            <NavBar><h3>맞힌 개수 : {score}/{maxScore}</h3></NavBar>
             {score === maxScore ? <Reward><h2>정답입니다!</h2></Reward> : null}
             <CardGame>
                 {
