@@ -31,26 +31,23 @@ const CardPair = ({num, cards, setCard, addScore, cardCount}: CardPairProps) => 
     return (
         <div>
             {
-                cards[num].isCorrect || (cards[num] && cards[num].isOpened) ?
-                    <OpenedCard> <img src={`public/card-image/card${num}.svg`}/> </OpenedCard> : (
+                cards[num].isCorrect || (cards[num].isOpened) ?
+                    <OpenedCard> <img src={`public/card-image/card${num}.svg`} alt="opened"/> </OpenedCard> : (
                         <Card onClick={
                             () => {
                                 const openedCardSet = [...cards]
                                 openedCardSet[num].isOpened = true;
-                                setCard(openedCardSet);
-
-                                if (cards[num].isOpened && cards[cardCount - 1 - num].isOpened
-                                    && !cards[num].isCorrect && !cards[cardCount - 1 - num].isCorrect) {
+                                if (openedCardSet[num].isOpened && openedCardSet[cardCount - 1 - num].isOpened) {
                                     addScore()
-                                    cards[num].isCorrect = true;
-                                    cards[cardCount - 1 - num].isCorrect = true;
+                                    openedCardSet[num].isCorrect = true;
+                                    openedCardSet[cardCount - 1 - num].isCorrect = true;
                                 }
+                                setCard(openedCardSet);
                             }}>
                             {num}
                             {cards[num].isCorrect || (cards[num] && cards[num].isOpened) ? "열렸음!!" : "닫혔음."}
                         </Card>)
             }
-
         </div>
     )
 }
