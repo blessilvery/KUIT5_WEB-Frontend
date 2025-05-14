@@ -1,7 +1,7 @@
 import React from "react";
-import Header from "./components/Header";
-import CardBoard from "./components/CardBoard";
-import Footer from "./components/Footer";
+import Header from "./components/Header/Header";
+import CardBoard from "./components/Cards/CardBoard";
+import Footer from "./components/Footer/Footer";
 import styled from "styled-components";
 
 const AppWrapper = styled.div`
