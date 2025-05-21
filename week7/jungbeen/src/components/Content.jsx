@@ -56,7 +56,6 @@ const FrontCard = styled.div`
 `;
 
 function Content({ setCorrect, resetKey, isPaused }) {
-  const [selectedCard, setSelectedCard] = useState(""); //현재 선택된 카드 src
   const [filppedIdx, setFlippedIdx] = useState([]); //현재 선택 카드 idx
   const [matchedIdx, setMatchedIdx] = useState([]); //이미 맞춘 카드
   const [isLoading, setIsLoading] = useState(false);
@@ -66,7 +65,6 @@ function Content({ setCorrect, resetKey, isPaused }) {
     setCards(shuffleArr(generateCard()));
     setFlippedIdx([]);
     setMatchedIdx([]);
-    setSelectedCard("");
     setCorrect(0);
 
     const timerId = setTimeout(() => {
@@ -100,20 +98,6 @@ function Content({ setCorrect, resetKey, isPaused }) {
     return shuffledArr;
   };
 
-  //카드 뒤집기
-  const flipCard = (e) => {
-    const imgSrc = e.currentTarget.children[0].src;
-    if (selectedCard === "") {
-      setSelectedCard(imgSrc);
-    } else {
-      if (imgSrc === selectedCard) {
-        console.log("good");
-        // setCorrect((prev) => prev + 1);
-      }
-      setSelectedCard("");
-    }
-  };
-
   const handleClick = (id) => {
     if (filppedIdx.includes(id) || filppedIdx.length === 2 || isPaused) return;
 
@@ -140,25 +124,23 @@ function Content({ setCorrect, resetKey, isPaused }) {
 
   return (
     <ContentDiv>
-      <ContentDiv>
-        {cards.map((card) => (
-          <CardWrapper key={card.id} onClick={() => handleClick(card.id)}>
-            <CardInner
-              flipped={
-                (!isLoading && filppedIdx.includes(card.id)) ||
-                matchedIdx.includes(card.id)
-              }
-            >
-              <FrontCard onClick={flipCard}>
-                <img src={card.img} alt="cardFront" />
-              </FrontCard>
-              <BackCard>
-                <img src={cardBack} alt="cardBack" />
-              </BackCard>
-            </CardInner>
-          </CardWrapper>
-        ))}
-      </ContentDiv>
+      {cards.map((card) => (
+        <CardWrapper key={card.id} onClick={() => handleClick(card.id)}>
+          <CardInner
+            flipped={
+              (!isLoading && filppedIdx.includes(card.id)) ||
+              matchedIdx.includes(card.id)
+            }
+          >
+            <FrontCard>
+              <img src={card.img} alt="cardFront" />
+            </FrontCard>
+            <BackCard>
+              <img src={cardBack} alt="cardBack" />
+            </BackCard>
+          </CardInner>
+        </CardWrapper>
+      ))}
     </ContentDiv>
   );
 }

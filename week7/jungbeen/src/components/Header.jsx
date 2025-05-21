@@ -37,11 +37,6 @@ function Header({ correct, resetKey, setResetKey, setIsPaused }) {
     setTimer(60);
   }, [resetKey]);
 
-  useEffect(() => {
-    if (correct === 5) {
-    }
-  }, [correct]);
-
   const resetGame = () => {
     setResetKey((prev) => prev + 1);
   };
